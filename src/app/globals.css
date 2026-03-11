@@ -24,11 +24,29 @@ body {
   color: var(--foreground);
   font-family: Arial, Helvetica, sans-serif;
 } */
-
-body {
-  @apply bg-white text-gray-900 p-5;
+@theme inline {
+  --color-white-LinkWater: #dce1eb;
+  --color-red-CoralRed: #ff2850;
+  --color-green-RiverBed: #325064;
+  --color-blue-NileBlue: #283750;
+  --color-black-Mirage: #191e28;
+  --color-yellow-GoldSand: #f9d77e;
+  --color-neiro: #ff0068;
+  --color-soria: #0077ff;
+  --color-boen: #ff8103;
+  --color-sog: #03ddff;
+  --color-nico: #6b95b0;
+  --color-grim: #0071ff;
+  --color-sabla: #e0ff00;
+  --color-holi: #ffbc05;
+  --font-lexend: var(--font-lexend);
 }
 
-a {
-  @apply text-blue-500 hover:underline;
+* {
+  box-sizing: border-box;
+  @apply duration-400 ease-in-out;
+}
+
+body {
+  @apply bg-white-LinkWater text-black-Mirage p-5 overflow-x-hidden;
 }
