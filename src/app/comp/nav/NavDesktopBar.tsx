@@ -2,7 +2,7 @@
 import React from "react";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
-import { navlinks } from "../data/navLinks";
+import { navlinks } from "../../data/navLinks";
 import { Lexend } from "next/font/google";
 
 const lexend = Lexend({
@@ -16,7 +16,7 @@ const desktopNavLinks = navlinks.filter((link) => link.name !== "Gold");
 const NavDesktopBar = () => {
   const pathname = usePathname();
   return (
-    <nav aria-label="Desktop Navigation Bar">
+    <nav aria-label="Desktop Navigation Bar" className="hidden lg:block">
       <ul
         className={`absolute -right-21 top-1/2 translate-y-[-50%] flex flex-col gap-1 ${lexend.variable}`}
       >
