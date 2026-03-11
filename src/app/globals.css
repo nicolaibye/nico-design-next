@@ -43,10 +43,14 @@ body {
 }
 
 * {
-  box-sizing: border-box;
+  -webkit-tap-highlight-color: transparent;
   @apply duration-400 ease-in-out;
 }
 
 body {
   @apply bg-white-LinkWater text-black-Mirage p-5 overflow-x-hidden;
+}
+
+nav {
+  @apply z-50;
 }
