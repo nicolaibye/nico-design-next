@@ -1,5 +1,5 @@
 import "./globals.css";
-import Link from "next/link";
+import NavSideBar from "./comp/NavSideBar.tsx";
 
 export default function RootLayout({
   children,
@@ -8,11 +8,12 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <nav className="flex gap-4">
-        <Link href="/">Home</Link>
-        <Link href="/about">About</Link>
-      </nav>
-      <body>{children}</body>
+      <body>
+        <header>
+          <NavSideBar />
+        </header>
+        <main>{children}</main>
+      </body>
     </html>
   );
 }
