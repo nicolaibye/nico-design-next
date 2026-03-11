@@ -1,5 +1,6 @@
 import "./globals.css";
-import NavSideBar from "./comp/NavSideBar.tsx";
+import NavDesktopBar from "./comp/NavDesktopBar";
+import NavTabletBar from "./comp/NavTabletBar";
 
 export default function RootLayout({
   children,
@@ -10,7 +11,8 @@ export default function RootLayout({
     <html lang="en">
       <body>
         <header>
-          <NavSideBar />
+          <NavDesktopBar />
+          <NavTabletBar />
         </header>
         <main>{children}</main>
       </body>
