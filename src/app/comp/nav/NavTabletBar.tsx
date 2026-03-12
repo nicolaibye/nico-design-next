@@ -1,5 +1,5 @@
 "use client";
-import React from "react";
+
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { navlinks } from "../../data/navLinks";
@@ -32,7 +32,7 @@ const NavTabletBar = () => {
             >
               <Link
                 href={link.href}
-                className={`flex flex-col w-20 h-full items-center justify-center gap-1 text-xs font-lexend uppercase tracking-wider text-white-LinkWater`}
+                className={`flex flex-col w-20 h-full items-center justify-center gap-1  text-sm font-lexend uppercase tracking-wider text-white-LinkWater`}
               >
                 {link.image ? (
                   <Image
