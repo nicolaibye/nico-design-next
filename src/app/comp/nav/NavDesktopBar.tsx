@@ -1,5 +1,5 @@
 "use client";
-import React from "react";
+
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { navlinks } from "../../data/navLinks";
@@ -18,7 +18,7 @@ const NavDesktopBar = () => {
   return (
     <nav aria-label="Desktop Navigation Bar" className="hidden lg:block">
       <ul
-        className={`absolute -right-21 top-1/2 translate-y-[-50%] flex flex-col gap-1 ${lexend.variable}`}
+        className={`fixed -right-21 top-5 flex flex-col gap-1 ${lexend.variable}`}
       >
         {desktopNavLinks.map((link) => {
           const Icon = link.icon;
