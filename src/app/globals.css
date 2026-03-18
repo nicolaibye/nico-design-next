@@ -72,3 +72,9 @@ nav {
     transform-origin: 81% 68%;
   }
 }
+
+.hero-image {
+  @apply absolute top-[74%] left-[14%] -translate-x-1/2 -translate-y-1/2 w-340 h-auto object-cover;
+}
+
+
