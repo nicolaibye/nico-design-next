@@ -1,6 +1,5 @@
 import { Major_Mono_Display } from "next/font/google";
-import HeroText from "./HeroText";
-import HeroPantone from "./HeroPantone"
+import HeroContent from "./HeroContent";
 import HeroImage from "./HeroImage";
 
 const fontMajorono = Major_Mono_Display({
@@ -12,10 +11,9 @@ const fontMajorono = Major_Mono_Display({
 const LandingPageHero = () => {
   return (
     <section
-      className={`relative -top-5 -left-5 h-real-screen overflow-hidden flex flex-col items-center justify-center ${fontMajorono.variable}`}
+      className={`h-screen overflow-hidden flex flex-col items-center justify-center relative ${fontMajorono.variable}`}
     >
-      <HeroText />
-      <HeroPantone />
+      <HeroContent />
       <HeroImage />
     </section>
   );

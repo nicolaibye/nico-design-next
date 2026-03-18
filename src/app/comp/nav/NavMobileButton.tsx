@@ -40,14 +40,14 @@ const NavMobileButton = () => {
 
   return (
     <nav aria-label="Mobile Navigation Bar" className="block sm:hidden">
-      <ul ref={navRef}>
+      <ul ref={navRef} className="z-999">
         {orderedLinks.map((link) => {
           const Icon = link.icon;
           const isActive = pathname === link.href;
           return (
             <li
               key={link.name}
-              className={`fixed bottom-5 right-5 aspect-square ${link.image ? "" : `${link.color}`} ${isActive ? "rounded-3xl" : "rounded-lg"} transition-all opacity-0 ${isNavOpen ? "" : "pointer-events-none"} ${link.name !== "Gold" ? "shadow-md shadow-black-Mirage/30" : ""}`}
+              className={`z-999 fixed bottom-5 right-5 aspect-square ${link.image ? "" : `${link.color}`} ${isActive ? "rounded-3xl" : "rounded-lg"} transition-all opacity-0 ${isNavOpen ? "" : "pointer-events-none"} ${link.name !== "Gold" ? "shadow-md shadow-black-Mirage/30" : ""}`}
             >
               <Link
                 href={link.href}

@@ -56,13 +56,19 @@ body {
 }
 
 main {
-  @apply min-h-screen p-5;
+  @apply min-h-screen;
 }
 
 nav {
   @apply z-50;
 }
 
-.section-label {
-  @apply text-white-LinkWater font-lexend  text-sm uppercase tracking-widest;
+@layer utilities {
+  .section-label {
+    @apply text-white-LinkWater font-lexend  text-sm uppercase tracking-widest;
+  }
+
+  .custom-text-origin {
+    transform-origin: 81% 68%;
+  }
 }

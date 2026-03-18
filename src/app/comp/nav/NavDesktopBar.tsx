@@ -18,7 +18,7 @@ const NavDesktopBar = () => {
   return (
     <nav aria-label="Desktop Navigation Bar" className="hidden lg:block">
       <ul
-        className={`fixed -right-21 top-5 flex flex-col gap-1 ${lexend.variable}`}
+        className={`fixed -right-21 top-5 flex flex-col gap-1 ${lexend.variable} z-999`}
       >
         {desktopNavLinks.map((link) => {
           const Icon = link.icon;
