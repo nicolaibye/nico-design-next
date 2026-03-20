@@ -2,10 +2,10 @@ import { useEffect, useState } from "react";
 
 export const useHeroPosition = () => {
   const [style, setStyle] = useState({
-    width: 0,
-    height: 0,
-    x: 0,
-    y: 0,
+    width: 1500 / 2,
+    height: 1552 / 2,
+    x: -450,
+    y: 800,
   });
 
   useEffect(() => {
@@ -25,8 +25,8 @@ export const useHeroPosition = () => {
 
       // YOUR EYE POSITION (px in original image)
       const eye = {
-        x: 1085.6,
-        y: 341.9,
+        x: 1050.6,
+        y: 312.9,
       };
 
       // ---- STEP 1: SCALE IMAGE LIKE "COVER" ----
@@ -36,8 +36,8 @@ export const useHeroPosition = () => {
       );
 
       const scaled = {
-        width: img.width * scale,
-        height: img.height * scale,
+        width: img.width * scale * 1.05,
+        height: img.height * scale * 1.05,
       };
 
       // ---- STEP 2: FIND "O" POSITION ----
@@ -94,14 +94,6 @@ export const useHeroPosition = () => {
     };
 
     calculate();
-
-    window.addEventListener("resize", calculate);
-    window.addEventListener("load", calculate);
-
-    return () => {
-      window.removeEventListener("resize", calculate);
-      window.removeEventListener("load", calculate);
-    };
   }, []);
 
   return style;
