@@ -20,7 +20,7 @@ const NavTabletBar = () => {
       className="sm:block hidden lg:hidden"
     >
       <ul
-        className={`fixed bottom-5 gap-2 left-1/2 -translate-x-1/2 flex flex-row ${lexend.variable}`}
+        className={`fixed bottom-5 gap-2 left-1/2 -translate-x-1/2 flex flex-row ${lexend.variable} z-999`}
       >
         {navlinks.map((link) => {
           const Icon = link.icon;

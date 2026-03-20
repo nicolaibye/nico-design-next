@@ -35,6 +35,7 @@
   --color-sabla: #e0ff00;
   --color-holi: #ffbc05;
   --font-lexend: var(--font-lexend);
+  --font-majorono: var(--font-majorono);
   --background-image-dotted-line: repeating-linear-gradient(
     to right,
     #dce1eb 0,
@@ -42,6 +43,7 @@
     transparent 2px,
     transparent 6px
   );
+  --height-real-screen: 100dvh;
 }
 
 * {
@@ -54,13 +56,25 @@ body {
 }
 
 main {
-  @apply min-h-screen p-5;
+  @apply min-h-screen;
 }
 
 nav {
   @apply z-50;
 }
 
-.section-label {
-  @apply text-white-LinkWater font-lexend  text-sm uppercase tracking-widest;
+@layer utilities {
+  .section-label {
+    @apply text-white-LinkWater font-lexend  text-sm uppercase tracking-widest;
+  }
+
+  .custom-text-origin {
+    transform-origin: 81% 68%;
+  }
 }
+
+.hero-image {
+  @apply absolute top-[74%] left-[14%] -translate-x-1/2 -translate-y-1/2 w-340 h-auto object-cover;
+}
+
+
