@@ -48,6 +48,7 @@ const FeaturedProjects = () => {
                       src={project.image.src}
                       alt={project.image.alt}
                       fill
+                      sizes="100%"
                       className="object-contain lg:grayscale lg:group-hover:grayscale-0 lg:transition-all"
                     />
                   </div>

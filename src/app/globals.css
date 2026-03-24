@@ -37,6 +37,7 @@
   --font-lexend: var(--font-lexend);
   --font-majorono: var(--font-majorono);
   --font-leckerli: var(--font-leckerli);
+  --font-sofiasans: var(--font-sofiasans);
   --background-image-dotted-line: repeating-linear-gradient(
     to right,
     #dce1eb 0,
