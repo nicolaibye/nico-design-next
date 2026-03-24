@@ -46,6 +46,7 @@ const HeroImage = () => {
             className="object-cover"
             width={1500}
             height={1552}
+            quality={90}
             priority
             style={{
               width: "100%",
