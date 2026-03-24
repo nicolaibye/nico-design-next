@@ -25,8 +25,8 @@ export const useHeroPosition = () => {
 
       // YOUR EYE POSITION (px in original image)
       const eye = {
-        x: 1050.6,
-        y: 312.9,
+        x: 1150.6,
+        y: 342.9,
       };
 
       // ---- STEP 1: SCALE IMAGE LIKE "COVER" ----
@@ -36,8 +36,8 @@ export const useHeroPosition = () => {
       );
 
       const scaled = {
-        width: img.width * scale * 1.05,
-        height: img.height * scale * 1.05,
+        width: img.width * scale * 1.15,
+        height: img.height * scale * 1.15,
       };
 
       // ---- STEP 2: FIND "O" POSITION ----
