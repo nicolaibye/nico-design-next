@@ -1,9 +1,15 @@
-const SectionDivider = ({ children }: { children: React.ReactNode }) => {
+const SectionDivider = ({
+  children,
+  lineClass = "outline-white-LinkWater",
+}: {
+  children: React.ReactNode;
+  lineClass?: string;
+}) => {
   return (
     <div className="mx-auto flex items-center gap-4 w-full">
       <div className="flex items-center min-w-fit">{children}</div>
 
-      <div className="w-full outline-[0.5px] outline-white-LinkWater"></div>
+      <div className={`w-full outline-[0.5px] ${lineClass}`}></div>
     </div>
   );
 };

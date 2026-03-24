@@ -33,7 +33,7 @@ const Footer = () => {
           {footerCards.map((info) => (
             <li key={info.title} className="max-w-50">
               <div>
-                <div className="flex flex-row items-center gap-6">
+                <div className="flex flex-row items-center gap-6 sm:h-10">
                   <Image
                     src={info.icon}
                     alt=""
@@ -65,7 +65,7 @@ const Footer = () => {
               </a>{" "}
               and let&apos;s make{" "}
               <Link
-                href="/project"
+                href="/projects"
                 className="underline hover:text-red-CoralRed"
               >
                 something great!
@@ -97,7 +97,7 @@ const Footer = () => {
           </div>
         </div>
         <p className="text-white-LinkWater font-lexend text-xs mx-auto sm:mx-0 uppercase tracking-widest">
-          &copy; 2025 NICO Design
+          &copy; 2026 NICO Design
         </p>
       </div>
     </footer>

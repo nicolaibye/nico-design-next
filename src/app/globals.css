@@ -36,6 +36,7 @@
   --color-holi: #ffbc05;
   --font-lexend: var(--font-lexend);
   --font-majorono: var(--font-majorono);
+  --font-leckerli: var(--font-leckerli);
   --background-image-dotted-line: repeating-linear-gradient(
     to right,
     #dce1eb 0,
@@ -76,5 +77,3 @@ nav {
 .hero-image {
   @apply absolute top-[74%] left-[14%] -translate-x-1/2 -translate-y-1/2 w-340 h-auto object-cover;
 }
-
-

@@ -16,7 +16,7 @@ export const navlinks = [
   },
   {
     name: "Project",
-    href: "/project",
+    href: "/projects",
     icon: KanbanIcon,
     color: "bg-green-RiverBed",
     hoverDistance: "hover:-translate-x-20",

@@ -1,5 +1,5 @@
 import devIcon from "@/public/icon/dev_icon.svg";
-import motionIcon from "@/public/icon/motion_icon.svg";
+// import motionIcon from "@/public/icon/motion_icon.svg";
 import designIcon from "@/public/icon/design_icon.svg";
 import brandingIcon from "@/public/icon/branding_icon.svg";
 
@@ -16,12 +16,12 @@ export const footerCards = [
       "Design that resonates with your audience—whether through web, print, or digital marketing.",
     icon: designIcon,
   },
-  {
-    title: "Motion Graphics",
-    description:
-      "Enhance your projects with dynamic movement, from sleek logo animations to engaging infographics.",
-    icon: motionIcon,
-  },
+  // {
+  //   title: "Motion Graphics",
+  //   description:
+  //     "Enhance your projects with dynamic movement, from sleek logo animations to engaging infographics.",
+  //   icon: motionIcon,
+  // },
   {
     title: "Front-end Developer",
     description:
