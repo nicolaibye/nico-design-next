@@ -4,7 +4,7 @@ const Project = () => {
   return (
     <div>
       project
-      <Link href="/project/neiro">Neiro</Link>
+      <Link href="/projects/neiro">Neiro</Link>
     </div>
   );
 };

@@ -27,11 +27,11 @@ export const heroCards: HeroCard[] = [
   {
     id: "project-card",
     title: "Projects",
-    year: "2015-2025",
+    year: "2015-2026",
     subtitle: "Creative thinker",
     color: "bg-green-RiverBed",
     outlineColor: "outline-green-RiverBed",
-    href: "/project",
+    href: "/projects",
   },
   {
     id: "about-card",
@@ -47,9 +47,9 @@ export const heroCards: HeroCard[] = [
     title: "Blog",
     personality: "ENFP",
     subtitle: "Social Optimist",
-    color: "bg-black-Mirage dark:bg-white",
-    outlineColor: "outline-black-Mirage dark:outline-white",
-    textColor: "text-white dark:text-black-Mirage",
+    color: "bg-black-Mirage",
+    outlineColor: "outline-black-Mirage",
+    textColor: "text-white",
     href: "/blog",
   },
 ];
