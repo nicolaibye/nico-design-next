@@ -19,38 +19,41 @@ const NavTabletBar = () => {
       aria-label="Tablet Navigation Bar"
       className="sm:block hidden lg:hidden"
     >
-      <ul
-        className={`fixed bottom-5 gap-2 left-1/2 -translate-x-1/2 flex flex-row ${lexend.variable} z-999`}
+      <div
+        id="tablet-nav"
+        className="fixed bottom-5 w-full flex justify-center z-999"
       >
-        {navlinks.map((link) => {
-          const Icon = link.icon;
-          const isActive = pathname === link.href;
-          return (
-            <li
-              key={link.name}
-              className={`flex flex-col items-center justify-center aspect-square ${link.color} shadow-md shadow-black-Mirage/30 ${isActive ? "rounded-3xl" : "rounded-lg"} transition-all`}
-            >
-              <Link
-                href={link.href}
-                className={`flex flex-col w-20 h-full items-center justify-center gap-1  text-sm font-lexend uppercase tracking-wider text-white-LinkWater`}
+        <ul className={`flex flex-row gap-2 ${lexend.variable}`}>
+          {navlinks.map((link) => {
+            const Icon = link.icon;
+            const isActive = pathname === link.href;
+            return (
+              <li
+                key={link.name}
+                className={`flex flex-col items-center justify-center aspect-square ${link.color} shadow-md shadow-black-Mirage/30 ${isActive ? "rounded-3xl" : "rounded-lg"} transition-all`}
               >
-                {link.image ? (
-                  <Image
-                    src={link.image}
-                    alt={`${link.name} icon`}
-                    className="p-4"
-                  />
-                ) : (
-                  <>
-                    <Icon size={22} weight="bold" />
-                    <span>{link.name}</span>
-                  </>
-                )}
-              </Link>
-            </li>
-          );
-        })}
-      </ul>
+                <Link
+                  href={link.href}
+                  className={`flex flex-col w-20 h-full items-center justify-center gap-1  text-sm font-lexend uppercase tracking-wider text-white-LinkWater`}
+                >
+                  {link.image ? (
+                    <Image
+                      src={link.image}
+                      alt={`${link.name} icon`}
+                      className="p-4"
+                    />
+                  ) : (
+                    <>
+                      <Icon size={22} weight="bold" />
+                      <span>{link.name}</span>
+                    </>
+                  )}
+                </Link>
+              </li>
+            );
+          })}
+        </ul>
+      </div>
     </nav>
   );
 };

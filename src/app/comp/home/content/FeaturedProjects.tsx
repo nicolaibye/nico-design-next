@@ -56,7 +56,7 @@ const FeaturedProjects = () => {
                 <ArrowUpRightIcon
                   size={32}
                   weight="regular"
-                  className={`flex items-center justify-center absolute bottom-5 left-5 lg:-bottom-8 lg:group-hover:bottom-5 bg-${project.color} text-black-Mirage rounded-full p-2`}
+                  className={`flex items-center justify-center absolute bottom-5 left-5 lg:-bottom-8 lg:group-hover:bottom-5 ${project.color} text-black-Mirage rounded-full p-2`}
                 />
               </a>
             </li>
