@@ -9,7 +9,6 @@ export function useRevealAnimation() {
 
     const elements =
       container.querySelectorAll<HTMLElement>("[data-reveal-el]");
-    console.log(elements);
 
     const observer = new IntersectionObserver(
       (entries) => {
@@ -17,9 +16,7 @@ export function useRevealAnimation() {
           if (!entry.isIntersecting) return;
 
           elements.forEach((el) => {
-            console.log(el);
             const delay = parseInt(el.dataset.revealDelay ?? "0", 10);
-            console.log(delay);
             setTimeout(() => {
               el.style.opacity = "1";
             }, delay);

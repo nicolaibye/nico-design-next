@@ -5,7 +5,7 @@ export const featuredProjects = [
     name: "Neiro",
     subtitle: "Identity design",
     href: "/projects/neiro/",
-    color: "neiro",
+    color: "bg-neiro",
     image: {
       src: "https://res.cloudinary.com/dg0c4lry9/image/upload/v1774357425/Neiro_festival_snapback_jr5yy3.png",
       alt: "Neiro Festival Snapback",
@@ -18,7 +18,7 @@ export const featuredProjects = [
     name: "Sabla Bra",
     subtitle: "Brand update",
     href: "/projects/sablaBra/",
-    color: "sabla",
+    color: "bg-sabla",
     image: {
       src: "https://res.cloudinary.com/dg0c4lry9/image/upload/a_50/v1755182360/sb_home_page_mgcbk9.png",
       alt: "Sabla Bra phone mockup",
@@ -31,7 +31,7 @@ export const featuredProjects = [
     name: "Holidaze",
     subtitle: "Website",
     href: "/projects/holidaze/",
-    color: "holi",
+    color: "bg-holi",
     image: {
       src: "https://res.cloudinary.com/dg0c4lry9/image/upload/t_blog_header/holi_home_mockup_w0hsvf.png",
       alt: "Holidaze website mockup",
@@ -44,7 +44,7 @@ export const featuredProjects = [
     name: "Soria Moria",
     subtitle: "Campaign visuals",
     href: "/projects/blaKors/",
-    color: "soria",
+    color: "bg-soria",
     image: {
       src: "https://res.cloudinary.com/dg0c4lry9/image/upload/t_blog_header/bk_homepage_veft8f.png",
       alt: "Blå Kors flyer mockup",

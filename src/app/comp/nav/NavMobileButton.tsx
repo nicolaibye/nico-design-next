@@ -1,5 +1,5 @@
 "use client";
-import React, { use, useRef, useState } from "react";
+import React, { useRef, useState } from "react";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { navlinks } from "../../data/navLinks";
@@ -52,6 +52,7 @@ const NavMobileButton = () => {
               <Link
                 href={link.href}
                 className={`w-10 h-full flex flex-col items-center justify-center text-white-LinkWater`}
+                onClick={link.href === "/" ? toggleNav : undefined}
               >
                 {link.image ? (
                   <Image
@@ -71,6 +72,7 @@ const NavMobileButton = () => {
       </ul>
       <button
         aria-label="Mobile nav toggle button"
+        id="mobile-nav-button"
         className={`fixed bottom-5 right-5 w-10 h-10 bg-white ${isNavOpen ? "rounded-3xl" : "rounded-lg"} flex flex-col items-center justify-center text-black-Mirage shadow-md shadow-black-Mirage/30 z-51 duration-750!`}
         onClick={toggleNav}
       >

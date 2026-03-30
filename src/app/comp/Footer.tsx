@@ -13,7 +13,7 @@ const lexend = Lexend({
 const Footer = () => {
   return (
     <footer
-      className={`bg-linear-to-t from-black-Mirage via-blue-NileBlue to-green-RiverBed text-white-LinkWater p-10 ${lexend.variable}`}
+      className={`absolute lg:static z-1000 lg:z-auto bg-linear-to-t from-black-Mirage via-blue-NileBlue to-green-RiverBed text-white-LinkWater p-10 ${lexend.variable}`}
     >
       <div className="flex flex-col gap-8 justify-center max-w-280 mx-auto">
         <SectionDivider>

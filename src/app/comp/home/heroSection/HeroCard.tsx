@@ -3,6 +3,9 @@ import Link from "next/link";
 import { HeroCard } from "../../../data/heroCards.js";
 import { Lexend } from "next/font/google";
 import { useCurrentTime } from "../../../hook/useCurrentTime.ts";
+import gsap from "gsap";
+import { useEffect } from "react";
+import { ScrollToPlugin } from "gsap/dist/ScrollToPlugin";
 
 const lexend = Lexend({
   subsets: ["latin"],
@@ -14,9 +17,24 @@ interface HeroCardProps {
   card: HeroCard;
 }
 
+const scrollToContent = (id: string) => {
+  gsap.to(window, {
+    duration: 1.25,
+    scrollTo: {
+      y: `#${id}`,
+      offsetY: 90,
+    },
+    ease: "power3.inOut",
+  });
+};
+
 const HeroCardComponent = ({ card }: HeroCardProps) => {
   // In HeroCard component, add:
   const currentTime = useCurrentTime();
+
+  useEffect(() => {
+    gsap.registerPlugin(ScrollToPlugin);
+  }, []);
 
   const {
     id,
@@ -77,7 +95,11 @@ const HeroCardComponent = ({ card }: HeroCardProps) => {
   // Special case for welcome card (not a link)
   if (id === "welcome-scroll") {
     return (
-      <li id={id} className={`cursor-pointer ${cardClasses}`}>
+      <li
+        id={id}
+        className={`cursor-pointer ${cardClasses}`}
+        onClick={() => scrollToContent("quote")}
+      >
         <div>{content}</div>
       </li>
     );
