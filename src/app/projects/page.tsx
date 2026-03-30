@@ -1,11 +1,13 @@
-import Link from "next/link";
+import BentoProjects from "../comp/projects/BentoProjects";
 
 const Project = () => {
   return (
-    <div>
-      project
-      <Link href="/projects/neiro">Neiro</Link>
-    </div>
+    <>
+      <h1 className="visually-hidden">Projects Page</h1>
+      <section>
+        <BentoProjects />
+      </section>
+    </>
   );
 };
 
