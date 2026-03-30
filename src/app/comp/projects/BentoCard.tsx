@@ -3,6 +3,8 @@ import Link from "next/link";
 import Image from "next/image";
 import { Project } from "../../data/portfolioProjectsData";
 
+
+
 const BentoCard = ({ project }: { project: Project }) => (
   <Link
     href={project.href}

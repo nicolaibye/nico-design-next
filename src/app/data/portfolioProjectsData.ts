@@ -14,6 +14,10 @@ export type Project = {
     src: string;
     alt: string;
   };
+  nav: {
+    label: string;
+    icon: string;
+  };
 };
 
 export const portfolioProjectsData = [
@@ -31,6 +35,10 @@ export const portfolioProjectsData = [
       src: "https://res.cloudinary.com/dg0c4lry9/image/upload/t_blog_header/Neiro_festival_snapback_hxgubv.jpg",
       alt: "Neiro Festival Snapback",
     },
+    nav: {
+      label: "Neiro",
+      icon: "https://res.cloudinary.com/dg0c4lry9/image/upload/t_blog_header/neiro_icon_ch8u0a.svg",
+    },
   },
   {
     name: "Blå Kors: Soria Moria",
@@ -38,7 +46,7 @@ export const portfolioProjectsData = [
     role: "Creative",
     href: "/projects/blaKors",
     color: "soria",
-    outlineColor: "#459cff",
+    outlineColor: "#0077ff",
     gradientColor: "from-soria via-soria/25 to-transparent",
     categories: "branding design motion",
     gridClass:
@@ -46,6 +54,10 @@ export const portfolioProjectsData = [
     image: {
       src: "https://res.cloudinary.com/dg0c4lry9/image/upload/t_blog_header/bk_paper_for_parents_m053v9.jpg",
       alt: "Blå Kors flyer mockup",
+    },
+    nav: {
+      label: "Blå Kors",
+      icon: "https://res.cloudinary.com/dg0c4lry9/image/upload/t_blog_header/bk_logo_icon_bw_ij4r0k.svg",
     },
   },
   {
@@ -62,6 +74,10 @@ export const portfolioProjectsData = [
       src: "https://res.cloudinary.com/dg0c4lry9/image/upload/t_blog_header/boen_icon_qobjyg.jpg",
       alt: "Boen Website",
     },
+    nav: {
+      label: "Boen",
+      icon: "https://res.cloudinary.com/dg0c4lry9/image/upload/t_blog_header/imgi_1_boen_logo_white_horizontal_transparent_xuix1y.svg",
+    },
   },
   {
     name: "Sea Otter Games",
@@ -76,6 +92,10 @@ export const portfolioProjectsData = [
     image: {
       src: "https://res.cloudinary.com/dg0c4lry9/image/upload/t_blog_header/sog_zoomed_chair_bfgnbm.jpg",
       alt: "Sea Otter Games gaming chair",
+    },
+    nav: {
+      label: "Sea Otter Games",
+      icon: "https://res.cloudinary.com/dg0c4lry9/image/upload/t_blog_header/sog_icon_black_lndgn7.svg",
     },
   },
   {
@@ -93,6 +113,10 @@ export const portfolioProjectsData = [
       src: "https://res.cloudinary.com/dg0c4lry9/image/upload/t_blog_header/nico_Business-Card-Mockup_10mn_b30kha.jpg",
       alt: "NICO Design business card mockup",
     },
+    nav: {
+      label: "NICO Design",
+      icon: "https://res.cloudinary.com/dg0c4lry9/image/upload/t_blog_header/nico_new_logo_y08ady.svg",
+    },
   },
   {
     name: "Grimstad",
@@ -100,7 +124,7 @@ export const portfolioProjectsData = [
     role: "Designer",
     href: "/projects/grimstad",
     color: "grim",
-    outlineColor: "#10b3f3",
+    outlineColor: "#0071ff",
     gradientColor: "from-grim via-grim/25 to-transparent",
     categories: "design",
     gridClass:
@@ -108,6 +132,10 @@ export const portfolioProjectsData = [
     image: {
       src: "https://res.cloudinary.com/dg0c4lry9/image/upload/t_blog_header/grim_Stationery-Mockup_tc7uzd.jpg",
       alt: "Grimstad stationary mockup",
+    },
+    nav: {
+      label: "Grimstad",
+      icon: "https://res.cloudinary.com/dg0c4lry9/image/upload/t_blog_header/Ikon_Med_Fyll_Sort_Uten_Klaring_kawrrn.svg",
     },
   },
   {
@@ -125,6 +153,10 @@ export const portfolioProjectsData = [
       src: "https://res.cloudinary.com/dg0c4lry9/image/upload/t_blog_header/sb_some_mockup_ew0isa.jpg",
       alt: "Sabla Bra SOME mockup",
     },
+    nav: {
+      label: "Sabla Bra",
+      icon: "https://res.cloudinary.com/dg0c4lry9/image/upload/t_blog_header/sb_logo_combine_black_g1vzmt.svg",
+    },
   },
   {
     name: "Holidaze",
@@ -140,6 +172,10 @@ export const portfolioProjectsData = [
     image: {
       src: "https://res.cloudinary.com/dg0c4lry9/image/upload/t_blog_header/holidaze_imac_mockup_fqgd7l.jpg",
       alt: "Holidaze iMac mockup",
+    },
+    nav: {
+      label: "Holidaze",
+      icon: "https://res.cloudinary.com/dg0c4lry9/image/upload/t_blog_header/icon_dawnFrame_dark_uzwvxg.svg",
     },
   },
 ];
