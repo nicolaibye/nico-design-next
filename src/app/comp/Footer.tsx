@@ -4,11 +4,7 @@ import Link from "next/link";
 import { footerCards, footerLinks } from "../data/footerData";
 import SectionDivider from "./reuse/SectionDivider";
 
-const lexend = Lexend({
-  subsets: ["latin"],
-  weight: ["400", "500", "600", "700"],
-  variable: "--font-lexend",
-});
+const lexend = Lexend({ subsets: ["latin"], variable: "--font-lexend" });
 
 const Footer = () => {
   return (

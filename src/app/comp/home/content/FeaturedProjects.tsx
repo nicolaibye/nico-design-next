@@ -4,11 +4,7 @@ import { featuredProjects as projects } from "../../../data/featuredProjectsData
 import { Lexend } from "@next/font/google";
 import { ArrowUpRightIcon } from "@phosphor-icons/react/dist/ssr";
 
-const lexend = Lexend({
-  subsets: ["latin"],
-  weight: ["400", "500", "600", "700"],
-  variable: "--font-lexend",
-});
+const lexend = Lexend({ subsets: ["latin"], variable: "--font-lexend" });
 
 const FeaturedProjects = () => {
   return (

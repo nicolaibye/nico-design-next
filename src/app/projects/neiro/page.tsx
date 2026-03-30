@@ -1,5 +1,11 @@
+import ProjectNav from "@/app/comp/reuse/ProjectNav";
+
 const Neiro = () => {
-  return <div>neiro</div>;
+  return (
+    <>
+      <ProjectNav />
+    </>
+  );
 };
 
 export default Neiro;

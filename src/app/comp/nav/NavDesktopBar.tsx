@@ -6,11 +6,7 @@ import { navlinks } from "../../data/navLinks";
 import { Lexend } from "next/font/google";
 import Image from "next/image";
 
-const lexend = Lexend({
-  subsets: ["latin"],
-  weight: ["400", "500", "600", "700"],
-  variable: "--font-lexend",
-});
+const lexend = Lexend({ subsets: ["latin"], variable: "--font-lexend" });
 
 const orderedLinks = [...navlinks].sort(
   (a, b) => (a.name === "Gold" ? 1 : 0) - (b.name === "Gold" ? 1 : 0),
