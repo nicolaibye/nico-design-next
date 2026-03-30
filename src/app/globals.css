@@ -46,6 +46,8 @@
     transparent 6px
   );
   --height-real-screen: 100dvh;
+  --grid-auto-rows-screen-4: calc((100svh - 12rem) / 4);
+  --grid-auto-rows-screen-mobile: calc((100svh - 12rem) / 2.5);
 }
 
 * {
@@ -72,6 +74,18 @@ nav {
 
   .custom-text-origin {
     transform-origin: 81% 68%;
+  }
+
+  .visually-hidden {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    white-space: nowrap;
+    border: 0;
   }
 }
 
