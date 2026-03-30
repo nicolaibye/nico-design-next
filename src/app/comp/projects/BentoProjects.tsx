@@ -1,7 +1,5 @@
 import React from "react";
-import Image from "next/image";
 import { portfolioProjectsData as projects } from "../../data/portfolioProjectsData.ts";
-import Link from "next/link";
 import { Lexend } from "next/font/google";
 import BentoCard from "./BentoCard.tsx";
 

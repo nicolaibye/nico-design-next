@@ -46,7 +46,7 @@ export const portfolioProjectsData = [
     role: "Creative",
     href: "/projects/blaKors",
     color: "soria",
-    outlineColor: "#459cff",
+    outlineColor: "#0077ff",
     gradientColor: "from-soria via-soria/25 to-transparent",
     categories: "branding design motion",
     gridClass:
@@ -124,7 +124,7 @@ export const portfolioProjectsData = [
     role: "Designer",
     href: "/projects/grimstad",
     color: "grim",
-    outlineColor: "#10b3f3",
+    outlineColor: "#0071ff",
     gradientColor: "from-grim via-grim/25 to-transparent",
     categories: "design",
     gridClass:

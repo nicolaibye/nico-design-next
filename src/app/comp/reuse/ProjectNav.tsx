@@ -16,10 +16,13 @@ const ProjectNav = () => {
   const prev = projects.at(currentIndex - 1)!; // wraps to last when index is 0
   const next = projects.at((currentIndex + 1) % projects.length)!;
 
+  const prevBgColor = `bg-${prev.color}`; // bg-prev.color;
+  const nextBgColor = `bg-${next.color}`; // bg-next.color;
+
   return (
     <div className="w-full px-5 pb-6 md:pb-0 md:px-20">
       <div
-        className={`flex flex-row justify-between items-center mt-5 gap-4 ${lexend.variable}`}
+        className={`flex flex-row justify-between items-center mt-5 ${lexend.variable}`}
       >
         {/* Prev */}
         <Link
@@ -27,15 +30,14 @@ const ProjectNav = () => {
           data-transition
           data-color={prev.color}
           data-link
-          className="group flex w-full md:w-auto rounded-xl rounded-r-none md:rounded-r-xl h-20 outline-2 transition-all duration-300"
+          className={`group flex w-full md:w-auto rounded-xl rounded-r-none hover:bg-white-LinkWater ${prevBgColor} md:rounded-r-xl h-20 outline-2 transition-all`}
           style={{
-            backgroundColor: prev.outlineColor,
             outlineColor: prev.outlineColor,
           }}
         >
           <div className="px-4 self-center">
             <p className="font-lexend uppercase">{prev.nav.label}</p>
-            <p className="font-lexend font-light leading-1">{prev.subtitle}</p>
+            <p className="font-lexend font-light leading-4">{prev.subtitle}</p>
           </div>
           <div className="relative w-20 h-full hidden md:block shrink-0">
             <Image
@@ -53,9 +55,8 @@ const ProjectNav = () => {
           data-transition
           data-color={next.color}
           data-link
-          className="group flex w-full justify-end md:w-auto rounded-xl rounded-l-none md:rounded-l-xl h-20 outline-2 transition-all duration-300"
+          className={`group flex w-full justify-end md:w-auto rounded-xl rounded-l-none hover:bg-white-LinkWater ${nextBgColor} md:rounded-l-xl h-20 outline-2 transition-all`}
           style={{
-            backgroundColor: next.outlineColor,
             outlineColor: next.outlineColor,
           }}
         >
@@ -69,7 +70,7 @@ const ProjectNav = () => {
           </div>
           <div className="px-4 self-center text-right">
             <p className="font-lexend uppercase">{next.nav.label}</p>
-            <p className="font-lexend font-light leading-1">{next.subtitle}</p>
+            <p className="font-lexend font-light leading-4">{next.subtitle}</p>
           </div>
         </Link>
       </div>
