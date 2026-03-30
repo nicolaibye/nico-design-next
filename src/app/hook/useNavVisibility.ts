@@ -5,7 +5,7 @@ import { ScrollTrigger } from "gsap/ScrollTrigger";
 
 gsap.registerPlugin(ScrollTrigger);
 
-const DURATION = 0.3;
+const DURATION = 0;
 const EASE = "none";
 
 export function useNavVisibility() {
