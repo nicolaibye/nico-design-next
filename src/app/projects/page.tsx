@@ -4,7 +4,7 @@ const Project = () => {
   return (
     <>
       <h1 className="visually-hidden">Projects Page</h1>
-      <section className="">
+      <section>
         <BentoProjects />
       </section>
     </>
