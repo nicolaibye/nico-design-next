@@ -20,7 +20,7 @@ const ProjectNav = () => {
   const nextBgColor = `bg-${next.color}`; // bg-next.color;
 
   return (
-    <div className="w-full px-5 pb-6 md:pb-0 md:px-20">
+    <div className="w-full px-5 pb-6 md:pb-0 md:px-20 mb-10">
       <div
         className={`flex flex-row justify-between items-center mt-5 ${lexend.variable}`}
       >
