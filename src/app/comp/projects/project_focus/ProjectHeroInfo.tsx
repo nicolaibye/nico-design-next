@@ -1,6 +1,6 @@
 "use client";
 import { useState } from "react";
-import { ProjectInfo } from "../../../data/projectData.ts";
+import { ProjectInfo } from "../../../data/projectData.tsx";
 
 const CARD_COLORS = ["bg-white", "bg-blue-NileBlue", "bg-red-CoralRed"];
 
@@ -63,9 +63,9 @@ const ProjectHeroInfo = ({ info }: { info: ProjectInfo }) => {
       </div>
 
       {/* Expanded content */}
-      {/* {activeCard !== null && (
+      {activeCard !== null && (
         <div className="mt-5">{info.cards[activeCard].content}</div>
-      )} */}
+      )}
     </div>
   );
 };

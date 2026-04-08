@@ -2,7 +2,7 @@ import ProjectNav from "@/app/comp/reuse/ProjectNav";
 import ProjectHero from "@/app/comp/projects/project_focus/ProjectHero";
 import ProjectHeroInfo from "@/app/comp/projects/project_focus/ProjectHeroInfo";
 import ProjectHeroMedia from "@/app/comp/projects/project_focus/ProjectHeroMedia";
-import { neiroInfo } from "@/app/data/projectData.ts";
+import { neiroInfo } from "@/app/data/projectData.tsx";
 
 const Neiro = () => {
   return (

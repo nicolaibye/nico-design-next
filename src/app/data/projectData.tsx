@@ -10,7 +10,7 @@ export type ProjectStat = {
 export type ProjectCard = {
   title: string;
   body: string;
-  // content: React.ReactNode;
+  content: React.ReactNode;
 };
 
 export type ProjectInfo = {
@@ -29,17 +29,17 @@ export const neiroInfo: ProjectInfo = {
     {
       title: "Brief",
       body: "NEIRO is a Japanese-inspired EDM festival for young adults in the West and East. The task was to build a dynamic, culturally respectful brand—from logo and typography to merch, Instagram content, and a guiding one-pager—that captures energy, curiosity, and global resonance.",
-      // content: <NeiroBriefContent />,
+      content: <NeiroBriefContent />,
     },
     {
       title: "Challenge",
       body: "The goal was to suggest Eastern inspiration without relying on clichés. By grounding the visuals in Techno-Orientalism—an aesthetic that presents Asia through futuristic, tech-driven tropes—we avoided stereotypes while embracing a forward-looking vibe.",
-      // content: <NeiroChallengeContent />,
+      content: <NeiroChallengeContent />,
     },
     {
       title: "Outcome",
       body: "The final brand features glitchy textures, futuristic typography, and Japanese tech-inspired motifs. Core merchandise is available year-round, plus limited-edition prints sold on-site to drive engagement.",
-      // content: <NeiroOutcomeContent />,
+      content: <NeiroOutcomeContent />,
     },
   ],
 };
