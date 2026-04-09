@@ -51,7 +51,7 @@ const NavMobileButton = () => {
             >
               <Link
                 href={link.href}
-                className={`w-10 h-full flex flex-col items-center justify-center text-white-LinkWater`}
+                className={`w-10 h-full flex flex-col items-center justify-center ${link.textColor ? link.textColor : "text-white-LinkWater"}`}
                 onClick={link.href === "/" ? toggleNav : undefined}
               >
                 {link.image ? (
