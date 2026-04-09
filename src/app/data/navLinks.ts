@@ -39,7 +39,8 @@ export const navlinks = [
     name: "Blog",
     href: "/blog",
     icon: QuotesIcon,
-    color: "bg-black-Mirage",
+    color: "bg-black-Mirage dark:bg-white-LinkWater",
+    textColor: "text-white-LinkWater dark:text-black-Mirage",
     hoverDistance: "hover:-translate-x-13.5",
   },
 ];
