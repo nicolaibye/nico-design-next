@@ -40,7 +40,6 @@ const NeiroBriefContent = () => {
           />
         </div>
       </div>
-      <div></div>
       <div
         className={`flex flex-col justify-center items-center my-auto h-screen px-10 lg:px-40`}
       >
