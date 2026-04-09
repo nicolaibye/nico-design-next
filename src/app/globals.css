@@ -56,7 +56,7 @@
 }
 
 body {
-  @apply bg-white-LinkWater text-black-Mirage overflow-x-hidden;
+  @apply bg-white-LinkWater dark:bg-black-Mirage text-black-Mirage dark:text-white-LinkWater overflow-x-hidden;
 }
 
 main {
