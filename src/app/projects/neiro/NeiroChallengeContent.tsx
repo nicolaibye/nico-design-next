@@ -3,73 +3,47 @@ import { Lexend } from "next/font/google";
 import SectionDivider from "@/app/comp/reuse/SectionDivider";
 import AnimatedText from "@/app/comp/reuse/AnimatedText";
 import { wrapText } from "@/app/js/helper/wrapText";
-import { gsap } from "gsap/gsap-core";
-import { Draggable } from "gsap/Draggable";
-import { InertiaPlugin } from "gsap/all";
-import { useEffect } from "react";
-
-gsap.registerPlugin(Draggable, InertiaPlugin);
+import { useDraggable } from "@/app/hook/useDraggable";
+import DraggableItem from "@/app/comp/reuse/DraggableItem";
+import Image from "next/image";
 
 const fontLexend = Lexend({ subsets: ["latin"], variable: "--font-lexend" });
 
-function initDraggable() {
-  Draggable.create("[data-dragable]", {
-    bounds: "#sketches",
-    type: "x,y",
-    inertia: true,
-    edgeResistance: 1,
-
-    onPress() {
-      this.target.style.zIndex = 10;
-      this.target._floatTimeline?.pause();
-    },
-
-    onDrag() {
-      InertiaPlugin.track(this.target, "x,y");
-      const velocityX = InertiaPlugin.getVelocity(this.target, "x");
-      gsap.to(this.target, {
-        rotation: gsap.utils.clamp(-20, 20, velocityX * 0.01),
-        duration: 0.2,
-        overwrite: true,
-      });
-    },
-
-    onRelease() {
-      this.target.style.zIndex = 1;
-
-      InertiaPlugin.track(this.target, "x,y");
-      const velocityX = InertiaPlugin.getVelocity(this.target, "x");
-      if (Math.abs(velocityX) < 20) return;
-
-      // Rotate based on horizontal velocity
-      const rotation = gsap.utils.clamp(-40, 40, velocityX * 0.01);
-      const duration = gsap.utils.clamp(0.7, 1, Math.abs(velocityX) * 0.01);
-
-      gsap.to(this.target, {
-        rotation: rotation,
-        duration: duration,
-        ease: "back.out(1.4)",
-        overwrite: "auto",
-      });
-    },
-  });
-}
-
-function fullView(target: HTMLElement) {
-  gsap.to(target, {
-    x: (window.innerWidth - target.offsetWidth) / 2,
-    y: (window.innerHeight - target.offsetHeight) / 2,
-    rotation: 0,
-    duration: 0.5,
-    ease: "power2.out",
-    scale: 15,
-  });
-}
+const sketches = [
+  {
+    src: "https://res.cloudinary.com/dg0c4lry9/image/upload/v1775750817/fmp_mindmap_snfnap.jpg",
+    alt: "Festival Mindmap Sketch",
+    width: "w-60",
+    position: "top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2",
+  },
+  {
+    src: "https://res.cloudinary.com/dg0c4lry9/image/upload/v1775750816/words_2_huqt6a.jpg",
+    alt: "Words_2 Sketch",
+    width: "w-60",
+    position: "top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2",
+  },
+  {
+    src: "https://res.cloudinary.com/dg0c4lry9/image/upload/v1775750816/logo_sketches_c46q5t.jpg",
+    alt: "Logo Sketch",
+    width: "w-45",
+    position: "top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2",
+  },
+  {
+    src: "https://res.cloudinary.com/dg0c4lry9/image/upload/v1775750815/asia_mindmap_yscod5.jpg",
+    alt: "Asia Mindmap Sketch",
+    width: "w-60",
+    position: "top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2",
+  },
+  {
+    src: "https://res.cloudinary.com/dg0c4lry9/image/upload/v1775750815/words_1_svukgp.jpg",
+    alt: "Words_1 Sketch",
+    width: "w-45",
+    position: "top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2",
+  },
+];
 
 const NeiroChallengeContent = () => {
-  useEffect(() => {
-    initDraggable();
-  }, []);
+  useDraggable("sketches");
 
   return (
     <section className={`${fontLexend.variable}`}>
@@ -110,24 +84,21 @@ const NeiroChallengeContent = () => {
           expandable and applicable to every touchpoint at the festival.
         </p>
       </div>
-      <div id="sketches" className={`relative flex m-20 md:mx-40 min-h-[75vh]`}>
-        <div
-          data-dragable
-          className="absolute top-0 right-0 w-10 h-10 bg-blue-400 hover:bg-amber-50"
-        />
-        <div
-          data-dragable
-          className="absolute bottom-0 right-0 w-10 h-10 bg-amber-400 hover:bg-amber-50"
-        />
-        <div
-          data-dragable
-          className="absolute top-0 left-0 w-10 h-10 bg-red-400 hover:bg-amber-50"
-          onDoubleClick={(e) => fullView(e.currentTarget)}
-        />
-        <div
-          data-dragable
-          className="absolute bottom-0 left-0 w-10 h-10 bg-lime-400 hover:h-20"
-        />
+      <div id="sketches" className="relative flex m-10 md:mx-20 min-h-[75vh]">
+        {sketches.map((sketch, index) => (
+          <DraggableItem
+            key={index}
+            className={`absolute ${sketch.width} h-fit ${sketch.position}`}
+          >
+            <Image
+              src={sketch.src}
+              alt={sketch.alt}
+              width={500}
+              height={500}
+              quality={100}
+            />
+          </DraggableItem>
+        ))}
       </div>
       <div
         className={`flex flex-col justify-center items-center mt-10 md:mt-auto min-h-[50vh] px-10 lg:px-40`}
