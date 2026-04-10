@@ -5,7 +5,7 @@ import { InertiaPlugin } from "gsap/InertiaPlugin";
 
 gsap.registerPlugin(Draggable, InertiaPlugin);
 
-const MAX_Z = 40; // stays below nav (z-50+)
+const MAX_Z = 40;
 
 export function useDraggable(boundsId: string) {
   const topZ = useRef(1);
