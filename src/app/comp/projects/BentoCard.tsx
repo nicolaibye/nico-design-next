@@ -3,8 +3,6 @@ import Link from "next/link";
 import Image from "next/image";
 import { Project } from "../../data/portfolioProjectsData";
 
-
-
 const BentoCard = ({ project }: { project: Project }) => (
   <Link
     href={project.href}
@@ -32,7 +30,7 @@ const BentoCard = ({ project }: { project: Project }) => (
     />
 
     {/* Text */}
-    <div className="absolute flex justify-between items-end bottom-5 lg:bottom-0 left-5 lg:opacity-0 group-hover:bottom-5 group-hover:opacity-100 w-[calc(100%-2.5rem)] z-20 text-black-mirage">
+    <div className="absolute flex justify-between items-end bottom-5 lg:bottom-0 left-5 lg:opacity-0 group-hover:bottom-5 group-hover:opacity-100 w-[calc(100%-2.5rem)] z-20 text-black-Mirage">
       <p className="font-lexend font-light">
         <span className="font-medium uppercase">{project.name}</span>
         <br />
