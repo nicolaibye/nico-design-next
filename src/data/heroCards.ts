@@ -22,7 +22,7 @@ export const heroCards: HeroCard[] = [
     subtitle: "Have a look",
     color: "bg-red-CoralRed",
     outlineColor: "outline-red-CoralRed",
-    href: "#welcome", // or remove if it's an anchor scroll
+    href: "#welcome",
   },
   {
     id: "project-card",
@@ -47,9 +47,9 @@ export const heroCards: HeroCard[] = [
     title: "Blog",
     personality: "ENFP",
     subtitle: "Social Optimist",
-    color: "bg-black-Mirage",
-    outlineColor: "outline-black-Mirage",
-    textColor: "text-white",
+    color: "bg-black-Mirage dark:bg-white-LinkWater",
+    outlineColor: "outline-black-Mirage dark:outline-white-LinkWater",
+    textColor: "text-white dark:text-black-Mirage",
     href: "/blog",
   },
 ];

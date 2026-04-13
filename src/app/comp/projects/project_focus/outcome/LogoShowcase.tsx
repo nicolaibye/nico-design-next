@@ -34,23 +34,28 @@ const DarkModeImage = ({ item }: { item: LogoItem }) => (
 );
 
 const LogoShowcase = ({ primary, secondary }: LogoShowcaseProps) => (
-  <div className="flex flex-col gap-8 items-center">
+  <div className="flex flex-col gap-16 items-center">
     <SectionDivider lineClass="outline-black-Mirage dark:outline-white-LinkWater">
       <h2 className="font-lexend uppercase text-xs min-w-fit tracking-widest">
         Logo options
       </h2>
     </SectionDivider>
-    <ul className="flex flex-row gap-20 items-start justify-center">
+    <ul className="flex flex-row gap-10 h-full items-start justify-center">
       {primary.map((logo) => (
-        <li key={logo.alt}>
+        <li
+          key={logo.alt}
+          className="flex flex-col items-center h-stretch justify-between gap-3"
+        >
           <DarkModeImage item={logo} />
+          {logo.label && (
+            <p className="font-lexend font-light text-black-Mirage text-center justify-self-end dark:text-white">
+              {logo.label}
+            </p>
+          )}
         </li>
       ))}
     </ul>
-    <p className="font-lexend font-light text-black-Mirage dark:text-white">
-      Primary logos
-    </p>
-    <ul className="flex flex-row flex-wrap gap-10 lg:gap-20 items-end justify-center">
+    <ul className="flex flex-row flex-wrap gap-16 lg:gap-20 items-end justify-center mt-5">
       {secondary.map((logo) => (
         <li key={logo.alt} className="flex flex-col items-center gap-3">
           <DarkModeImage item={logo} />

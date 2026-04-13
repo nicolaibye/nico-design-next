@@ -29,7 +29,7 @@ const CARD_OUTLINE_COLORS = [
 ];
 
 const ProjectHeroInfo = ({ info }: { info: ProjectInfo }) => {
-  const [activeCard, setActiveCard] = useState<number | null>(null);
+  const [activeCard, setActiveCard] = useState<number | null>(2);
 
   return (
     <div className="w-full h-auto">

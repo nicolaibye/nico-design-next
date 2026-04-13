@@ -61,6 +61,7 @@ export const neiroOutcome = {
           "https://res.cloudinary.com/dg0c4lry9/image/upload/t_blog_header/neiro_hor_nameSigns_k2frau.svg",
         dark: "https://res.cloudinary.com/dg0c4lry9/image/upload/t_blog_header/neiro_hor_nameSigns_drk_m2ldu0.svg",
         alt: "Neiro logo with text underneath",
+        label: "Primary vertical",
         displayClass: "h-[260px] w-auto",
       },
       {
@@ -68,6 +69,7 @@ export const neiroOutcome = {
           "https://res.cloudinary.com/dg0c4lry9/image/upload/t_blog_header/neiro_hor_signs_temfze.svg",
         dark: "https://res.cloudinary.com/dg0c4lry9/image/upload/t_blog_header/neiro_hor_signs_drk_gjzpys.svg",
         alt: "Neiro logo",
+        label: "Brand mark",
         displayClass: "h-[224px] w-auto",
       },
     ],
@@ -184,7 +186,7 @@ export const neiroOutcome = {
       ],
     },
   ],
-  merch: [
+  mockup: [
     {
       image: {
         src: "https://res.cloudinary.com/dg0c4lry9/image/upload/t_blog_header/Neiro_festival_snapback_hxgubv.jpg",
@@ -201,7 +203,7 @@ export const neiroOutcome = {
         alt: "Neiro vinyl mockup",
         bg: "bg-[#00ffbc]",
       },
-      label: "Recurring merch",
+      label: "Recurring Merch",
       description:
         "Festival-themed staples for the true die-hard fans — consistent, iconic, and made with intention.",
       labelPosition: "below" as const,

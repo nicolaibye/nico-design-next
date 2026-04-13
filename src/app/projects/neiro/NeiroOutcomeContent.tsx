@@ -23,7 +23,7 @@ const NeiroOutcomeContent = () => (
             alt={neiroOutcome.banner.mainImage.alt}
             width={2000}
             height={2000}
-            className="h-[60vh] w-auto md:h-full max-w-none md:w-full object-cover rounded-xl"
+            className="h-[60vh] w-auto md:h-full max-w-none md:w-full object-cover md:object-top rounded-xl"
           />
         </div>
         {neiroOutcome.banner.floatingImages.map((img) => (
@@ -55,7 +55,7 @@ const NeiroOutcomeContent = () => (
 
       <section>
         <div className="w-full max-w-wide mx-auto px-5 md:px-20 flex flex-col gap-5 xl:gap-10 md:my-16">
-          <MockupGrid items={neiroOutcome.merch} />
+          <MockupGrid items={neiroOutcome.mockup} />
         </div>
       </section>
     </>

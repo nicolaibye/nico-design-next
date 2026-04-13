@@ -32,7 +32,7 @@ const LifeAchievements = () => {
             </AnimatedCounter>
           </li>
           <li className="flex flex-col w-61">
-            <AnimatedCounter target={6} textColor="text-green-RiverBed">
+            <AnimatedCounter target={6} textColor="text-green-RiverBed dark:text-white-LinkWater">
               Years of working as a freelancer and co-worker
             </AnimatedCounter>
           </li>

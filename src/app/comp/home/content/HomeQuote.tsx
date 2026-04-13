@@ -37,17 +37,17 @@ const HomeQuote = () => {
 
         <div className="flex flex-col items-center" aria-label="quote">
           <div className="flex flex-col md:flex-row items-center md:items-end gap-4">
-            <p className="font-majorono text-4xl sm:text-5xl text-blue-NileBlue">
+            <p className="font-majorono text-4xl sm:text-5xl text-blue-NileBlue dark:text-white-LinkWater">
               eitHeR it
               <br />
               ends Well
             </p>
-            <p className="font-lexend font-bold text-[2.5rem] sm:text-[3.35rem] leading-[0.9] md:text-5xl text-green-RiverBed">
+            <p className="font-lexend font-bold text-[2.5rem] sm:text-[3.35rem] leading-[0.9] md:text-5xl text-green-RiverBed dark:text-white-LinkWater">
               ... or it ends
             </p>
           </div>
           <div className="relative w-fit">
-            <p className="font-leckerli text-[72px] sm:text-[92px] text-red-CoralRed uppercase leading-[0.9] pt-6 md:pt-0 md:leading-tight text-center w-[240px] sm:w-[310px] md:w-auto">
+            <p className="font-leckerli text-[72px] sm:text-[92px] text-red-CoralRed uppercase leading-[0.9] pt-6 md:pt-0 md:leading-tight text-center w-60 sm:w-77.5 md:w-auto">
               event
               <wbr />
               ually
