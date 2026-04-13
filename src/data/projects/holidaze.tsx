@@ -12,22 +12,25 @@ export const holidazeInfo: ProjectInfo = {
       label: "Tools",
       value: "Illustrator, Figma, Tailwind CSS, JS, Vite + React",
     },
-    { label: "Services", value: "Identity design" },
+    {
+      label: "Services",
+      value: "Identity design, UI / UX design, Front-End Dev",
+    },
   ],
   cards: [
     {
       title: "Brief",
-      body: "A Japanese-inspired EDM festival.",
+      body: "A SaaS host & booking platform.",
       content: <HolidazeBriefContent />,
     },
     {
       title: "Challenge",
-      body: "Orientalism and cultural appropriation.",
+      body: "Transformative branding for our audience.",
       content: <HolidazeChallengeContent />,
     },
     {
       title: "Outcome",
-      body: "Logo suite, social, merchandise and more.",
+      body: "Identity, logo suite and website.",
       content: <HolidazeOutcomeContent />,
     },
   ],
