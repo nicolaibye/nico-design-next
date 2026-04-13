@@ -1,5 +1,5 @@
 import React from "react";
-import { portfolioProjectsData as projects } from "../../data/portfolioProjectsData.ts";
+import { portfolioProjectsData as projects } from "../../../data/portfolioProjectsData.ts";
 import { Lexend } from "next/font/google";
 import BentoCard from "./BentoCard.tsx";
 

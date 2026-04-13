@@ -1,6 +1,6 @@
 // components/HeroPantone.tsx
 import { Lexend } from "next/font/google";
-import { heroCards } from "../../../data/heroCards";
+import { heroCards } from "../../../../data/heroCards";
 import HeroCard from "./HeroCard";
 
 const lexend = Lexend({

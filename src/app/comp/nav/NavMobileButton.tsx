@@ -2,7 +2,7 @@
 import React, { useRef, useState } from "react";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
-import { navlinks } from "../../data/navLinks";
+import { navlinks } from "../../../data/navLinks";
 import Image from "next/image";
 import { BackpackIcon } from "@phosphor-icons/react";
 import gsap from "gsap";

@@ -1,6 +1,6 @@
 "use client";
 import Link from "next/link";
-import { HeroCard } from "../../../data/heroCards.js";
+import { HeroCard } from "../../../../data/heroCards.js";
 import { Lexend } from "next/font/google";
 import { useCurrentTime } from "../../../hook/useCurrentTime.ts";
 import gsap from "gsap";
