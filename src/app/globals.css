@@ -90,6 +90,10 @@ nav {
     white-space: nowrap;
     border: 0;
   }
+
+  .h-stretch {
+    height: stretch;
+  }
 }
 
 .hero-image {
