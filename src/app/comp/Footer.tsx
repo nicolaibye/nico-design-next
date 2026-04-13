@@ -1,7 +1,7 @@
 import { Lexend } from "next/font/google";
 import Image from "next/image";
 import Link from "next/link";
-import { footerCards, footerLinks } from "../data/footerData";
+import { footerCards, footerLinks } from "../../data/footerData";
 import SectionDivider from "./reuse/SectionDivider";
 
 const lexend = Lexend({ subsets: ["latin"], variable: "--font-lexend" });

@@ -43,7 +43,7 @@ const NeiroBriefContent = () => {
       <div
         className={`flex flex-col justify-center items-center my-auto h-screen px-10 lg:px-40`}
       >
-        <SectionDivider>
+        <SectionDivider lineClass="outline-black-Mirage dark:outline-white-LinkWater">
           <h2 className="font-lexend uppercase text-xs min-w-fit tracking-widest">
             Background
           </h2>

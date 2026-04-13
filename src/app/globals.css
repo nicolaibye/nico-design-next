@@ -19,6 +19,8 @@
   }
 }*/
 
+@custom-variant dark (&:where(.dark, .dark *));
+
 @theme inline {
   --color-white-LinkWater: #dce1eb;
   --color-red-CoralRed: #ff2850;
@@ -48,6 +50,7 @@
   --height-real-screen: 100dvh;
   --grid-auto-rows-screen-4: calc((100svh - 12rem) / 4);
   --grid-auto-rows-screen-mobile: calc((100svh - 12rem) / 2.5);
+  --max-width-wide: 1440px;
 }
 
 * {

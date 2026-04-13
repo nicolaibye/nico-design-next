@@ -62,7 +62,7 @@ const NeiroChallengeContent = () => {
       <div
         className={`flex flex-col justify-center items-center my-auto min-h-[50vh] px-10 lg:px-40`}
       >
-        <SectionDivider>
+        <SectionDivider lineClass="outline-black-Mirage dark:outline-white-LinkWater">
           <h2 className="font-lexend uppercase text-xs min-w-fit tracking-widest">
             Music festivals
           </h2>
@@ -95,7 +95,6 @@ const NeiroChallengeContent = () => {
               alt={sketch.alt}
               width={500}
               height={500}
-              quality={100}
             />
           </DraggableItem>
         ))}
@@ -103,7 +102,7 @@ const NeiroChallengeContent = () => {
       <div
         className={`flex flex-col justify-center items-center mt-10 md:mt-auto min-h-[50vh] px-10 lg:px-40`}
       >
-        <SectionDivider>
+        <SectionDivider lineClass="outline-black-Mirage dark:outline-white-LinkWater">
           <h2 className="font-lexend uppercase text-xs min-w-fit tracking-widest">
             The East and Orientalism
           </h2>

@@ -2,7 +2,7 @@
 import Link from "next/link";
 import Image from "next/image";
 import { usePathname } from "next/navigation";
-import { portfolioProjectsData as projects } from "../../data/portfolioProjectsData.ts";
+import { portfolioProjectsData as projects } from "../../../data/portfolioProjectsData.ts";
 import { Lexend } from "next/font/google";
 
 const lexend = Lexend({ subsets: ["latin"], variable: "--font-lexend" });

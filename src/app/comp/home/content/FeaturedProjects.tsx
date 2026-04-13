@@ -1,6 +1,6 @@
 import React from "react";
 import Image from "next/image";
-import { featuredProjects as projects } from "../../../data/featuredProjectsData.ts";
+import { featuredProjects as projects } from "../../../../data/featuredProjectsData.ts";
 import { Lexend } from "@next/font/google";
 import { ArrowUpRightIcon } from "@phosphor-icons/react/dist/ssr";
 
