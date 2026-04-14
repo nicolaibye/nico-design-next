@@ -69,17 +69,15 @@ const HolidazeChallengeContent = () => {
   const [activeProfile, setActiveProfile] = useState(0);
   const [expanded, setExpanded] = useState<Record<string, boolean>>({});
 
-  const toggle = (profileIndex: number, field: string) => {
-    const key = `${profileIndex}-${field}`;
-    setExpanded((prev) => ({ ...prev, [key]: !prev[key] }));
+  const toggle = (field: string) => {
+    setExpanded((prev) => ({ ...prev, [field]: !prev[field] }));
   };
 
-  const isOpen = (profileIndex: number, field: string) =>
-    expanded[`${profileIndex}-${field}`] ?? false;
+  const isOpen = (field: string) => expanded[field] ?? false;
 
   const switchProfile = (i: number) => {
     setActiveProfile(i);
-    setExpanded({});
+    // setExpanded({}); // Optionally reset expanded state when switching profiles
   };
 
   return (
@@ -89,9 +87,10 @@ const HolidazeChallengeContent = () => {
       >
         <AnimatedText
           lines={wrapText(
-            `At the start of this project, I identified two research focuses: music festivals as an arena and the relationship between the East and the West.`,
-            50,
+            `Exploring a brand that applies to a wide audience, while lending itself to creating custom user experiences based on your own travel archetype.`,
+            30,
           )}
+          focusLine={3}
           size="md"
           align="left"
         />
@@ -130,9 +129,9 @@ const HolidazeChallengeContent = () => {
           booking process.
         </p>
       </div>
-      <div className="relative max-w-200 flex flex-col justify-center m-10 mx-auto min-h-[50vh]">
+      <div className="relative max-w-200 flex flex-col justify-center m-10 lg:mx-auto min-h-[50vh] rounded-lg p-10">
         {/* Profile name switcher */}
-        <div className="flex flex-row gap-4 mb-6 items-center justify-center">
+        <div className="flex flex-col md:flex-row gap-4 mb-6 items-start md:items-center justify-center">
           {userProfiles.map((profile, i) => (
             <button
               key={i}
