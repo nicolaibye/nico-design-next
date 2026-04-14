@@ -178,6 +178,26 @@ export const portfolioProjectsData = [
       icon: "https://res.cloudinary.com/dg0c4lry9/image/upload/t_blog_header/icon_dawnFrame_dark_uzwvxg.svg",
     },
   },
+  // {
+  //   name: "MTG Norgesmesterskap",
+  //   subtitle: "Website",
+  //   role: "Designer / Dev",
+  //   href: "/projects/mtg_nm",
+  //   color: "mtg",
+  //   outlineColor: "#ffbc05",
+  //   gradientColor: "from-mtg via-mtg/25 to-transparent",
+  //   categories: "branding design dev",
+  //   gridClass:
+  //     "col-start-1 sm:col-start-auto sm:row-start-7 lg:row-start-3 lg:col-start-3 sm:col-span-2 sm:row-span-2",
+  //   image: {
+  //     src: "https://res.cloudinary.com/dg0c4lry9/image/upload/t_blog_header/holidaze_imac_mockup_fqgd7l.jpg",
+  //     alt: "Holidaze iMac mockup",
+  //   },
+  //   nav: {
+  //     label: "MTG Norgesmesterskap",
+  //     icon: "https://res.cloudinary.com/dg0c4lry9/image/upload/t_blog_header/icon_dawnFrame_dark_uzwvxg.svg",
+  //   },
+  // },
 ];
 
 export default portfolioProjectsData;
