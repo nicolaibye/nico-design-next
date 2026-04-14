@@ -13,7 +13,7 @@ const MTG = () => {
           <div className="w-full h-full bg-[#760933] relative">
             <Image
               src="https://res.cloudinary.com/dg0c4lry9/image/upload/t_blog_header/NMMTG_Ikon_farge_26_bkfcdh.svg"
-              className="w-auto h-14 md:h-75 absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 z-5"
+              className="w-auto h-50 md:h-75 absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 z-5"
               alt="MTG main logo"
               width={1000}
               height={1000}
