@@ -18,8 +18,8 @@ const HolidazeBriefContent = () => {
         <div className="block xl:hidden">
           <AnimatedText
             lines={wrapText(
-              `"...Holidaze is a SaaS service in need of a new brand identity along with a complete website, both design and development."`,
-              36,
+              `"…a brand mark that is “unmistakably” Norwegian to represent a Magic: The Gathering tournament."`,
+              24,
             )}
             uppercase
             focusLine={1}
@@ -30,8 +30,8 @@ const HolidazeBriefContent = () => {
         <div className="hidden xl:block">
           <AnimatedText
             lines={wrapText(
-              `"...Holidaze is a SaaS service in need of a new brand identity along with a complete website, both design and development."`,
-              36,
+              `"…a brand mark that is “unmistakably” Norwegian to represent a Magic: The Gathering tournament."`,
+              24,
             )}
             uppercase
             focusLine={1}
@@ -49,16 +49,19 @@ const HolidazeBriefContent = () => {
           </h2>
         </SectionDivider>
         <p className="font-lexend font-light text-black-Mirage dark:text-white-LinkWater lg:px-40 mt-10">
-          While finishing up my studies at Noroff, our final project was to
-          design and develop a full website for a SaaS service company named
-          Holidaze. It was a website that would host both regular hotels and
-          hosts offering their houses and apartments. We also stood freely to
-          develop a profile befitting the company.
+          The Magic: The Gathering committee in Oslo, Norway, sought a Graphic
+          Designer to create a logo for their Norwegian championship. After a
+          brief email exchange and portfolio review, they were happy to be
+          working with me on this project.
           <br />
-          <br />I took this opportunity to develop a comprehensive brand
-          identity to guide my design decisions, as well as how we approached
-          our positioning in relation to our competitors. Along with fully
-          developing and designing Holidazes’ website.
+          <br />
+          We started working on a brief together, and due to a limited budget,
+          we decided to focus primarily on the tournament&apos;s logo, featuring
+          a brand mark and a horizontal lock-up they could use for the 2026
+          tournament. From the brief, the committee wanted a simple and
+          recognisable mark they could use for the coming years. Further, they
+          added that they would like for the logo to be “unmistakably”
+          Norwegian, but this wasn’t a requirement.
         </p>
       </div>
     </section>

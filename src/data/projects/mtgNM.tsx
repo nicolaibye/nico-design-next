@@ -20,7 +20,7 @@ export const mtgInfo: ProjectInfo = {
   cards: [
     {
       title: "Brief",
-      body: "Brandmark for a TCG tournament.",
+      body: "Logo for a TCG tournament.",
       content: <MTGBriefContent />,
     },
     {
