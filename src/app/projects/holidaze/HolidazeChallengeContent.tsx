@@ -3,47 +3,82 @@ import { Lexend } from "next/font/google";
 import SectionDivider from "@/app/comp/reuse/SectionDivider";
 import AnimatedText from "@/app/comp/reuse/AnimatedText";
 import { wrapText } from "@/app/js/helper/wrapText";
-import { useDraggable } from "@/app/hook/useDraggable";
-import DraggableItem from "@/app/comp/reuse/DraggableItem";
-import Image from "next/image";
+import { useState } from "react";
 
 const fontLexend = Lexend({ subsets: ["latin"], variable: "--font-lexend" });
 
-const sketches = [
+const userProfiles = [
   {
-    src: "https://res.cloudinary.com/dg0c4lry9/image/upload/v1775750817/fmp_mindmap_snfnap.jpg",
-    alt: "Festival Mindmap Sketch",
-    width: "w-60",
-    position: "top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2",
+    name: "Affluent",
+    iconColor: "text-[#760933]",
+    who: "Business traveller/part leisure. Moderately priced, well-rated hotels value convenience, reliability and family friendliness.",
+    currentUse:
+      "Booking.com/Expedia user. Start on desktop, finalise on mobile. Deeper research, review checker, close by locations, and checks the features of the hotel.",
+    needs:
+      "Transparent info about the room, Wi-Fi connection, business options, easy check-in/out, location map and quick access to booking history.",
+    wants:
+      "Seamless cross-device booking. Filter for business options, quick checkout flow, account + loyalty features, consistent UX.",
+    painPoints: [
+      "Decision fatigue",
+      "Inconsistent UI between devices",
+      "Booking changes/cancellations unclear",
+    ],
+    userTrip:
+      "Login -> Destination + date + filters -> Top recommendations with map for locations, reviews, price -> Books in a few steps. Later in the app, he sees the upcoming trip, itinerary, and check-in link. Mobile notifications for check-in, changes, and loyalty offers.",
   },
   {
-    src: "https://res.cloudinary.com/dg0c4lry9/image/upload/v1775750816/words_2_huqt6a.jpg",
-    alt: "Words_2 Sketch",
-    width: "w-60",
-    position: "top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2",
+    name: "Guardian",
+    iconColor: "text-[#ec4e20]",
+    who: "Value-driven, risk-averse, plans for her family. Comfort, safety and clear info.",
+    currentUse:
+      "Book family holidays through Hotels/Booking. Might stop by Airbnb if she finds a family-friendly stay. Looks through many reviews, good breakfast option and cancellation policies.",
+    needs:
+      "Clear information about the room and facilities. Cancellation policy, locations relative to attractions, real reviews, and easy-to-compare listings.",
+    wants:
+      "One-stop search, no nasty surprises. Good booking confidence, photos showcasing the accommodation, explicit info about child policies, a map, and possible transport options.",
+    painPoints: [
+      "Unclear policies and info",
+      "Hidden fees",
+      "Accommodation fitting online listing",
+    ],
+    userTrip:
+      "Google destination + criteria for her family. Bookmarking, checks maps, reviews, then books. Clear and family-friendly badges/icons for information. Mobile easily shows the itinerary.",
   },
+
   {
-    src: "https://res.cloudinary.com/dg0c4lry9/image/upload/v1775750816/logo_sketches_c46q5t.jpg",
-    alt: "Logo Sketch",
-    width: "w-45",
-    position: "top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2",
-  },
-  {
-    src: "https://res.cloudinary.com/dg0c4lry9/image/upload/v1775750815/asia_mindmap_yscod5.jpg",
-    alt: "Asia Mindmap Sketch",
-    width: "w-60",
-    position: "top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2",
-  },
-  {
-    src: "https://res.cloudinary.com/dg0c4lry9/image/upload/v1775750815/words_1_svukgp.jpg",
-    alt: "Words_1 Sketch",
-    width: "w-45",
-    position: "top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2",
+    name: "Explorer",
+    iconColor: "text-[#ff9505]",
+    who: "Very price-sensitive, adventurous, flexible on dates and locations, want the baseline accommodation, and social feelings.",
+    currentUse:
+      "Hostelworld or cheap Airbnb stays. Mobile use first, filters for the lowest price first, looks for shared and social, gives in to last-minute deals, goes by friend tips or social media, and flies over reviews to ensure he will survive.",
+    needs:
+      "Price filter, if there are social areas, shared rooms, info about close-by transportation and nightlife, easy booking flow and cancellation flexibility.",
+    wants:
+      "Cheap, central, meeting minimal standards, and meeting other travellers. Want the booking to be easy without hidden extras, his focus is just getting to the place.",
+    painPoints: [
+      "Hidden fees",
+      "Accommodation uses old pictures",
+      "Complex booking processes",
+    ],
+    userTrip:
+      "Destination, flexible dates, filter “budget”, map overview of city with listings + price and rating. Finds one, books in under a minute. Chat support + easy check-in instructions on mobile.",
   },
 ];
 
 const HolidazeChallengeContent = () => {
-  useDraggable("sketches");
+  const [activeProfile, setActiveProfile] = useState(0);
+  const [expanded, setExpanded] = useState<Record<string, boolean>>({});
+
+  const toggle = (field: string) => {
+    setExpanded((prev) => ({ ...prev, [field]: !prev[field] }));
+  };
+
+  const isOpen = (field: string) => expanded[field] ?? false;
+
+  const switchProfile = (i: number) => {
+    setActiveProfile(i);
+    // setExpanded({}); // Optionally reset expanded state when switching profiles
+  };
 
   return (
     <section className={`${fontLexend.variable}`}>
@@ -52,9 +87,10 @@ const HolidazeChallengeContent = () => {
       >
         <AnimatedText
           lines={wrapText(
-            `At the start of this project, I identified two research focuses: music festivals as an arena and the relationship between the East and the West.`,
-            50,
+            `Exploring a brand that applies to a wide audience, while lending itself to creating custom user experiences based on your own travel archetype.`,
+            30,
           )}
+          focusLine={3}
           size="md"
           align="left"
         />
@@ -64,76 +100,137 @@ const HolidazeChallengeContent = () => {
       >
         <SectionDivider lineClass="outline-black-Mirage dark:outline-white-LinkWater">
           <h2 className="font-lexend uppercase text-xs min-w-fit tracking-widest">
-            Music festivals
+            Varied Focus
           </h2>
         </SectionDivider>
         <p className="font-lexend font-light text-black-Mirage dark:text-white-LinkWater lg:px-40 mt-10">
-          During my research into the space, it quickly became apparent that the
-          music alone was no longer as important as the experience, unlike in
-          the past. Today, we have endless choices when it comes to festivals,
-          all competing for our attention in a tug of war. This has led to
-          festivals differentiating themselves through strong brand identity and
-          an emphasis on the experience economy. A great example of this is
-          Tomorrowland, one of the world&apos;s largest music festivals, where
-          everything from your ticket to the trash cans on site is carefully
-          crafted to immerse you in their world.
+          Starting my research, I did a deep dive into how competitors in the
+          same field were operating, what design decisions they made for their
+          websites, and ultimately what demographics they attracted. After
+          distilling some main takeaways from this, accompanied by market
+          research into hotel trends, it became clear that a tailored experience
+          would be necessary to engage a wider audience.
           <br />
           <br />
-          Due to my project focused on the brand, it was essential to create an
-          identity that was strong and had a unique foundation, while also being
-          expandable and applicable to every touchpoint at the festival.
+          To better grasp the needs for different audiences, I worked out 5 user
+          profiles and combined / refined them into 3 main target audiences for
+          the brand. Dividing them into guiding archetypes of “Affluent”,
+          “Guardian” and “Explorer”.
+          <br />
+          <br />
+          For the website, this took form in dynamically updating how
+          information and texts were displayed to the user, essentially creating
+          three separate experiences depending on what type of travel archetype
+          you identified with. “Affluent” was focused on maximising, showing the
+          location, and keeping deeper details for the listing page. “Guardian”
+          showcased important amenities that could play a key role in meeting
+          their needs at every location. Finally, “Explorer” being the fast and
+          wild one, given the chance to skip as many steps as possible of the
+          booking process.
         </p>
       </div>
-      <div id="sketches" className="relative flex m-10 md:mx-20 min-h-[75vh]">
-        {sketches.map((sketch, index) => (
-          <DraggableItem
-            key={index}
-            className={`absolute ${sketch.width} h-fit ${sketch.position}`}
-          >
-            <Image
-              src={sketch.src}
-              alt={sketch.alt}
-              width={500}
-              height={500}
-            />
-          </DraggableItem>
-        ))}
+      <div className="relative max-w-200 flex flex-col justify-center m-10 lg:mx-auto min-h-[50vh] rounded-lg p-10">
+        {/* Profile name switcher */}
+        <div className="flex flex-col md:flex-row gap-4 mb-6 items-start md:items-center justify-center">
+          {userProfiles.map((profile, i) => (
+            <button
+              key={i}
+              onClick={() => switchProfile(i)}
+              className={`font-bold text-2xl uppercase ${activeProfile === i ? `${profile.iconColor}` : "hover:underline"} transition-color`}
+            >
+              {profile.name}
+            </button>
+          ))}
+        </div>
+
+        {/* Active profile content */}
+        {(() => {
+          const profile = userProfiles[activeProfile];
+          return (
+            <div className="flex flex-col gap-4 rounded-lg text-black-Mirage dark:text-white-LinkWater">
+              <p>
+                <button
+                  onClick={() => toggle("who")}
+                  className="font-semibold hover:underline cursor-pointer"
+                >
+                  Who they are {isOpen("who") ? "▲" : "▼"}
+                </button>
+                {isOpen("who") && (
+                  <span className="block mt-1">{profile.who}</span>
+                )}
+              </p>
+              <p>
+                <button
+                  onClick={() => toggle("needs")}
+                  className="font-semibold hover:underline cursor-pointer"
+                >
+                  Needs {isOpen("needs") ? "▲" : "▼"}
+                </button>
+                {isOpen("needs") && (
+                  <span className="block mt-1">{profile.needs}</span>
+                )}
+              </p>
+              <p>
+                <button
+                  onClick={() => toggle("wants")}
+                  className="font-semibold hover:underline cursor-pointer"
+                >
+                  Wants {isOpen("wants") ? "▲" : "▼"}
+                </button>
+                {isOpen("wants") && (
+                  <span className="block mt-1">{profile.wants}</span>
+                )}
+              </p>
+              <ul>
+                <button
+                  onClick={() => toggle("painPoints")}
+                  className="font-semibold hover:underline cursor-pointer"
+                >
+                  Pain points {isOpen("painPoints") ? "▲" : "▼"}
+                </button>
+                {isOpen("painPoints") && (
+                  <ul className="block mt-1">
+                    {profile.painPoints.map((point, j) => (
+                      <li key={j}>{point}</li>
+                    ))}
+                  </ul>
+                )}
+              </ul>
+              <p>
+                <button
+                  onClick={() => toggle("userTrip")}
+                  className="font-semibold hover:underline cursor-pointer"
+                >
+                  User trip {isOpen("userTrip") ? "▲" : "▼"}
+                </button>
+                {isOpen("userTrip") && (
+                  <span className="block mt-1">{profile.userTrip}</span>
+                )}
+              </p>
+            </div>
+          );
+        })()}
       </div>
       <div
         className={`flex flex-col justify-center items-center mt-10 md:mt-auto min-h-[50vh] px-10 lg:px-40`}
       >
         <SectionDivider lineClass="outline-black-Mirage dark:outline-white-LinkWater">
           <h2 className="font-lexend uppercase text-xs min-w-fit tracking-widest">
-            The East and Orientalism
+            True Exploration
           </h2>
         </SectionDivider>
         <p className="font-lexend font-light text-black-Mirage dark:text-white-LinkWater lg:px-40 my-10">
-          The West has a long history of alienating the East through different
-          methods throughout the years. Shortly summarised, traditional
-          orientalism is the depiction of temples, ninjas, geisha, kimono, etc.,
-          fetishising the “exotic” East. Techno-orientalism is the depiction of
-          the Japanese people as soulless machines working under an authority
-          with no real emotions. Lastly, wacky-orientalism covers the modern
-          form of orientalist thinking seen in memes like “because Japan” and
-          “WTF Japan”, depicting them as weird people we don’t associate with. I
-          would argue that we are moving into a new wave of orientalism.
+          My approach to branding became focused on being grounded in community
+          and sustainability. Holidazes’ brand would pride itself on the great
+          benefits of travelling and exploring the world outside of your own
+          borders. Not only evolving as individuals, but also learning the
+          importance of taking care of our world.
           <br />
           <br />
-          In recent years, post the pandemic, this alienation has started to
-          lessen but also take on a new form. Tourism has grown exponentially in
-          the East, particularly in Japan, which has brought its own problems.
-          Today, many travel to Japan, being sold the idealistic world promised
-          on social media, which in turn makes tourists treat the country like
-          their own playground, resulting in annoyance and discomfort from the
-          local population about how they are being treated.
-          <br />
-          <br />
-          For my project, it was important to be aware and actively create with
-          this history in mind, as the goal was to bring the West and East
-          together. I decided to focus on the technological side of Japan, as I
-          found it to be an easily recognisable visual landscape for the
-          festival, but also to celebrate the incredible technological strides
-          of Japan, instead of dehumanising them for it.
+          The final brand aimed to communicate as a warm summer sunrise, the
+          start of a bright and beautiful day, with endless opportunities lying
+          in wait. Standing out as more than just a booking website, but a
+          lifestyle of connecting.
         </p>
       </div>
     </section>

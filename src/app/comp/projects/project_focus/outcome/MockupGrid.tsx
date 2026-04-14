@@ -12,7 +12,7 @@ const MockupGrid = ({ items }: { items: MockupItem[] }) => (
     {items.map((item, i) => (
       <div
         key={i}
-        className="flex flex-col items-center gap-5 xl:gap-10 md:w-[calc(50%-1.25rem)]"
+        className="flex flex-col items-center gap-5 xl:gap-10 mx-auto w-[90%] md:w-[calc(50%-1.25rem)]"
       >
         {item.label && item.labelPosition === "above" && (
           <div className="flex flex-col xl:flex-row gap-3 xl:gap-20 w-[90%]">
