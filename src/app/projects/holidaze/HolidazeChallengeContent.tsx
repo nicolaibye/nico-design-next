@@ -4,6 +4,7 @@ import SectionDivider from "@/app/comp/reuse/SectionDivider";
 import AnimatedText from "@/app/comp/reuse/AnimatedText";
 import { wrapText } from "@/app/js/helper/wrapText";
 import { useState } from "react";
+import AccordionItem from "@/app/comp/reuse/AccordionItem";
 
 const fontLexend = Lexend({ subsets: ["latin"], variable: "--font-lexend" });
 
@@ -129,9 +130,9 @@ const HolidazeChallengeContent = () => {
           booking process.
         </p>
       </div>
-      <div className="relative max-w-200 flex flex-col justify-center m-10 lg:mx-auto min-h-[50vh] rounded-lg p-10">
+      <div className="relative max-w-200 flex flex-col justify-center m-10 lg:mx-auto min-h-[75vh] rounded-lg">
         {/* Profile name switcher */}
-        <div className="flex flex-col md:flex-row gap-4 mb-6 items-start md:items-center justify-center">
+        <div className="flex flex-col md:flex-row gap-2 md:gap-4 mb-6 items-start md:items-center justify-center">
           {userProfiles.map((profile, i) => (
             <button
               key={i}
@@ -147,72 +148,52 @@ const HolidazeChallengeContent = () => {
         {(() => {
           const profile = userProfiles[activeProfile];
           return (
-            <div className="flex flex-col gap-4 rounded-lg text-black-Mirage dark:text-white-LinkWater">
-              <p>
-                <button
-                  onClick={() => toggle("who")}
-                  className="font-semibold hover:underline cursor-pointer"
-                >
-                  Who they are {isOpen("who") ? "▲" : "▼"}
-                </button>
-                {isOpen("who") && (
-                  <span className="block mt-1">{profile.who}</span>
-                )}
-              </p>
-              <p>
-                <button
-                  onClick={() => toggle("needs")}
-                  className="font-semibold hover:underline cursor-pointer"
-                >
-                  Needs {isOpen("needs") ? "▲" : "▼"}
-                </button>
-                {isOpen("needs") && (
-                  <span className="block mt-1">{profile.needs}</span>
-                )}
-              </p>
-              <p>
-                <button
-                  onClick={() => toggle("wants")}
-                  className="font-semibold hover:underline cursor-pointer"
-                >
-                  Wants {isOpen("wants") ? "▲" : "▼"}
-                </button>
-                {isOpen("wants") && (
-                  <span className="block mt-1">{profile.wants}</span>
-                )}
-              </p>
-              <ul>
-                <button
-                  onClick={() => toggle("painPoints")}
-                  className="font-semibold hover:underline cursor-pointer"
-                >
-                  Pain points {isOpen("painPoints") ? "▲" : "▼"}
-                </button>
-                {isOpen("painPoints") && (
-                  <ul className="block mt-1">
-                    {profile.painPoints.map((point, j) => (
-                      <li key={j}>{point}</li>
-                    ))}
-                  </ul>
-                )}
-              </ul>
-              <p>
-                <button
-                  onClick={() => toggle("userTrip")}
-                  className="font-semibold hover:underline cursor-pointer"
-                >
-                  User trip {isOpen("userTrip") ? "▲" : "▼"}
-                </button>
-                {isOpen("userTrip") && (
-                  <span className="block mt-1">{profile.userTrip}</span>
-                )}
-              </p>
+            <div className="flex flex-col rounded-lg text-black-Mirage dark:text-white-LinkWater">
+              <AccordionItem
+                label="Who they are"
+                isOpen={isOpen("who")}
+                onToggle={() => toggle("who")}
+              >
+                {profile.who}
+              </AccordionItem>
+              <AccordionItem
+                label="Needs"
+                isOpen={isOpen("needs")}
+                onToggle={() => toggle("needs")}
+              >
+                {profile.needs}
+              </AccordionItem>
+              <AccordionItem
+                label="Wants"
+                isOpen={isOpen("wants")}
+                onToggle={() => toggle("wants")}
+              >
+                {profile.wants}
+              </AccordionItem>
+              <AccordionItem
+                label="Pain points"
+                isOpen={isOpen("painPoints")}
+                onToggle={() => toggle("painPoints")}
+              >
+                <ul className="list-disc pl-5">
+                  {profile.painPoints.map((point, j) => (
+                    <li key={j}>{point}</li>
+                  ))}
+                </ul>
+              </AccordionItem>
+              <AccordionItem
+                label="User trip"
+                isOpen={isOpen("userTrip")}
+                onToggle={() => toggle("userTrip")}
+              >
+                {profile.userTrip}
+              </AccordionItem>
             </div>
           );
         })()}
       </div>
       <div
-        className={`flex flex-col justify-center items-center mt-10 md:mt-auto min-h-[50vh] px-10 lg:px-40`}
+        className={`flex flex-col justify-center items-center mt-20 md:mt-auto min-h-[50vh] px-10 lg:px-40`}
       >
         <SectionDivider lineClass="outline-black-Mirage dark:outline-white-LinkWater">
           <h2 className="font-lexend uppercase text-xs min-w-fit tracking-widest">
