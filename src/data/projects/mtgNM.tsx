@@ -39,148 +39,83 @@ export const mtgInfo: ProjectInfo = {
 export const MTGOutcome = {
   banner: {
     mainImage: {
-      src: "https://res.cloudinary.com/dg0c4lry9/image/upload/v1776091819/ios-app-icon-iphone-17-pro-mockup-on-gradient-background-v6-front-view_pnvyzj.jpg",
-      alt: "MTG app mockup",
+      src: "https://res.cloudinary.com/dg0c4lry9/image/upload/v1777200194/mtg_construction_mockup_zdj2hj.jpg",
+      alt: "MTG:NM construction mockup",
     },
   },
   logos: {
     primary: [
       {
         light:
-          "https://res.cloudinary.com/dg0c4lry9/image/upload/t_blog_header/Holidaze_full_dark_czd0cn.svg",
-        dark: "https://res.cloudinary.com/dg0c4lry9/image/upload/t_blog_header/Holidaze_full_light_w1ejsm.svg",
-        alt: "Holidaze Lock up logo",
-        label: "Lock up logo",
-        displayClass: "w-auto md:h-64",
+          "https://res.cloudinary.com/dg0c4lry9/image/upload/v1776176762/NMMTG_Tekst_sort_26_mnu0wh.svg",
+        dark: "https://res.cloudinary.com/dg0c4lry9/image/upload/v1776176757/NMMTG_Tekst_hvit_26_qiuqrk.svg",
+        alt: "MTG:NM Primary Logo",
+        label: "Brand Lockup",
+        displayClass: "w-full md:w-auto md:h-45",
       },
     ],
     secondary: [
       {
         light:
-          "https://res.cloudinary.com/dg0c4lry9/image/upload/t_blog_header/Holidaze_main_dark_zw9adr.svg",
-        dark: "https://res.cloudinary.com/dg0c4lry9/image/upload/t_blog_header/Holidaze_main_light_v7qihp.svg",
-        alt: "Holidaze main logo",
-        label: "Primary Horizontal",
-        displayClass: "w-auto md:h-24",
-      },
-      {
-        light:
-          "https://res.cloudinary.com/dg0c4lry9/image/upload/t_blog_header/icon_dawnFrame_dark_uzwvxg.svg",
-        dark: "https://res.cloudinary.com/dg0c4lry9/image/upload/t_blog_header/icon_dawnFrame_light_bmysu4.svg",
-        alt: "Holidaze Brand Mark",
+          "https://res.cloudinary.com/dg0c4lry9/image/upload/v1776176728/NMMTG_Ikon_sort_26_mwwvrk.svg",
+        dark: "https://res.cloudinary.com/dg0c4lry9/image/upload/v1776176720/NMMTG_Ikon_hvit_26_y7kprv.svg",
+        alt: "MTG:NM Brand Mark",
         label: "Brand Mark",
-        displayClass: "w-auto h-24",
+        displayClass: "w-30 md:h-auto",
       },
       {
         light:
-          "https://res.cloudinary.com/dg0c4lry9/image/upload/t_blog_header/HD_wordmark_dark_zwblps.svg",
-        dark: "https://res.cloudinary.com/dg0c4lry9/image/upload/t_blog_header/HD_wordmark_light_dyvwez.svg",
-        alt: "Holidaze Wordmark",
-        label: "Wordmark",
-        displayClass: "w-auto h-18",
+          "https://res.cloudinary.com/dg0c4lry9/image/upload/v1776177226/alt_mark_black_xsdraj.svg",
+        dark: "https://res.cloudinary.com/dg0c4lry9/image/upload/v1776177226/alt_mark_k8t6ac.svg",
+        alt: "MTG:NM Alt Brand Mark",
+        label: "Alt. Brand Mark",
+        displayClass: "w-30 h-auto",
+      },
+      {
+        light:
+          "https://res.cloudinary.com/dg0c4lry9/image/upload/v1776177225/secondary_horizontal_black_mg0k9i.svg",
+        dark: "https://res.cloudinary.com/dg0c4lry9/image/upload/v1776177226/secondary_horizontal_zgrevz.svg",
+        alt: "MTG:NM Alt Horizontal Logo",
+        label: "Alt. Horizontal Logo",
+        displayClass: "w-auto h-30",
       },
     ],
   },
-  colors: {
-    primary: [
-      { hex: "#23191d", darkOutline: true, name: "Licorice" },
-      { hex: "#f4ede9", name: "Isabelline" },
-      { hex: "#760933", name: "Claret" },
-      { hex: "#ec4e20", name: "Flame" },
-      { hex: "#ff9505", name: "Princeton Orange" },
+  colouredLogos: {
+    colour: [
+      {
+        light:
+          "https://res.cloudinary.com/dg0c4lry9/image/upload/v1776176751/NMMTG_Tekst_farge_26_enm5sm.svg",
+        dark: "https://res.cloudinary.com/dg0c4lry9/image/upload/v1776176751/NMMTG_Tekst_farge_26_enm5sm.svg",
+        alt: "MTG:NM Primary Logo Coloured",
+        label: "Brand Lockup Coloured",
+        displayClass: "w-full md:w-auto md:h-45",
+      },
     ],
   },
-  iconGroups: [
-    {
-      label: "Icon set",
-      align: "bottom",
-      icons: [
-        {
-          light:
-            "https://res.cloudinary.com/dg0c4lry9/image/upload/t_blog_header/icon_eve_dark_aemuoq.svg",
-          dark: "https://res.cloudinary.com/dg0c4lry9/image/upload/t_blog_header/icon_eve_light_lz3r3j.svg",
-          alt: "Holidaze eve icon",
-        },
-        {
-          light:
-            "https://res.cloudinary.com/dg0c4lry9/image/upload/t_blog_header/icon_dawn_dark_zkwodt.svg",
-          dark: "https://res.cloudinary.com/dg0c4lry9/image/upload/t_blog_header/icon_dawn_light_ptkkgl.svg",
-          alt: "Holidaze dawn icon",
-        },
-        {
-          light:
-            "https://res.cloudinary.com/dg0c4lry9/image/upload/t_blog_header/icon_day_dark_x0husr.svg",
-          dark: "https://res.cloudinary.com/dg0c4lry9/image/upload/t_blog_header/icon_day_light_wfn8g6.svg",
-          alt: "Holidaze day icon",
-        },
-      ],
-    },
-    {
-      label: "Icon set (frame)",
-      align: "bottom",
-      icons: [
-        {
-          light:
-            "https://res.cloudinary.com/dg0c4lry9/image/upload/v1768393633/icon_eveFrame_dark_hjcels.svg",
-          dark: "https://res.cloudinary.com/dg0c4lry9/image/upload/v1768393634/icon_eveFrame_light_ns7bdg.svg",
-          alt: "Holidaze eve frame icon",
-        },
-        {
-          light:
-            "https://res.cloudinary.com/dg0c4lry9/image/upload/v1768393631/icon_dawnFrame_dark_uzwvxg.svg",
-          dark: "https://res.cloudinary.com/dg0c4lry9/image/upload/v1768393634/icon_dawnFrame_light_bmysu4.svg",
-          alt: "Holidaze dawn frame icon",
-        },
-        {
-          light:
-            "https://res.cloudinary.com/dg0c4lry9/image/upload/v1768393636/icon_dayFrame_dark_jmvlox.svg",
-          dark: "https://res.cloudinary.com/dg0c4lry9/image/upload/v1768393634/icon_dayFrame_light_cbzpri.svg",
-          alt: "Holidaze day frame icon",
-        },
-      ],
-    },
-    {
-      label: "Patterns",
-      align: "center",
-      icons: [
-        {
-          light:
-            "https://res.cloudinary.com/dg0c4lry9/image/upload/v1776090553/Spiral_pattern_drk_nqk0qu.svg",
-          dark: "https://res.cloudinary.com/dg0c4lry9/image/upload/v1776090553/Spiral_pattern_light_ypwmfv.svg",
-          alt: "Holidaze swirl pattern",
-        },
-        {
-          light:
-            "https://res.cloudinary.com/dg0c4lry9/image/upload/v1776090553/Wave_pattern_dark_rhugcz.svg",
-          dark: "https://res.cloudinary.com/dg0c4lry9/image/upload/v1776090554/Wave_pattern_light_pb8mgq.svg",
-          alt: "Holidaze wave pattern",
-        },
-      ],
-    },
-  ],
   mockup: [
     {
       image: {
-        src: "https://res.cloudinary.com/dg0c4lry9/image/upload/v1776091815/business_cards_16x9_yhohsz.jpg",
-        alt: "Holidaze business cards mockup",
+        src: "https://res.cloudinary.com/dg0c4lry9/image/upload/v1777200194/mtg_landingpage_mockup_h4ss1d.jpg",
+        alt: "MTG:NM landing page mockup",
       },
     },
     {
       image: {
-        src: "https://res.cloudinary.com/dg0c4lry9/image/upload/v1776091815/iMac_holidaze_yso91g.jpg",
-        alt: "Holidaze iMac mockup",
+        src: "https://res.cloudinary.com/dg0c4lry9/image/upload/v1777200196/mtg_playmat_mockup_gyfv5j.jpg",
+        alt: "MTG:NM playmat mockup",
       },
     },
     {
       image: {
-        src: "https://res.cloudinary.com/dg0c4lry9/image/upload/v1776091817/Floating-Classic-Notebooks-Cover-Design-psd-Mockup_eaeglf.jpg",
-        alt: "Holidaze notebook mockup",
+        src: "https://res.cloudinary.com/dg0c4lry9/image/upload/v1777200469/mtg_tote_mockup_ymsylk.jpg",
+        alt: "MTG:NM tote bag mockup",
       },
     },
     {
       image: {
-        src: "https://res.cloudinary.com/dg0c4lry9/image/upload/v1776091816/Studio_Desk_iPhone_Mockup_ysmdxf.jpg",
-        alt: "Holidaze iPhone mockup",
+        src: "https://res.cloudinary.com/dg0c4lry9/image/upload/v1777200195/mtg_business_mockup_jhpwz5.jpg",
+        alt: "MTG:NM business card mockup",
       },
     },
   ],

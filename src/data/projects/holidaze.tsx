@@ -49,8 +49,8 @@ export const HolidazeOutcome = {
         light:
           "https://res.cloudinary.com/dg0c4lry9/image/upload/t_blog_header/Holidaze_full_dark_czd0cn.svg",
         dark: "https://res.cloudinary.com/dg0c4lry9/image/upload/t_blog_header/Holidaze_full_light_w1ejsm.svg",
-        alt: "Holidaze Lock up logo",
-        label: "Lock up logo",
+        alt: "Holidaze Lockup logo",
+        label: "Lockup logo",
         displayClass: "w-auto md:h-64",
       },
     ],
