@@ -9,7 +9,7 @@ const fontLexend = Lexend({
   variable: "--font-lexend",
 });
 
-const HolidazeBriefContent = () => {
+const MTGBriefContent = () => {
   return (
     <section>
       <div
@@ -68,4 +68,4 @@ const HolidazeBriefContent = () => {
   );
 };
 
-export default HolidazeBriefContent;
+export default MTGBriefContent;
