@@ -12,6 +12,7 @@ type IconGroupItem = {
   label: string;
   align?: "center" | "bottom";
   icons: IconItem[];
+  sizeOverride?: string;
 };
 
 const IconGroup = ({ groups }: { groups: IconGroupItem[] }) => (
@@ -35,14 +36,14 @@ const IconGroup = ({ groups }: { groups: IconGroupItem[] }) => (
                     alt={icon.alt}
                     width={68}
                     height={68}
-                    className="block dark:hidden"
+                    className={`block dark:hidden ${group.sizeOverride ? group.sizeOverride : ""}`}
                   />
                   <Image
                     src={icon.dark}
                     alt={icon.alt}
                     width={68}
                     height={68}
-                    className="hidden dark:block"
+                    className={`hidden dark:block ${group.sizeOverride ? group.sizeOverride : ""}`}
                   />
                 </span>
               ) : (

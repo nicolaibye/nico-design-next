@@ -41,7 +41,7 @@ const LogoShowcase = ({ primary, secondary, label }: LogoShowcaseProps) => (
         {label ? label : "Logo suite"}
       </h2>
     </SectionDivider>
-    <ul className="flex flex-row gap-10 h-full items-start justify-center">
+    <ul className="flex flex-row flex-wrap gap-16 h-full items-start justify-center">
       {primary.map((logo) => (
         <li
           key={logo.alt}

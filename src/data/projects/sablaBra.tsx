@@ -1,6 +1,6 @@
 "use client";
 import { ProjectInfo } from "@/types/projectDataType";
-import SablaBraBriefContent from "@/app/projects/sabla_bra/SablaBriefContent";
+import SablaBraBriefContent from "@/app/projects/sabla_bra/SablaBraBriefContent";
 import SablaBraChallengeContent from "@/app/projects/sabla_bra/SablaBraChallengeContent";
 import SablaBraOutcomeContent from "@/app/projects/sabla_bra/SablaBraOutcomeContent";
 
@@ -36,19 +36,19 @@ export const sablaBraInfo: ProjectInfo = {
 export const sablaBraOutcome = {
   banner: {
     mainImage: {
-      src: "https://res.cloudinary.com/dg0c4lry9/image/upload/t_blog_header/3_hoodies_ayf7vf.jpg",
-      alt: "Neiro hoodies mockup",
+      src: "https://res.cloudinary.com/dg0c4lry9/image/upload/v1754577639/sb_some_mockup_ew0isa.jpg",
+      alt: "Sabla Bra social media mockup",
     },
     floatingImages: [
       {
-        src: "https://res.cloudinary.com/dg0c4lry9/image/upload/t_blog_header/sakura_pin_ho3uxr.png",
-        alt: "Sakura pin mockup",
+        src: "https://res.cloudinary.com/dg0c4lry9/image/upload/v1755160022/3d_triangle_float_coloured_shudvp.png",
+        alt: "3D triangle mockup",
         className:
           "absolute -top-10 sm:-top-1 right-8 w-[25%] sm:w-[10%] -rotate-12",
       },
       {
-        src: "https://res.cloudinary.com/dg0c4lry9/image/upload/t_blog_header/moon_pin_f5orqh.png",
-        alt: "Moon pin mockup",
+        src: "https://res.cloudinary.com/dg0c4lry9/image/upload/v1755160022/3d_square_float_coloured_xqzrqb.png",
+        alt: "3D square mockup",
         className:
           "absolute -bottom-10 sm:bottom-1 left-8 w-[25%] sm:w-[10%] rotate-12",
       },
@@ -58,144 +58,109 @@ export const sablaBraOutcome = {
     primary: [
       {
         light:
-          "https://res.cloudinary.com/dg0c4lry9/image/upload/t_blog_header/neiro_hor_nameSigns_k2frau.svg",
-        dark: "https://res.cloudinary.com/dg0c4lry9/image/upload/t_blog_header/neiro_hor_nameSigns_drk_m2ldu0.svg",
-        alt: "Neiro logo with text underneath",
-        label: "Primary vertical",
-        displayClass: "h-[260px] w-auto",
+          "https://res.cloudinary.com/dg0c4lry9/image/upload/v1777207611/sb_flat_circle_black_qcbttu.svg",
+        dark: "https://res.cloudinary.com/dg0c4lry9/image/upload/v1777207611/sb_flat_circle_white_b0zmpo.svg",
+        alt: "Sabla Bra circle main logo",
+        label: "Primary circle",
+        displayClass: "h-45 w-auto p-2",
       },
       {
         light:
-          "https://res.cloudinary.com/dg0c4lry9/image/upload/t_blog_header/neiro_hor_signs_temfze.svg",
-        dark: "https://res.cloudinary.com/dg0c4lry9/image/upload/t_blog_header/neiro_hor_signs_drk_gjzpys.svg",
-        alt: "Neiro logo",
-        label: "Brand mark",
-        displayClass: "h-[224px] w-auto",
+          "https://res.cloudinary.com/dg0c4lry9/image/upload/v1777207612/sb_flat_square_black_kcsdrb.svg",
+        dark: "https://res.cloudinary.com/dg0c4lry9/image/upload/v1777207612/sb_flat_square_white_lriwq1.svg",
+        alt: "Sabla Bra square main logo",
+        label: "Primary square",
+        displayClass: "h-45 w-auto p-2",
+      },
+      {
+        light:
+          "https://res.cloudinary.com/dg0c4lry9/image/upload/v1777207613/sb_flat_triangle_black_ymar1y.svg",
+        dark: "https://res.cloudinary.com/dg0c4lry9/image/upload/v1777207616/sb_flat_triangle_white_mv26mc.svg",
+        alt: "Sabla Bra triangle main logo",
+        label: "Primary triangle",
+        displayClass: "h-45 w-auto p-2",
       },
     ],
     secondary: [
       {
         light:
-          "https://res.cloudinary.com/dg0c4lry9/image/upload/t_blog_header/neiro_icon_ch8u0a.svg",
-        dark: "https://res.cloudinary.com/dg0c4lry9/image/upload/t_blog_header/neiro_icon_drk_wffulb.svg",
-        alt: "Neiro icon",
-        label: "Icon",
-        displayClass: "h-[60px] w-[60px]",
+          "https://res.cloudinary.com/dg0c4lry9/image/upload/v1777208437/sb_blur_circle_black_kr6ldg.svg",
+        dark: "https://res.cloudinary.com/dg0c4lry9/image/upload/v1777208433/sb_blur_circle_white_xl7l4r.svg",
+        alt: " Sabla Bra secondary circle logo",
+        label: "Secondary circle",
+        displayClass: "h-25 w-auto",
       },
       {
         light:
-          "https://res.cloudinary.com/dg0c4lry9/image/upload/t_blog_header/neiro_vert_signs_qiexjm.svg",
-        dark: "https://res.cloudinary.com/dg0c4lry9/image/upload/t_blog_header/neiro_vert_signs_netbhn.svg",
-        alt: "Neiro horizontal name signs",
-        label: "Alt. horisontal signs",
-        displayClass: "h-auto w-[148px]",
+          "https://res.cloudinary.com/dg0c4lry9/image/upload/v1777208433/sb_blur_square_black_xzb57i.svg",
+        dark: "https://res.cloudinary.com/dg0c4lry9/image/upload/v1777208434/sb_blur_square_white_dromkc.svg",
+        alt: " Sabla Bra secondary square logo",
+        label: "Secondary square",
+        displayClass: "h-25 w-auto",
       },
       {
         light:
-          "https://res.cloudinary.com/dg0c4lry9/image/upload/t_blog_header/neiro_vert_nameSigns_cgmx7p.svg",
-        dark: "https://res.cloudinary.com/dg0c4lry9/image/upload/t_blog_header/neiro_vert_nameSigns_l9efx4.svg",
-        alt: "Neiro horizontal name with signs",
-        label: "Alt. full logo",
-        displayClass: "h-auto w-[284px]",
+          "https://res.cloudinary.com/dg0c4lry9/image/upload/v1777208435/sb_blur_triangle_black_waxuxv.svg",
+        dark: "https://res.cloudinary.com/dg0c4lry9/image/upload/v1777208435/sb_blur_triangle_white_sufeqj.svg",
+        alt: "Sabla Bra secondary triangle logo",
+        label: "Secondary triangle",
+        displayClass: "h-25 w-auto",
+      },
+    ],
+    altLogo: [
+      {
+        light:
+          "https://res.cloudinary.com/dg0c4lry9/image/upload/v1755076507/sb_logo_combine_black_g1vzmt.svg",
+        dark: "https://res.cloudinary.com/dg0c4lry9/image/upload/v1755507125/sb_logo_combine_white_eliijl.svg",
+        alt: "Sabla Bra alt. logo",
+        label: "Alt. logo",
+        displayClass: "h-20 w-auto",
+      },
+      {
+        light:
+          "https://res.cloudinary.com/dg0c4lry9/image/upload/v1755076507/sb_logo_combine_colour_xlimmd.svg",
+        dark: "https://res.cloudinary.com/dg0c4lry9/image/upload/v1755507123/sb_logo_combine_colour_white_hcecmm.svg",
+        alt: "Sabla Bra alt. coloured logo",
+        label: "Alt. coloured logo",
+        displayClass: "h-20 w-auto",
       },
     ],
   },
   colors: {
-    primary: [
-      { hex: "#ff0068", darkOutline: true },
-      { hex: "#ff9700" },
-      { hex: "#00ffbc" },
-      { hex: "#130f16", darkOutline: true },
-      { hex: "#f7f5f2", lightOutline: true },
-    ],
-    secondary: [{ hex: "#1557d2" }, { hex: "#c000ff" }],
+    primary: [{ hex: "#E0FF00" }, { hex: "#5E00B0" }, { hex: "#F4006F" }],
+    secondary: [{ hex: "#FF2E09" }, { hex: "#1A174E", darkOutline: true }],
   },
   iconGroups: [
     {
-      label: "Icons",
+      label: "Gradients",
+      sizeOverride: "md:w-30 md:h-30",
       icons: [
         {
           light:
-            "https://res.cloudinary.com/dg0c4lry9/image/upload/t_blog_header/icon_sakura_ppuuz7.svg",
-          dark: "https://res.cloudinary.com/dg0c4lry9/image/upload/t_blog_header/icon_sakura_drk_fonc3c.svg",
-          alt: "Sakura icon",
+            "https://res.cloudinary.com/dg0c4lry9/image/upload/v1755076516/sb_bg_purple-yellow_pfslwp.svg",
+          dark: "https://res.cloudinary.com/dg0c4lry9/image/upload/v1755076516/sb_bg_purple-yellow_pfslwp.svg",
+          alt: "Gradient 1",
         },
         {
           light:
-            "https://res.cloudinary.com/dg0c4lry9/image/upload/t_blog_header/icon_sun_qmwn4e.svg",
-          dark: "https://res.cloudinary.com/dg0c4lry9/image/upload/t_blog_header/icon_sun_drk_elbjpj.svg",
-          alt: "Sun icon",
+            "https://res.cloudinary.com/dg0c4lry9/image/upload/v1755076510/sb_bg_pink-purple_dempni.svg",
+          dark: "https://res.cloudinary.com/dg0c4lry9/image/upload/v1755076510/sb_bg_pink-purple_dempni.svg",
+          alt: "Gradient 2",
         },
         {
           light:
-            "https://res.cloudinary.com/dg0c4lry9/image/upload/t_blog_header/icon_moon_g7jxzw.svg",
-          dark: "https://res.cloudinary.com/dg0c4lry9/image/upload/t_blog_header/icon_moon_drk_nak6pt.svg",
-          alt: "Moon icon",
-        },
-      ],
-    },
-    {
-      label: "Mainstage",
-      icons: [
-        {
-          src: "https://res.cloudinary.com/dg0c4lry9/image/upload/t_blog_header/icon_stage_main_1_uuz0i3.svg",
-          alt: "Mainstage icon 1",
-        },
-        {
-          src: "https://res.cloudinary.com/dg0c4lry9/image/upload/t_blog_header/icon_stage_main_2_usbjeo.svg",
-          alt: "Mainstage icon 2",
-        },
-        {
-          src: "https://res.cloudinary.com/dg0c4lry9/image/upload/t_blog_header/icon_stage_main_3_blwb9s.svg",
-          alt: "Mainstage icon 3",
-        },
-      ],
-    },
-    {
-      label: "Ethosstage",
-      icons: [
-        {
-          src: "https://res.cloudinary.com/dg0c4lry9/image/upload/t_blog_header/icon_stage_ethos_1_q9e8zu.svg",
-          alt: "Ethosstage icon 1",
-        },
-        {
-          src: "https://res.cloudinary.com/dg0c4lry9/image/upload/t_blog_header/icon_stage_ethos_2_fcf4io.svg",
-          alt: "Ethosstage icon 2",
-        },
-        {
-          src: "https://res.cloudinary.com/dg0c4lry9/image/upload/t_blog_header/icon_stage_ethos_3_lucm5m.svg",
-          alt: "Ethosstage icon 3",
-        },
-      ],
-    },
-    {
-      label: "Powerstage",
-      icons: [
-        {
-          src: "https://res.cloudinary.com/dg0c4lry9/image/upload/t_blog_header/icon_stage_power_1_udrub8.svg",
-          alt: "Powerstage icon 1",
-        },
-        {
-          src: "https://res.cloudinary.com/dg0c4lry9/image/upload/t_blog_header/icon_stage_power_3_vvczob.svg",
-          alt: "Powerstage icon 2",
-        },
-        {
-          src: "https://res.cloudinary.com/dg0c4lry9/image/upload/t_blog_header/icon_stage_power_3_2_skysqt.svg",
-          alt: "Powerstage icon 3",
+            "https://res.cloudinary.com/dg0c4lry9/image/upload/v1755076512/sb_bg_pink-yellow_fcmjyo.svg",
+          dark: "https://res.cloudinary.com/dg0c4lry9/image/upload/v1755076512/sb_bg_pink-yellow_fcmjyo.svg",
+          alt: "Gradient 3",
         },
       ],
     },
   ],
   mockup: [
     {
-      image: {
-        src: "https://res.cloudinary.com/dg0c4lry9/image/upload/t_blog_header/Neiro_festival_snapback_hxgubv.jpg",
-        alt: "Neiro Snapback mockup",
+      video: {
+        src: "https://res.cloudinary.com/dg0c4lry9/video/upload/v1754577443/sb_Kategorier_post_dyhbdh.mp4",
       },
-      label: "Yearly exclusives",
-      description:
-        "Limited yearly drops to keep the shop fresh, fans excited, and collections always evolving.",
-      labelPosition: "above" as const,
     },
     {
       image: {
@@ -203,10 +168,6 @@ export const sablaBraOutcome = {
         alt: "Neiro vinyl mockup",
         bg: "bg-[#00ffbc]",
       },
-      label: "Recurring Merch",
-      description:
-        "Festival-themed staples for the true die-hard fans — consistent, iconic, and made with intention.",
-      labelPosition: "below" as const,
     },
     {
       image: {
