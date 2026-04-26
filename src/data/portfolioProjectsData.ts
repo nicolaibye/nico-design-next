@@ -142,7 +142,7 @@ export const portfolioProjectsData = [
     name: "Sabla Bra",
     subtitle: "Brand update",
     role: "Designer",
-    href: "/projects/sablaBra",
+    href: "/projects/sabla_bra",
     color: "sabla",
     outlineColor: "#e0ff00",
     gradientColor: "from-sabla via-sabla/25 to-transparent",
