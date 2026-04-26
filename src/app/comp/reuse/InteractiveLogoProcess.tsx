@@ -75,29 +75,67 @@ const logoRefinement = [
 
 /* ---------------- ANIMATION HELPERS ---------------- */
 
-const expand = (el: HTMLElement, duration = 0.45) => {
-  gsap.set(el, { autoAlpha: 1, height: "auto" });
+const ITEMS_FROM = { opacity: 0, y: 0, scale: 0.92 };
+const ITEMS_TO = {
+  opacity: 1,
+  y: 0,
+  scale: 1,
+  duration: 0.45,
+  stagger: 0.07,
+  ease: "back.out(1.4)",
+};
+const ITEMS_OUT = {
+  opacity: 0,
+  y: 0,
+  scale: 0.92,
+  duration: 0.35,
+  stagger: 0.05,
+  ease: "power2.in",
+};
+
+// rowRef is the single height-animated container.
+// Recalculate its full scrollHeight and tween to it.
+function resizeRow(el: HTMLElement, onComplete?: () => void): void {
+  const current = el.offsetHeight;
+  gsap.set(el, { height: "auto" });
+  const target = el.scrollHeight;
+  gsap.fromTo(
+    el,
+    { height: current },
+    { height: target, duration: 0.45, ease: "expo.out", onComplete },
+  );
+}
+
+function expandEl(el: HTMLElement, onComplete?: () => void): void {
+  gsap.set(el, { height: "auto", opacity: 0, visibility: "visible" });
   const height = el.scrollHeight;
-
-  gsap.set(el, { height: 0, overflow: "hidden" });
-
-  return gsap.to(el, {
+  gsap.set(el, { height: 0 });
+  gsap.to(el, {
     height,
     opacity: 1,
-    duration,
+    duration: 0.45,
     ease: "expo.out",
-    onComplete: () => gsap.set(el, { height: "auto" }),
+    onComplete,
   });
-};
+}
 
-const collapse = (el: HTMLElement, duration = 0.35) => {
-  return gsap.to(el, {
+function collapseEl(el: HTMLElement, onComplete?: () => void): void {
+  gsap.to(el, {
     height: 0,
     opacity: 0,
-    duration,
+    duration: 0.35,
     ease: "expo.in",
+    onComplete,
   });
-};
+}
+
+function staggerIn(els: (HTMLElement | null)[]): void {
+  gsap.fromTo(els.filter(Boolean), ITEMS_FROM, ITEMS_TO);
+}
+
+function staggerOut(els: (HTMLElement | null)[]): void {
+  gsap.to(els.filter(Boolean), ITEMS_OUT);
+}
 
 /* ---------------- COMPONENT ---------------- */
 
@@ -111,162 +149,124 @@ export default function LogoShowcase() {
   const rowItemsRef = useRef<(HTMLDivElement | null)[]>([]);
   const refinementRef = useRef<HTMLDivElement>(null);
   const refinementItemsRef = useRef<(HTMLDivElement | null)[]>([]);
-  const containerRef = useRef<HTMLDivElement>(null);
 
-  /* ---------------- INITIAL STATE ---------------- */
+  /* ---------------- MOUNT ---------------- */
 
   useEffect(() => {
-    if (hintRef.current) {
-      gsap.fromTo(
-        hintRef.current,
-        { opacity: 0, y: 8 },
-        { opacity: 1, y: 0, duration: 0.8, delay: 0.6 },
-      );
-    }
-
-    if (rowRef.current) {
-      gsap.set(rowRef.current, { height: 0, opacity: 0 });
-    }
-
-    if (refinementRef.current) {
-      gsap.set(refinementRef.current, { height: 0, opacity: 0 });
-    }
+    gsap.set(rowRef.current, { height: 0, opacity: 0 });
+    // Refinement starts hidden in flow (height: auto, opacity: 0)
+    // so rowRef can always measure it correctly
+    gsap.set(refinementRef.current, { height: 0, opacity: 0 });
+    gsap.fromTo(
+      hintRef.current,
+      { opacity: 0, y: 8 },
+      { opacity: 1, y: 0, duration: 0.8, delay: 0.6 },
+    );
   }, []);
 
-  /* ---------------- HERO CLICK ---------------- */
+  /* ---------------- REFINEMENT HELPERS ---------------- */
+
+  const openRefinement = () => {
+    if (!refinementRef.current || !rowRef.current) return;
+    // Make refinement visible in flow so rowRef can measure the new total height
+    gsap.set(refinementRef.current, { opacity: 0, height: "auto" });
+    gsap.set(refinementItemsRef.current.filter(Boolean), ITEMS_FROM);
+    // Grow rowRef to fit, then stagger in the items
+    resizeRow(rowRef.current, () => {
+      gsap.to(refinementRef.current, { opacity: 1, duration: 0.2 });
+      staggerIn(refinementItemsRef.current);
+    });
+  };
+
+  const closeRefinement = (onComplete?: () => void) => {
+    if (!refinementRef.current || !rowRef.current) {
+      onComplete?.();
+      return;
+    }
+    staggerOut(refinementItemsRef.current);
+    // Shrink rowRef back to just the row items, then hide refinement
+    resizeRow(rowRef.current, () => {
+      gsap.set(refinementRef.current!, { height: "auto", opacity: 0 });
+      onComplete?.();
+    });
+  };
+
+  /* ---------------- HERO TOGGLE ---------------- */
 
   const handleHeroClick = () => {
-    if (!rowRef.current) return;
-
     if (phase === "hero") {
-      const tl = gsap.timeline({
-        onComplete: () => setPhase("explore"),
+      gsap.to(hintRef.current, { opacity: 0, y: -6, duration: 0.25 });
+      gsap.to(heroRef.current, {
+        scale: 0.38,
+        duration: 0.65,
+        ease: "expo.inOut",
+        delay: 0.1,
       });
-
-      tl.to(hintRef.current, { opacity: 0, y: -6, duration: 0.25 });
-
-      tl.to(
-        heroRef.current,
-        { scale: 0.38, duration: 0.65, ease: "expo.inOut" },
-        "<0.1",
-      );
-
-      // Expand row
-      tl.add(() => expand(rowRef.current!));
-
-      // Animate items
-      tl.fromTo(
-        rowItemsRef.current.filter(Boolean),
-        { opacity: 0, y: 40, scale: 0.92 },
-        {
-          opacity: 1,
-          y: 0,
-          scale: 1,
-          duration: 0.45,
-          stagger: 0.07,
-          ease: "back.out(1.4)",
-        },
-        "<0.1",
-      );
+      gsap.set(rowItemsRef.current.filter(Boolean), ITEMS_FROM);
+      expandEl(rowRef.current!, () => {
+        staggerIn(rowItemsRef.current);
+        setPhase("explore");
+      });
     } else {
-      const tl = gsap.timeline({
-        onComplete: () => setPhase("hero"),
-      });
+      const collapseRow = () => {
+        staggerOut(rowItemsRef.current);
+        collapseEl(rowRef.current!, () => {
+          gsap.to(heroRef.current, {
+            scale: 1,
+            duration: 0.65,
+            ease: "expo.inOut",
+          });
+          gsap.to(hintRef.current, {
+            opacity: 1,
+            y: 0,
+            duration: 0.35,
+            delay: 0.3,
+          });
+          setPhase("hero");
+        });
+      };
 
-      // Close refinement first
-      if (activePanel !== null && refinementRef.current) {
-        tl.add(() =>
-          collapse(refinementRef.current!).eventCallback("onComplete", () =>
-            setActivePanel(null),
-          ),
-        );
+      if (activePanel !== null) {
+        // No need to animate refinement closed separately — collapseEl on rowRef hides everything
+        staggerOut(refinementItemsRef.current);
+        setActivePanel(null);
+        collapseRow();
+      } else {
+        collapseRow();
       }
-
-      // Hide items
-      tl.to(
-        rowItemsRef.current.filter(Boolean),
-        {
-          opacity: 0,
-          y: 24,
-          scale: 0.92,
-          duration: 0.35,
-          stagger: 0.05,
-        },
-        "<0.1",
-      );
-
-      // Collapse row
-      tl.add(() => collapse(rowRef.current!));
-
-      // Restore hero
-      tl.to(
-        heroRef.current,
-        { scale: 1, duration: 0.65, ease: "expo.inOut" },
-        "<0.05",
-      );
-
-      // Hint back
-      tl.to(hintRef.current, { opacity: 1, y: 0, duration: 0.35 }, "-=0.2");
     }
   };
 
-  /* ---------------- REFINEMENT ---------------- */
+  /* ---------------- DIRECTION TOGGLE ---------------- */
 
   const handleDirectionClick = (idx: number) => {
     if (activePanel === idx) {
       closeRefinement(() => setActivePanel(null));
-    } else {
-      if (activePanel !== null) {
-        closeRefinement(() => setActivePanel(idx));
-      } else {
+    } else if (activePanel !== null) {
+      closeRefinement(() => {
         setActivePanel(idx);
-      }
+        openRefinement();
+      });
+    } else {
+      setActivePanel(idx);
+      openRefinement();
     }
   };
 
-  useEffect(() => {
-    if (activePanel === null || !refinementRef.current) return;
-
-    expand(refinementRef.current);
-
-    gsap.fromTo(
-      refinementItemsRef.current.filter(Boolean),
-      { opacity: 0, y: 16, scale: 0.94 },
-      {
-        opacity: 1,
-        y: 0,
-        scale: 1,
-        duration: 0.4,
-        stagger: 0.06,
-        ease: "back.out(1.3)",
-        delay: 0.1,
-      },
-    );
-  }, [activePanel]);
-
-  const closeRefinement = (onComplete?: () => void) => {
-    if (!refinementRef.current) return onComplete?.();
-
-    collapse(refinementRef.current).eventCallback("onComplete", onComplete);
-  };
+  /* ---------------- RENDER ---------------- */
 
   const exploreItems = logoStart.slice(1);
 
   return (
-    <section
-      ref={containerRef}
-      className="flex min-h-screen items-center justify-center"
-    >
+    <section className="flex min-h-screen items-center justify-center">
       <div className="w-full">
-        {/* ── Hero stage ── */}
+        {/* Hero */}
         <div className="relative flex justify-center items-center">
           <button
             ref={heroRef}
             onClick={handleHeroClick}
             aria-label="Click to explore the logo process"
-            className={[
-              "origin-left transition-none focus-visible:outline-none cursor-pointer",
-            ].join(" ")}
+            className="cursor-pointer focus-visible:outline-none"
             style={{ transformOrigin: "center center" }}
           >
             <Image
@@ -287,11 +287,11 @@ export default function LogoShowcase() {
           </p>
         </div>
 
-        {/* ── Exploration row ── */}
+        {/* Exploration row */}
         <div
           ref={rowRef}
-          className="overflow-hidden opacity-0 mt-6 will-change-[height,opacity]"
-          style={{ height: 0 }}
+          className="overflow-hidden mt-6 will-change-[height,opacity]"
+          style={{ height: 0, opacity: 0 }}
         >
           <div className="flex flex-wrap gap-5 justify-center items-start px-10">
             {exploreItems.map((item, i) => (
@@ -339,11 +339,11 @@ export default function LogoShowcase() {
             ))}
           </div>
 
-          {/* ── Refinement panel ── */}
+          {/* Refinement panel */}
           <div
             ref={refinementRef}
-            className="overflow-hidden opacity-0 mt-6 will-change-[height,opacity]"
-            style={{ height: 0 }}
+            className="overflow-hidden mt-6 will-change-[height,opacity]"
+            style={{ height: 0, opacity: 0 }}
           >
             <div className="border-t border-gray-200 dark:border-gray-700 pt-6">
               <div className="flex flex-wrap gap-5 justify-center px-10">
@@ -353,7 +353,7 @@ export default function LogoShowcase() {
                     ref={(el) => {
                       refinementItemsRef.current[i] = el;
                     }}
-                    className={`opacity-0 ${item.chosen ? "outline-1 -outline-offset-4 outline-red-CoralRed rounded-lg" : ""}`}
+                    className={`${item.chosen ? "outline-1 -outline-offset-4 outline-red-CoralRed rounded-lg" : ""}`}
                   >
                     <Image
                       src={item.src}
