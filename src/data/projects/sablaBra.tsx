@@ -164,22 +164,20 @@ export const sablaBraOutcome = {
     },
     {
       image: {
-        src: "https://res.cloudinary.com/dg0c4lry9/image/upload/t_blog_header/vinyl_2_azqgjb.jpg",
-        alt: "Neiro vinyl mockup",
-        bg: "bg-[#00ffbc]",
+        src: "https://res.cloudinary.com/dg0c4lry9/image/upload/v1754577420/sb_poster_mockup_bmsnza.jpg",
+        alt: "Sabla Bra poster mockup",
       },
     },
     {
       image: {
-        src: "https://res.cloudinary.com/dg0c4lry9/image/upload/t_blog_header/t_shirt_neiro_yearly_fxtrig.png",
-        alt: "Neiro t-shirt mockup",
-        bg: "bg-[#ff9700]",
+        src: "https://res.cloudinary.com/dg0c4lry9/image/upload/v1777229575/sb_flag_mockup_ffhjtc.jpg",
+        alt: "Sabla Bra flag mockup",
       },
     },
     {
       image: {
-        src: "https://res.cloudinary.com/dg0c4lry9/image/upload/t_blog_header/2_wymjdv.jpg",
-        alt: "Neiro sweatshirt mockup",
+        src: "https://res.cloudinary.com/dg0c4lry9/image/upload/v1777229577/sb_mac_mockup_i76gcw.jpg",
+        alt: "Sabla Bra Macbook mockup",
       },
     },
   ],
