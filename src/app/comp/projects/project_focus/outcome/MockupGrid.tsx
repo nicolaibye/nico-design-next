@@ -2,6 +2,7 @@ import Image from "next/image";
 
 type MockupItem = {
   image: { src: string; alt: string; bg?: string };
+  video?: { src: string };
   label?: string;
   description?: string;
   labelPosition?: "above" | "below";
@@ -25,15 +26,26 @@ const MockupGrid = ({ items }: { items: MockupItem[] }) => (
           </div>
         )}
         <div
-          className={`relative aspect-square w-full rounded-xl overflow-hidden ${item.image.bg ?? ""}`}
+          className={`relative aspect-square w-full rounded-xl overflow-hidden`}
         >
-          <Image
-            src={item.image.src}
-            alt={item.image.alt}
-            fill
-            sizes="(max-width: 768px) 100vw, 50vw"
-            className="object-cover"
-          />
+          {item.video ? (
+            <video
+              src={item.video.src}
+              autoPlay
+              loop
+              muted
+              playsInline
+              className="w-full h-full object-cover"
+            />
+          ) : (
+            <Image
+              src={item.image.src}
+              alt={item.image.alt}
+              fill
+              sizes="(max-width: 768px) 100vw, 50vw"
+              className={`object-cover ${item.image.bg ?? ""}`}
+            />
+          )}
         </div>
         {item.label && item.labelPosition === "below" && (
           <div className="flex flex-col-reverse xl:flex-row gap-3 xl:gap-20 w-[90%]">

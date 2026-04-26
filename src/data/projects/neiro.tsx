@@ -199,7 +199,7 @@ export const neiroOutcome = {
     },
     {
       image: {
-        src: "https://res.cloudinary.com/dg0c4lry9/image/upload/t_blog_header/vinyl_2_azqgjb.jpg",
+        src: "https://res.cloudinary.com/dg0c4lry9/image/upload/v1751400915/vinyl_2_azqgjb.png",
         alt: "Neiro vinyl mockup",
         bg: "bg-[#00ffbc]",
       },

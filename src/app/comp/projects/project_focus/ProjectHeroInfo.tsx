@@ -45,7 +45,7 @@ const ProjectHeroInfo = ({ info }: { info: ProjectInfo }) => {
       </ul>
 
       {/* Mobile stats */}
-      <ul className="md:hidden flex flex-col gap-3 w-full text-sm font-lexend font-light text-black-Mirage my-10 dark:text-white-LinkWater px-10">
+      <ul className="md:hidden flex flex-col gap-3 w-full text-sm font-lexend font-light text-black-Mirage my-10 dark:text-white-LinkWater px-5">
         {info.stats.map((stat) => (
           <li key={stat.label} className="flex flex-row justify-between">
             <p className="uppercase font-medium">{stat.label}</p>
@@ -55,7 +55,7 @@ const ProjectHeroInfo = ({ info }: { info: ProjectInfo }) => {
       </ul>
 
       {/* Cards */}
-      <div className="grid grid-cols-1 lg:grid-cols-3 gap-5 items-center w-full h-full px-10 md:px-20">
+      <div className="grid grid-cols-1 lg:grid-cols-3 gap-5 items-center w-full h-full px-5 md:px-20">
         {info.cards.map((card, i) => (
           <button
             key={card.title}
