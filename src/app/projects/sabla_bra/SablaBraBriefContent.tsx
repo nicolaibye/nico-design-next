@@ -18,11 +18,11 @@ const SablaBraBriefContent = () => {
         <div className="block xl:hidden">
           <AnimatedText
             lines={wrapText(
-              `"...create a brand and visual identity for a new electronic dance music (EDM) festival with a Japanese theme that is aimed at young adults both in the West and East, creating an interest for both backgrounds."`,
-              39,
+              `"...designing a visual identity that captures the essence of Sabla Bra ...aiming for a cohesive design language to be used for years."`,
+              25,
             )}
             uppercase
-            focusLine={0}
+            focusLine={2}
             size="md"
             align="left"
           />
@@ -30,11 +30,11 @@ const SablaBraBriefContent = () => {
         <div className="hidden xl:block">
           <AnimatedText
             lines={wrapText(
-              `"...create a brand and visual identity for a new electronic dance music (EDM) festival with a Japanese theme that is aimed at young adults both in the West and East, creating an interest for both backgrounds."`,
-              39,
+              `"...designing a visual identity that captures the essence of Sabla Bra ...aiming for a cohesive design language to be used for years."`,
+              25,
             )}
             uppercase
-            focusLine={0}
+            focusLine={2}
             size="lg"
             align="left"
           />
@@ -49,18 +49,20 @@ const SablaBraBriefContent = () => {
           </h2>
         </SectionDivider>
         <p className="font-lexend font-light text-black-Mirage dark:text-white-LinkWater lg:px-40 mt-10">
-          During my studies at UCA (University for the Creative Arts) I was
-          given the opportunity to create my own project for our FMP (Final
-          Major Project). At the time I was 21 years old and had recently
-          discovered the wonderful world of music festivals. As an aspiring
-          brand designer, I couldn’t imagine a better project than to work on
-          the branding for a music festival.
+          During my time at S & B - N, I had the pleasure of working with a
+          group of creative souls on the Sabla Bra committee. Sabla Bra is a
+          southern Norwegian initiative/competition where we celebrate the great
+          work created within MarCom. Everything, from TV campaigns to visual
+          identities, gets its moment to shine once a year at the awards
+          ceremony. My role on the committee involved being part of the design
+          team, primarily working through our communication channels. However,
+          there was also an opportunity to explore the committee&apos;s
+          identity, as they did not have a set brand in place.
           <br />
-          <br />
-          During my initial research into the project, I unveiled the huge EDM
-          (Electronic Dance Music) scene in the East. Given my pre-existing
-          interest in Eastern culture, this seemed like a perfect project to
-          further explore and learn about a world I already was interested in.
+          <br />I took on the challenge of designing a visual identity that
+          captures the essence of Sabla Bra. I focused on the committee&apos;s
+          logo, colour palette, and supporting graphics, aiming for a cohesive
+          design language to be used for years.
         </p>
       </div>
     </section>

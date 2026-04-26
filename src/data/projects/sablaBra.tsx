@@ -17,7 +17,7 @@ export const sablaBraInfo: ProjectInfo = {
   cards: [
     {
       title: "Brief",
-      body: "Brand update.",
+      body: "Capturing the essence of Sabla Bra.",
       content: <SablaBraBriefContent />,
     },
     {
