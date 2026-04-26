@@ -17,7 +17,7 @@ export const featuredProjects = [
   {
     name: "Sabla Bra",
     subtitle: "Brand update",
-    href: "/projects/sablaBra/",
+    href: "/projects/sabla_bra/",
     color: "bg-sabla",
     image: {
       src: "https://res.cloudinary.com/dg0c4lry9/image/upload/a_50/v1755182360/sb_home_page_mgcbk9.png",
