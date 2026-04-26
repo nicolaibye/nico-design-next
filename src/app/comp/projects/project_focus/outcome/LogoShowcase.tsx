@@ -10,6 +10,7 @@ type LogoItem = {
 };
 
 type LogoShowcaseProps = {
+  label?: string;
   primary: LogoItem[];
   secondary: LogoItem[];
 };
@@ -33,11 +34,11 @@ const DarkModeImage = ({ item }: { item: LogoItem }) => (
   </>
 );
 
-const LogoShowcase = ({ primary, secondary }: LogoShowcaseProps) => (
+const LogoShowcase = ({ primary, secondary, label }: LogoShowcaseProps) => (
   <div className="flex flex-col gap-16 items-center">
     <SectionDivider lineClass="outline-black-Mirage dark:outline-white-LinkWater">
       <h2 className="font-lexend uppercase text-xs min-w-fit tracking-widest">
-        Logo options
+        {label ? label : "Logo suite"}
       </h2>
     </SectionDivider>
     <ul className="flex flex-row gap-10 h-full items-start justify-center">
