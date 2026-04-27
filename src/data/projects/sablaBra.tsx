@@ -17,12 +17,12 @@ export const sablaBraInfo: ProjectInfo = {
   cards: [
     {
       title: "Brief",
-      body: "Brand update.",
+      body: "Capturing the essence of Sabla Bra.",
       content: <SablaBraBriefContent />,
     },
     {
       title: "Challenge",
-      body: "Freshen up.",
+      body: "Fundamentals, nuance and boldness.",
       content: <SablaBraChallengeContent />,
     },
     {
