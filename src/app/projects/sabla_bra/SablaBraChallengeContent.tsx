@@ -11,34 +11,22 @@ const fontLexend = Lexend({ subsets: ["latin"], variable: "--font-lexend" });
 
 const sketches = [
   {
-    src: "https://res.cloudinary.com/dg0c4lry9/image/upload/v1775750817/fmp_mindmap_snfnap.jpg",
-    alt: "Festival Mindmap Sketch",
+    src: "https://res.cloudinary.com/dg0c4lry9/image/upload/v1777300910/3d_draggable_cube_2_wodqcc.png",
+    alt: "3d cube",
     width: "w-60",
-    position: "top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2",
+    position: "top-3/4 left-2/5 -translate-x-1/2 -translate-y-1/2",
   },
   {
-    src: "https://res.cloudinary.com/dg0c4lry9/image/upload/v1775750816/words_2_huqt6a.jpg",
-    alt: "Words_2 Sketch",
-    width: "w-60",
-    position: "top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2",
+    src: "https://res.cloudinary.com/dg0c4lry9/image/upload/v1777300911/3d_draggable_sphere_i4ub4i.png",
+    alt: "3d sphere",
+    width: "w-56",
+    position: "top-1/2 left-3/4 -translate-x-1/2 -translate-y-1/2",
   },
   {
-    src: "https://res.cloudinary.com/dg0c4lry9/image/upload/v1775750816/logo_sketches_c46q5t.jpg",
-    alt: "Logo Sketch",
-    width: "w-45",
-    position: "top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2",
-  },
-  {
-    src: "https://res.cloudinary.com/dg0c4lry9/image/upload/v1775750815/asia_mindmap_yscod5.jpg",
-    alt: "Asia Mindmap Sketch",
-    width: "w-60",
-    position: "top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2",
-  },
-  {
-    src: "https://res.cloudinary.com/dg0c4lry9/image/upload/v1775750815/words_1_svukgp.jpg",
-    alt: "Words_1 Sketch",
-    width: "w-45",
-    position: "top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2",
+    src: "https://res.cloudinary.com/dg0c4lry9/image/upload/v1777300911/3d_draggable_triangle_2_ixbcff.png",
+    alt: "3d triangle",
+    width: "w-62",
+    position: "top-1/3 left-1/4 -translate-x-1/2 -translate-y-1/2",
   },
 ];
 
@@ -94,27 +82,6 @@ const SablaBraChallengeContent = () => {
         id="sketches"
         className="relative flex m-10 md:mb-30 md:mx-20 min-h-[75vh]"
       >
-        <div className="absolute w-full h-full pointer-events-none">
-          {/* Vertical lines */}
-          <div className="absolute inset-0 flex justify-around">
-            {Array.from({ length: 7 }).map((_, index) => (
-              <div
-                key={index}
-                className="w-px h-full bg-black-Mirage dark:bg-white-LinkWater"
-              />
-            ))}
-          </div>
-
-          {/* Horizontal lines */}
-          <div className="absolute inset-0 flex flex-col justify-around">
-            {Array.from({ length: 5 }).map((_, index) => (
-              <div
-                key={index}
-                className="w-full h-px bg-black-Mirage dark:bg-white-LinkWater"
-              />
-            ))}
-          </div>
-        </div>
         {sketches.map((sketch, index) => (
           <DraggableItem
             key={index}
