@@ -90,7 +90,31 @@ const SablaBraChallengeContent = () => {
           work.
         </p>
       </div>
-      <div id="sketches" className="relative flex m-10 md:mx-20 min-h-[75vh]">
+      <div
+        id="sketches"
+        className="relative flex m-10 md:mb-30 md:mx-20 min-h-[75vh]"
+      >
+        <div className="absolute w-full h-full pointer-events-none">
+          {/* Vertical lines */}
+          <div className="absolute inset-0 flex justify-around">
+            {Array.from({ length: 7 }).map((_, index) => (
+              <div
+                key={index}
+                className="w-px h-full bg-black-Mirage dark:bg-white-LinkWater"
+              />
+            ))}
+          </div>
+
+          {/* Horizontal lines */}
+          <div className="absolute inset-0 flex flex-col justify-around">
+            {Array.from({ length: 5 }).map((_, index) => (
+              <div
+                key={index}
+                className="w-full h-px bg-black-Mirage dark:bg-white-LinkWater"
+              />
+            ))}
+          </div>
+        </div>
         {sketches.map((sketch, index) => (
           <DraggableItem
             key={index}
