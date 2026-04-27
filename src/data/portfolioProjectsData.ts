@@ -44,7 +44,7 @@ export const portfolioProjectsData = [
     name: "Blå Kors: Soria Moria",
     subtitle: "Campaign visuals",
     role: "Creative",
-    href: "/projects/blaKors",
+    href: "/projects/soria_moria",
     color: "soria",
     outlineColor: "#0077ff",
     gradientColor: "from-soria via-soria/25 to-transparent",

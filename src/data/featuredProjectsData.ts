@@ -43,7 +43,7 @@ export const featuredProjects = [
   {
     name: "Soria Moria",
     subtitle: "Campaign visuals",
-    href: "/projects/blaKors/",
+    href: "/projects/soria_moria/",
     color: "bg-soria",
     image: {
       src: "https://res.cloudinary.com/dg0c4lry9/image/upload/t_blog_header/bk_homepage_veft8f.png",
