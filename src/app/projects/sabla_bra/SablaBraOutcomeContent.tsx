@@ -1,4 +1,5 @@
 "use client";
+import { useState } from "react";
 import { sablaBraOutcome } from "@/data/projects/sablaBra";
 import ColorSwatches from "@/app/comp/projects/project_focus/outcome/ColorSwatches";
 import LogoShowcase from "@/app/comp/projects/project_focus/outcome/LogoShowcase";
@@ -8,14 +9,21 @@ import Image from "next/image";
 import { useDraggable } from "@/app/hook/useDraggable";
 import IconGroup from "@/app/comp/projects/project_focus/outcome/IconGroup";
 
-const SablaBraOutcomeContent = () => (
-  useDraggable("banner"),
-  (
+const SablaBraOutcomeContent = () => {
+  useDraggable("banner");
+  const [expand, setExpand] = useState(false);
+
+  const expandImage = () => {
+    setExpand(!expand);
+  };
+
+  return (
     <>
       {/* Banner with draggable glass */}
       <div
         id="banner"
-        className="w-full h-[60vh] md:h-[50vh] my-10 xl:my-20 px-5 md:px-20 relative max-w-wide mx-auto"
+        className={`w-full h-[60vh] my-10 xl:my-20 px-5 md:px-20 relative max-w-wide mx-auto ${expand ? "md:h-[80vh] md:cursor-zoom-out" : "md:h-[40vh] md:cursor-zoom-in"}`}
+        onClick={expandImage}
       >
         <div className="w-full h-full rounded-xl overflow-x-auto md:overflow-hidden no-scrollbar">
           <Image
@@ -64,7 +72,7 @@ const SablaBraOutcomeContent = () => (
         </div>
       </section>
     </>
-  )
-);
+  );
+};
 
 export default SablaBraOutcomeContent;

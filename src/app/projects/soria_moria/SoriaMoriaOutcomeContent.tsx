@@ -19,7 +19,7 @@ const SoriaMoriaOutcomeContent = () => {
       {/* Banner */}
       <div
         id="banner"
-        className={`w-full h-[60vh] my-10 xl:my-20 px-5 md:px-20 relative max-w-wide mx-auto ${expand ? "h-[80vh] cursor-zoom-out" : "md:h-[40vh] cursor-zoom-in"}`}
+        className={`w-full h-[60vh] my-10 xl:my-20 px-5 md:px-20 relative max-w-wide mx-auto ${expand ? "md:h-[80vh] md:cursor-zoom-out" : "md:h-[40vh] md:cursor-zoom-in"}`}
         onClick={expandImage}
       >
         <div className="w-full h-full rounded-xl overflow-x-auto md:overflow-hidden no-scrollbar">
@@ -28,7 +28,7 @@ const SoriaMoriaOutcomeContent = () => {
             alt={SoriaMoriaOutcome.banner.mainImage.alt}
             width={2000}
             height={2000}
-            className="h-[60vh] w-auto md:h-full max-w-none md:w-full object-cover rounded-xl"
+            className="h-[60vh] w-auto md:h-full max-w-none md:w-full object-cover object-halftop rounded-xl"
           />
         </div>
       </div>

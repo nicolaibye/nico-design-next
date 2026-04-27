@@ -39,7 +39,7 @@ export const soriaMoriaInfo: ProjectInfo = {
 export const SoriaMoriaOutcome = {
   banner: {
     mainImage: {
-      src: "https://res.cloudinary.com/dg0c4lry9/image/upload/v1776091819/ios-app-icon-iphone-17-pro-mockup-on-gradient-background-v6-front-view_pnvyzj.jpg",
+      src: "https://res.cloudinary.com/dg0c4lry9/image/upload/v1754574263/bk_Hanging-Poster-Mockup_d1foxb.jpg",
       alt: "Holidaze app mockup",
     },
   },
