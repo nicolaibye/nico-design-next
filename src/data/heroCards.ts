@@ -19,7 +19,7 @@ export const heroCards: HeroCard[] = [
     id: "welcome-scroll",
     title: "Welcome",
     timeId: "welcome-time",
-    subtitle: "Let's collaborate",
+    subtitle: "Let's connect",
     color: "bg-red-CoralRed",
     outlineColor: "outline-red-CoralRed",
     href: "/contact",
