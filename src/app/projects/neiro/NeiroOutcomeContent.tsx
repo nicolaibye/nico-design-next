@@ -7,15 +7,23 @@ import DraggableItem from "@/app/comp/reuse/DraggableItem";
 import Image from "next/image";
 import { useDraggable } from "@/app/hook/useDraggable";
 import IconGroup from "@/app/comp/projects/project_focus/outcome/IconGroup";
+import { useState } from "react";
 
-const NeiroOutcomeContent = () => (
-  useDraggable("banner"),
-  (
+const NeiroOutcomeContent = () => {
+  useDraggable("banner");
+  const [expand, setExpand] = useState(false);
+
+  const expandImage = () => {
+    setExpand(!expand);
+  };
+
+  return (
     <>
       {/* Banner with draggable pins */}
       <div
         id="banner"
-        className="w-full h-[60vh] md:h-[40vh] my-10 xl:my-20 px-5 md:px-20 relative max-w-wide mx-auto"
+        className={`w-full h-[60vh] my-10 xl:my-20 px-5 md:px-20 relative max-w-wide mx-auto ${expand ? "md:h-[60vh] md:cursor-zoom-out" : "md:h-[40vh] md:cursor-zoom-in"}`}
+        onClick={expandImage}
       >
         <div className="w-full h-full rounded-xl overflow-x-auto md:overflow-hidden no-scrollbar">
           <Image
@@ -59,7 +67,7 @@ const NeiroOutcomeContent = () => (
         </div>
       </section>
     </>
-  )
-);
+  );
+};
 
 export default NeiroOutcomeContent;

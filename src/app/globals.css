@@ -126,6 +126,10 @@ nav {
     );
     filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#B88A44", endColorstr="#F9F295", GradientType=0);
   }
+
+  .object-halftop {
+    object-position: 50% 15%;
+  }
 }
 
 .hero-image {

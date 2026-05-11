@@ -10,22 +10,30 @@ const SoriaMoria = () => {
     <>
       <ProjectHero>
         <ProjectHeroMedia>
-          <div className="w-full h-full bg-[#760933] relative">
+          <div className="w-full h-full relative">
             <Image
-              src="https://res.cloudinary.com/dg0c4lry9/image/upload/t_blog_header/6_2k_p_ck946q.png"
-              alt="Holidaze tree shadow hero"
-              className="w-full h-full object-cover object-center absolute top-0 left-0 z-10 opacity-75"
+              src="https://res.cloudinary.com/dg0c4lry9/image/upload/v1778440589/desk_logo_spj7rk.gif"
+              alt="Soria Moria Logotype animation"
+              className="hidden md:block w-1/3 h-auto left-1/2 -translate-x-1/2 top-1/2 -translate-y-1/2 absolute z-5"
               width={1000}
               height={1000}
+              priority
             />
             <Image
-              src="https://res.cloudinary.com/dg0c4lry9/image/upload/v1768398020/Holidaze_main_yellow_onmjxs.svg"
-              className="w-auto h-14 md:h-32 absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 z-5"
-              alt="Holidaze main logo yellow"
+              src="https://res.cloudinary.com/dg0c4lry9/image/upload/v1778439934/mob_logo_t090c6.gif"
+              alt="Soria Moria Icon animation"
+              className="block md:hidden -rotate-90 w-3/5 h-auto left-1/2 -translate-x-1/2 top-1/2 -translate-y-1/2 absolute z-5"
               width={1000}
               height={1000}
+              priority
             />
-            <div className="absolute inset-1 bg-[url(https://res.cloudinary.com/dg0c4lry9/image/upload/t_blog_header/SwirlPattern_fespsx.svg)] w-full h-full bg-repeat top-0 left-0 z-0"></div>
+            <video
+              src="https://res.cloudinary.com/dg0c4lry9/video/upload/v1778438880/SoMo_bg_gradient_e85gnc.mp4"
+              autoPlay
+              loop
+              muted
+              className="w-full h-full object-cover object-left md:object-center absolute top-0 left-0 z-0"
+            />
           </div>
         </ProjectHeroMedia>
         <ProjectHeroInfo info={soriaMoriaInfo} />
