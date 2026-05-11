@@ -8,18 +8,20 @@ const lexend = Lexend({ subsets: ["latin"], variable: "--font-lexend" });
 
 const FeaturedProjects = () => {
   return (
-    <section className={`${lexend.variable}`}>
+    <section
+      className={`${lexend.variable} min-h-screen my-auto flex flex-col justify-center`}
+    >
       <div className="w-full flex justify-center">
         <h2 className="font-lexend font-light uppercase text-3xl tracking-[0.3em] my-16 text-center">
           Featured Projects
         </h2>
       </div>
       <div>
-        <ul className="flex flex-col lg:flex-row lg:h-100 max-w-wide mx-auto">
+        <ul className="flex flex-col lg:flex-row lg:h-[75vh] max-w-wide mx-auto">
           {projects.map((project) => (
             <li
               key={project.href}
-              className="group lg:grow lg:hover:grow-4 lg:transition-all lg:duration-500"
+              className={`group lg:grow lg:hover:grow-4 lg:transition-all lg:duration-500`}
             >
               <a
                 href={project.href}
@@ -38,7 +40,7 @@ const FeaturedProjects = () => {
                   </p>
                 </div>
 
-                <div className="absolute w-54 lg:w-60 lg:group-hover:w-102 -bottom-5 -right-24 lg:right-1/2 lg:translate-x-1/2 lg:bottom-[5%] lg:group-hover:-bottom-[15%] rotate-[-20deg] lg:group-hover:rotate-10">
+                <div className="absolute w-54 lg:w-60 lg:group-hover:w-102 -bottom-5 -right-24 lg:right-1/2 lg:translate-x-1/2 lg:bottom-[5%] rotate-[-20deg] lg:group-hover:rotate-10">
                   <div className="relative w-full aspect-square">
                     <Image
                       src={project.image.src}
