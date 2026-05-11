@@ -20,7 +20,7 @@ export const soriaMoriaInfo: ProjectInfo = {
   cards: [
     {
       title: "Brief",
-      body: "A childrens art festival.",
+      body: "A childrens art exhibition.",
       content: <SoriaMoriaBriefContent />,
     },
     {
@@ -60,7 +60,7 @@ export const SoriaMoriaOutcome = {
           "https://res.cloudinary.com/dg0c4lry9/image/upload/v1778438895/SoMo_logoSuite_vector-03_eofryv.svg",
         dark: "https://res.cloudinary.com/dg0c4lry9/image/upload/v1778438895/SoMo_logoSuite_vector-04_dpplnl.svg",
         alt: "Soria Moria main logo",
-        label: "Logotype",
+        label: "Lettermark",
         displayClass: "w-auto md:h-24",
       },
       {
@@ -107,8 +107,8 @@ export const SoriaMoriaOutcome = {
     },
     {
       image: {
-        src: "https://res.cloudinary.com/dg0c4lry9/image/upload/v1778446380/SoMo_Sign_izcjhf.jpg",
-        alt: "Soria Moria sign mockup",
+        src: "https://res.cloudinary.com/dg0c4lry9/image/upload/v1778505836/SoMo_Tote-Bag-Mockups-with-People_vperez.jpg",
+        alt: "Soria Moria tote bag mockup",
       },
     },
     {

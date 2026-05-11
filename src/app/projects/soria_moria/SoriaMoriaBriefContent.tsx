@@ -18,11 +18,11 @@ const HolidazeBriefContent = () => {
         <div className="block xl:hidden">
           <AnimatedText
             lines={wrapText(
-              `"...Holidaze is a SaaS service in need of a new brand identity along with a complete website, both design and development."`,
-              36,
+              `"A creative collaboration between children and professional artists to create a space for expression, creativity, and inclusion."`,
+              30,
             )}
             uppercase
-            focusLine={1}
+            focusLine={3}
             size="md"
             align="left"
           />
@@ -30,11 +30,11 @@ const HolidazeBriefContent = () => {
         <div className="hidden xl:block">
           <AnimatedText
             lines={wrapText(
-              `"...Holidaze is a SaaS service in need of a new brand identity along with a complete website, both design and development."`,
-              36,
+              `"A creative collaboration between children and professional artists to create a space for expression, creativity, and inclusion."`,
+              40,
             )}
             uppercase
-            focusLine={1}
+            focusLine={2}
             size="lg"
             align="left"
           />
@@ -49,16 +49,19 @@ const HolidazeBriefContent = () => {
           </h2>
         </SectionDivider>
         <p className="font-lexend font-light text-black-Mirage dark:text-white-LinkWater lg:px-40 mt-10">
-          While finishing up my studies at Noroff, our final project was to
-          design and develop a full website for a SaaS service company named
-          Holidaze. It was a website that would host both regular hotels and
-          hosts offering their houses and apartments. We also stood freely to
-          develop a profile befitting the company.
+          The year was 2022, after years plagued by the pandemic and global
+          unrest, many children had been deeply affected by the world
+          surrounding them. Blå Kors, in light of this, wanted to create the
+          largest children&apos;s art exhibition in Norway. Through collaboration
+          between children and professional artists, they wanted to create a
+          space for expression, creativity and inclusion. Making room for
+          children to express their emotions after these trying times.
           <br />
-          <br />I took this opportunity to develop a comprehensive brand
-          identity to guide my design decisions, as well as how we approached
-          our positioning in relation to our competitors. Along with fully
-          developing and designing Holidazes’ website.
+          <br />
+          The agency I was working at, and I was tasked with helping them with
+          the visual identity for their campaign, as well as creating
+          collaterals like flyers for the parents, advertising posters and
+          digital assets.
         </p>
       </div>
     </section>
