@@ -92,18 +92,18 @@ const HeroCardComponent = ({ card }: HeroCardProps) => {
     h-full
   `;
 
-  // Special case for welcome card (not a link)
-  if (id === "welcome-scroll") {
-    return (
-      <li
-        id={id}
-        className={`cursor-pointer ${cardClasses}`}
-        onClick={() => scrollToContent("quote")}
-      >
-        <div>{content}</div>
-      </li>
-    );
-  }
+  // // Special case for welcome card (not a link)
+  // if (id === "welcome-scroll") {
+  //   return (
+  //     <li
+  //       id={id}
+  //       className={`cursor-pointer ${cardClasses}`}
+  //       onClick={() => scrollToContent("quote")}
+  //     >
+  //       <div>{content}</div>
+  //     </li>
+  //   );
+  // }
 
   // Regular cards as links
   return (
