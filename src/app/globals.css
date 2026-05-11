@@ -135,3 +135,17 @@ nav {
 .hero-image {
   @apply absolute top-[74%] left-[14%] -translate-x-1/2 -translate-y-1/2 w-340 h-auto object-cover;
 }
+
+input {
+  @apply bg-white-LinkWater p-3 rounded-sm text-black-Mirage;
+}
+
+textarea {
+  @apply bg-white-LinkWater p-3 rounded-sm text-black-Mirage;
+}
+
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
