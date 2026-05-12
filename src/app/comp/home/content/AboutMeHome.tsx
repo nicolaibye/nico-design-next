@@ -22,20 +22,16 @@ const AboutMeHome = () => {
     >
       <div className="flex flex-col-reverse md:flex-row gap-4 md:gap-12">
         <div>
-          <h2 className="flex flex-col items-start" aria-label="quote">
-            <div className="flex flex-col items-start">
-              <p className="font-majorono text-left text-[1.425rem] sm:text-5xl text-blue-NileBlue dark:text-white-LinkWater">
-                to be not like
-              </p>
-              <p className="font-leckerli text-left text-[44px] sm:text-[92px] text-red-CoralRed uppercase md:pt-0 leading-tight w-60 sm:w-77.5 md:w-auto">
-                everyone
-              </p>
-              <p className="-translate-y-1 sm:-translate-y-3 font-majorono text-left text-[1.425rem] sm:text-5xl text-blue-NileBlue dark:text-white-LinkWater">
-                else
-              </p>
-            </div>
+          <h2 className="font-lexend uppercase tracking-widest leading-9 md:leading-none font-light text-[1.60rem] md:text-5xl">
+            To not be like <br />
+            <span className="font-leckerli tracking-normal text-[2.65rem] md:text-6xl text-red-CoralRed uppercase">
+              every
+              <wbr />
+              one <br />
+            </span>
+            <span className="absolute -translate-y-2 md:relative">else</span>
           </h2>
-          <p className="mt-4 md:max-w-lg font-lexend text-left text-sm">
+          <p className="mt-12 md:mt-4 md:max-w-lg font-lexend text-left text-sm">
             Hi!
             <br />
             I&apos;m Nicolai, but most people just call me Nico. A colourful

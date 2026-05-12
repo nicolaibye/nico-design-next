@@ -11,8 +11,10 @@ export default function Home() {
       <LandingPageHero />
       <FeaturedProjects />
       <AboutMeHome />
-      <ContactSectionHome />
-      <LifeAchievements />
+      <div className="flex flex-col min-h-screen justify-start">
+        <ContactSectionHome />
+        <LifeAchievements />
+      </div>
     </>
   );
 }
