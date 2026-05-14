@@ -2,7 +2,7 @@
 import Link from "next/link";
 import Image from "next/image";
 import { usePathname } from "next/navigation";
-import { portfolioProjectsData as projects } from "../../../data/portfolioProjectsData.ts";
+import { portfolioProjectsData as projects } from "../../../data/portfolioProjectsDataNew.ts";
 import { Lexend } from "next/font/google";
 
 const lexend = Lexend({ subsets: ["latin"], variable: "--font-lexend" });
@@ -30,16 +30,13 @@ const ProjectNav = () => {
           data-transition
           data-color={prev.color}
           data-link
-          className={`group flex w-full md:w-auto rounded-xl rounded-r-none hover:bg-white-LinkWater ${prevBgColor} md:rounded-r-xl h-20 outline-2 transition-all`}
-          style={{
-            outlineColor: prev.outlineColor,
-          }}
+          className={`group flex w-auto rounded-lg outline-2 outline-offset-4 outline-white-LinkWater dark:outline-black-Mirage ${prevBgColor} h-20 transition-all`}
         >
-          <div className="px-4 self-center">
+          <div className="px-4 self-center hidden md:block">
             <p className="font-lexend uppercase">{prev.nav.label}</p>
             <p className="font-lexend font-light leading-4">{prev.subtitle}</p>
           </div>
-          <div className="relative w-20 h-full hidden md:block shrink-0">
+          <div className="relative w-20 h-full shrink-0">
             <Image
               src={prev.nav.icon}
               alt={prev.nav.label}
@@ -55,12 +52,9 @@ const ProjectNav = () => {
           data-transition
           data-color={next.color}
           data-link
-          className={`group flex w-full justify-end md:w-auto rounded-xl rounded-l-none hover:bg-white-LinkWater ${nextBgColor} md:rounded-l-xl h-20 outline-2 transition-all`}
-          style={{
-            outlineColor: next.outlineColor,
-          }}
+          className={`group flex justify-end w-auto rounded-lg outline-2 outline-offset-4 outline-white-LinkWater dark:outline-black-Mirage ${nextBgColor} h-20 transition-all`}
         >
-          <div className="relative w-20 h-full hidden md:block shrink-0">
+          <div className="relative w-20 h-full shrink-0">
             <Image
               src={next.nav.icon}
               alt={next.nav.label}
@@ -68,7 +62,7 @@ const ProjectNav = () => {
               className="object-contain p-4 opacity-80"
             />
           </div>
-          <div className="px-4 self-center text-right">
+          <div className="px-4 self-center text-right hidden md:block">
             <p className="font-lexend uppercase">{next.nav.label}</p>
             <p className="font-lexend font-light leading-4">{next.subtitle}</p>
           </div>
