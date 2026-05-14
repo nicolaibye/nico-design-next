@@ -18,9 +18,9 @@ type SubmitStatus =
 
 const BUDGET_OPTIONS = [
   "Under £1,000",
-  "£1,000 – £3,000",
-  "£3,000 – £5,000",
-  "£5,000 – £10,000",
+  "£1,000 - £3,000",
+  "£3,000 - £5,000",
+  "Over £5,000",
 ];
 
 const TIMELINE_OPTIONS = [
@@ -75,7 +75,8 @@ const ContactForm = () => {
     } catch {
       setSubmitStatus({
         type: "error",
-        message: "Something went wrong, please try again.",
+        message:
+          "Something went wrong, please try again. If the issue persists, feel free to email me directly at contact@nicodesign.no.",
       });
     }
   };
@@ -168,7 +169,7 @@ const ContactForm = () => {
       </div>
       <textarea
         {...register("message")}
-        placeholder="Your Project"
+        placeholder="Your Project Details"
         rows={5}
         className="w-full"
       />

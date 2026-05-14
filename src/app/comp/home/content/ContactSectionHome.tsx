@@ -27,13 +27,6 @@ const ContactSectionHome = () => {
             stand out <br />
           </span>
         </h2>
-        <p className="mt-12 md:mt-4 md:max-w-lg font-lexend text-left text-sm hidden lg:block">
-          I&apos;d love to hear from you! If you&apos;re interested in working
-          together, have a project in mind, or just want to say hi, don&apos;t
-          hesitate to reach out. Whether you have a specific project you want to
-          discuss or just want to connect, I&apos;m all ears. Let&apos;s create
-          something amazing together!
-        </p>
       </div>
       <ContactForm />
     </section>
