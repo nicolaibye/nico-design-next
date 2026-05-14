@@ -135,3 +135,57 @@ nav {
 .hero-image {
   @apply absolute top-[74%] left-[14%] -translate-x-1/2 -translate-y-1/2 w-340 h-auto object-cover;
 }
+
+input {
+  @apply bg-white-LinkWater p-3 rounded-sm text-black-Mirage hover:cursor-pointer hover:bg-white;
+}
+
+input::placeholder {
+  @apply text-black-Mirage;
+}
+
+textarea {
+  @apply bg-white-LinkWater p-3 rounded-sm text-black-Mirage hover:cursor-pointer hover:bg-white;
+}
+
+textarea::placeholder {
+  @apply text-black-Mirage;
+}
+
+select {
+  @apply bg-white-LinkWater p-3 rounded-sm text-black-Mirage hover:cursor-pointer hover:bg-white;
+}
+
+select {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+}
+
+select::-ms-expand {
+  display: none;
+}
+
+option {
+  display: flex;
+  justify-content: flex-start;
+  gap: 20px;
+
+  border: 2px solid #dddddd;
+  background: #eeeeee;
+  padding: 10px;
+  transition: 0.4s;
+}
+
+option:not(option:last-of-type) {
+  border-bottom: none;
+}
+option:nth-of-type(odd) {
+  background: white;
+}
+
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
