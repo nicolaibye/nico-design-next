@@ -76,10 +76,10 @@ const items: MasonryItem[] = [
 ];
 
 const MasonryArchiveGrid = () => (
-  <div className="columns-2 md:columns-3 lg:columns-4 gap-4 space-y-4">
+  <div className="columns-2 md:columns-3 gap-4 space-y-4 my-40 max-w-6xl px-10 sm:px-16 mx-auto">
     {items.map((item) => (
       <div key={item.id} className="break-inside-avoid">
-        <div className="rounded-lg overflow-hidden bg-green-RiverBed shadow-sm">
+        <div className="rounded-lg overflow-hidden">
           <Image
             src={item.image}
             alt={item.alt}
@@ -87,10 +87,10 @@ const MasonryArchiveGrid = () => (
             width={1000}
             height={1000}
           />
-          <div className="p-3">
-            <h3 className="font-lexend text-sm font-medium">{item.title}</h3>
+          <div className="p-3 dark:bg-green-RiverBed bg-black-Mirage">
+            <h3 className="font-lexend font-medium text-white-LinkWater dark:text-black-Mirage">{item.title}</h3>
             {item.description && (
-              <p className="font-lexend text-xs text-black-Mirage/60 mt-1">
+              <p className="font-lexend text-white-LinkWater/60 dark:text-black-Mirage/60 mt-1">
                 {item.description}
               </p>
             )}
