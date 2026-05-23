@@ -84,15 +84,15 @@ export const items: MasonryItem[] = [
   {
     id: "11",
     light:
-      "https://res.cloudinary.com/dg0c4lry9/image/upload/v1778438895/SoMo_logoSuite_vector-06_jiiss3.svg",
-    dark: "https://res.cloudinary.com/dg0c4lry9/image/upload/v1778438895/SoMo_logoSuite_vector-05_tkax5q.svg",
+      "https://res.cloudinary.com/dg0c4lry9/image/upload/v1779572410/AgderWebservice_black_lioywg.svg",
+    dark: "https://res.cloudinary.com/dg0c4lry9/image/upload/v1779572412/AgderWebservice_white_msahbs.svg",
     alt: "Agder Webservice Logo",
   },
   {
     id: "12",
     light:
-      "https://res.cloudinary.com/dg0c4lry9/image/upload/v1778438895/SoMo_logoSuite_vector-06_jiiss3.svg",
-    dark: "https://res.cloudinary.com/dg0c4lry9/image/upload/v1778438895/SoMo_logoSuite_vector-05_tkax5q.svg",
+      "https://res.cloudinary.com/dg0c4lry9/image/upload/v1779572408/MagicSorlandet_black_ewdaqs.svg",
+    dark: "https://res.cloudinary.com/dg0c4lry9/image/upload/v1779572409/MagicSorlandet_white_vkeysd.svg",
     alt: "Magic Sørlandet Logo",
   },
   {
