@@ -19,7 +19,7 @@ const MasonryArchiveGrid = () => {
 
   return (
     <>
-      <div className="columns-1 md:columns-2 lg:columns-3 gap-4 space-y-4 my-40 max-w-6xl px-10 sm:px-16 mx-auto">
+      <div className="columns-1 md:columns-2 lg:columns-3 gap-4 space-y-4 max-w-6xl px-10 sm:px-16 mx-auto">
         {items.map((item) => (
           <div
             key={item.id}

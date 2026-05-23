@@ -1,7 +1,6 @@
 "use client";
 import React, { useState } from "react";
 import { Lexend } from "next/font/google";
-import Image from "next/image";
 import { ProjectNavProps } from "@/data/projectsContent";
 
 const LexendFont = Lexend({ subsets: ["latin"] });
@@ -28,25 +27,11 @@ const ProjectNav = ({ info }: { info: ProjectNavProps }) => {
         </ul>
         <div className="relative">
           <div className="w-full h-40 absolute -top-px bg-linear-to-b from-white-LinkWater via-white-LinkWater/50 to-transparent dark:bg-linear-to-b dark:from-black-Mirage dark:via-black-Mirage/50 dark:to-transparent pointer-events-none transition-colors duration-500" />
-          {/* <Image
-            src="https://res.cloudinary.com/dg0c4lry9/image/upload/v1778779416/navGradient_dark_yyenam.png"
-            className="w-full h-45 absolute -top-0.5 opacity-0 dark:opacity-100"
-            alt="Holidaze main logo yellow"
-            width={1000}
-            height={1000}
-          />{" "}
-          <Image
-            src="https://res.cloudinary.com/dg0c4lry9/image/upload/v1778779416/navGradient_light_ej0sgv.png"
-            className="w-full h-45 absolute -top-0.5 opacity-100 dark:opacity-0"
-            alt="Holidaze main logo yellow"
-            width={1000}
-            height={1000}
-          /> */}
         </div>
       </nav>
       {/* Expanded content */}
       {activeCard !== null && (
-        <div className="mt-5">{info.navigation[activeCard].content}</div>
+        <div className="my-40">{info.navigation[activeCard].content}</div>
       )}
     </>
   );
