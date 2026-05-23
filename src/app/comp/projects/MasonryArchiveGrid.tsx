@@ -19,7 +19,7 @@ const MasonryArchiveGrid = () => {
 
   return (
     <>
-      <div className="columns-2 md:columns-3 gap-4 space-y-4 my-40 max-w-6xl px-10 sm:px-16 mx-auto">
+      <div className="columns-1 md:columns-2 lg:columns-3 gap-4 space-y-4 my-40 max-w-6xl px-10 sm:px-16 mx-auto">
         {items.map((item) => (
           <div
             key={item.id}
@@ -34,7 +34,7 @@ const MasonryArchiveGrid = () => {
                 width={1000}
                 height={1000}
               />
-              <div className="p-4 dark:bg-green-RiverBed bg-black-Mirage">
+              <div className="p-4 dark:bg-white-LinkWater bg-black-Mirage">
                 <h3 className="font-lexend font-medium text-white-LinkWater dark:text-black-Mirage leading-3">
                   {item.title}
                 </h3>
@@ -51,15 +51,19 @@ const MasonryArchiveGrid = () => {
       <div
         id="fullscreen"
         onClick={closeFullscreen}
-        className={`fixed inset-0 bg-black-Mirage/80 flex items-center justify-center z-50 ${activeImage ? "opacity-100 pointer-events-auto" : "opacity-0 pointer-events-none"} z-9999`}
+        className={`fixed inset-0 bg-black-Mirage/80 flex items-center justify-center ${activeImage ? "opacity-100 pointer-events-auto" : "opacity-0 pointer-events-none"} z-9999`}
       >
-        <Image
-          src={activeImage || "https://placehold.co/600x400/EEE/31343C"}
-          alt="Fullscreen"
-          className="p-20 w-auto h-full object-cover"
-          width={1000}
-          height={1000}
-        />
+        {activeImage ? (
+          <Image
+            src={activeImage}
+            alt="Fullscreen"
+            className="p-5 md:p-10 lg:p-20 w-auto h-full object-contain"
+            width={1000}
+            height={1000}
+          />
+        ) : (
+          <div className="w-16 h-16 border-4 border-white-LinkWater border-t-transparent rounded-full animate-spin" />
+        )}
       </div>
     </>
   );
