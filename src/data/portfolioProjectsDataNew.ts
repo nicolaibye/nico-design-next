@@ -22,7 +22,7 @@ export const portfolioProjectsData = [
     subtitle: "Logo design",
     role: "Designer",
     href: "/projects/mtg_nm",
-    color: "mtg",
+    color: "bg-mtg",
     image: {
       src: "https://res.cloudinary.com/dg0c4lry9/image/upload/v1777200194/mtg_construction_mockup_zdj2hj.jpg",
       alt: "MTG Norgesmesterskap construction mockup",
@@ -37,7 +37,7 @@ export const portfolioProjectsData = [
     subtitle: "Website",
     role: "Designer / Dev",
     href: "/projects/holidaze",
-    color: "holi",
+    color: "bg-holi",
     image: {
       src: "https://res.cloudinary.com/dg0c4lry9/image/upload/t_blog_header/holidaze_imac_mockup_fqgd7l.jpg",
       alt: "Holidaze iMac mockup",
@@ -52,7 +52,7 @@ export const portfolioProjectsData = [
     subtitle: "Brand update",
     role: "Designer",
     href: "/projects/sabla_bra",
-    color: "sabla",
+    color: "bg-sabla",
     image: {
       src: "https://res.cloudinary.com/dg0c4lry9/image/upload/t_blog_header/sb_some_mockup_ew0isa.jpg",
       alt: "Sabla Bra SOME mockup",
@@ -67,7 +67,7 @@ export const portfolioProjectsData = [
     subtitle: "Campaign visuals",
     role: "Creative",
     href: "/projects/soria_moria",
-    color: "soria",
+    color: "bg-soria",
     image: {
       src: "https://res.cloudinary.com/dg0c4lry9/image/upload/t_blog_header/bk_paper_for_parents_m053v9.jpg",
       alt: "Blå Kors flyer mockup",
@@ -82,7 +82,7 @@ export const portfolioProjectsData = [
     subtitle: "Identity design",
     role: "Designer",
     href: "/projects/neiro",
-    color: "neiro",
+    color: "bg-neiro",
     image: {
       src: "https://res.cloudinary.com/dg0c4lry9/image/upload/t_blog_header/Neiro_festival_snapback_hxgubv.jpg",
       alt: "Neiro Festival Snapback",

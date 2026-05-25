@@ -12,7 +12,7 @@ const ProjectNav = ({ info }: { info: ProjectNavProps }) => {
     <>
       <nav className="fixed top-0 left-0 z-10 w-full bg-white-LinkWater dark:bg-black-Mirage">
         <ul
-          className={`flex justify-center items-center gap-10 h-20 ${LexendFont.className}`}
+          className={`flex flex-col md:flex-row md:justify-center mt-5 mr-5 items-end md:items-center md:gap-10 h-20 ${LexendFont.className}`}
         >
           {info.navigation.map((navItem, i) => (
             <li key={navItem.title}>

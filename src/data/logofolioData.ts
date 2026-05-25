@@ -77,8 +77,8 @@ export const items: MasonryItem[] = [
   {
     id: "10",
     light:
-      "https://res.cloudinary.com/dg0c4lry9/image/upload/v1778438895/SoMo_logoSuite_vector-06_jiiss3.svg",
-    dark: "https://res.cloudinary.com/dg0c4lry9/image/upload/v1778438895/SoMo_logoSuite_vector-05_tkax5q.svg",
+      "https://res.cloudinary.com/dg0c4lry9/image/upload/v1779735058/vipers_black_xkke1m.svg",
+    dark: "https://res.cloudinary.com/dg0c4lry9/image/upload/v1779735058/vipers_white_rzg92y.svg",
     alt: "Vipers Logo",
   },
   {
@@ -98,8 +98,9 @@ export const items: MasonryItem[] = [
   {
     id: "13",
     light:
-      "https://res.cloudinary.com/dg0c4lry9/image/upload/v1778438895/SoMo_logoSuite_vector-06_jiiss3.svg",
-    dark: "https://res.cloudinary.com/dg0c4lry9/image/upload/v1778438895/SoMo_logoSuite_vector-05_tkax5q.svg",
+      "https://res.cloudinary.com/dg0c4lry9/image/upload/v1779735058/klashe_black_ojdmco.svg",
+    dark: "https://res.cloudinary.com/dg0c4lry9/image/upload/v1779735058/klashe_white_z5mc1b.svg",
     alt: "Klashe Logo",
+    customSize: "p-2",
   },
 ];
