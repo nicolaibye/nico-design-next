@@ -16,8 +16,8 @@ const ProjectNav = () => {
   const prev = projects.at(currentIndex - 1)!; // wraps to last when index is 0
   const next = projects.at((currentIndex + 1) % projects.length)!;
 
-  const prevBgColor = `bg-${prev.color}`; // bg-prev.color;
-  const nextBgColor = `bg-${next.color}`; // bg-next.color;
+  const prevBgColor = `${prev.color}`; // bg-prev.color;
+  const nextBgColor = `${next.color}`; // bg-next.color;
 
   return (
     <div className="w-full px-5 pb-6 md:pb-0 md:px-20 md:mb-10 text-black-Mirage">
