@@ -28,7 +28,9 @@ const ProjectNav = ({ info }: { info: ProjectNavProps }) => {
       </nav>
       {/* Expanded content */}
       {activeCard !== null && (
-        <div className="my-30">{info.navigation[activeCard].content}</div>
+        <div className="mb-5 mt-30 md:mt-60 md:mb-30">
+          {info.navigation[activeCard].content}
+        </div>
       )}
     </>
   );
