@@ -1,19 +1,21 @@
+"use client";
+
 import Image from "next/image";
 import { items } from "@/data/archiveData.ts";
 import { useState } from "react";
 
-// Setup div with setState, transition with opactiy, getting item.image from click, showing the image from click in div for fullscreen.
+type ActiveMedia = { src: string; type: "image" | "video" } | null;
 
 const MasonryArchiveGrid = () => {
-  const [activeImage, setActiveImage] = useState<string | null>(null);
+  const [activeMedia, setActiveMedia] = useState<ActiveMedia>(null);
 
-  const fullscreenImage = (image: string) => {
-    setActiveImage(image);
+  const openFullscreen = (src: string, type: "image" | "video") => {
+    setActiveMedia({ src, type });
     document.body.classList.add("overflow-hidden");
   };
 
   const closeFullscreen = () => {
-    setActiveImage(null);
+    setActiveMedia(null);
     document.body.classList.remove("overflow-hidden");
   };
 
@@ -24,16 +26,31 @@ const MasonryArchiveGrid = () => {
           <div
             key={item.id}
             className="break-inside-avoid"
-            onClick={() => fullscreenImage(item.image)}
+            onClick={() => openFullscreen(
+              item.type === "video" ? item.video! : item.image,
+              item.type as "image" | "video"
+            )}
           >
             <div className="rounded-lg overflow-hidden cursor-pointer">
-              <Image
-                src={item.image}
-                alt={item.alt}
-                className="w-full h-auto object-cover"
-                width={1000}
-                height={1000}
-              />
+              {item.type === "video" ? (
+                <video
+                  src={item.video}
+                  poster={item.image}
+                  muted
+                  loop
+                  autoPlay
+                  playsInline
+                  className="w-full h-auto object-cover"
+                />
+              ) : (
+                <Image
+                  src={item.image}
+                  alt={item.alt}
+                  className="w-full h-auto object-cover"
+                  width={1000}
+                  height={1000}
+                />
+              )}
               <div className="p-4 dark:bg-white-LinkWater bg-black-Mirage">
                 <h3 className="font-lexend font-medium text-white-LinkWater dark:text-black-Mirage leading-3">
                   {item.title}
@@ -48,14 +65,24 @@ const MasonryArchiveGrid = () => {
           </div>
         ))}
       </div>
+
       <div
-        id="fullscreen"
         onClick={closeFullscreen}
-        className={`fixed inset-0 bg-black-Mirage/80 flex items-center justify-center ${activeImage ? "opacity-100 pointer-events-auto" : "opacity-0 pointer-events-none"} z-9999`}
+        className={`fixed inset-0 bg-black-Mirage/80 flex items-center justify-center z-9999 ${activeMedia ? "opacity-100 pointer-events-auto" : "opacity-0 pointer-events-none"}`}
       >
-        {activeImage ? (
+        {activeMedia?.type === "video" ? (
+          <video
+            src={activeMedia.src}
+            autoPlay
+            loop
+            muted
+            playsInline
+            controls
+            className="p-5 md:p-10 lg:p-20 w-auto h-full object-contain"
+          />
+        ) : activeMedia?.type === "image" ? (
           <Image
-            src={activeImage}
+            src={activeMedia.src}
             alt="Fullscreen"
             className="p-5 md:p-10 lg:p-20 w-auto h-full object-contain"
             width={1000}
