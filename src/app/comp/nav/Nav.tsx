@@ -90,7 +90,7 @@ const Nav = () => {
         <button
           onClick={toggleDarkmode}
           aria-label="Toggle dark mode"
-          className="z-999 fixed top-18 left-6 w-8 h-8 p-1.5 bg-black-Mirage dark:bg-white-LinkWater rounded-full flex items-center overflow-hidden"
+          className="z-999 fixed top-17 left-6 w-8 h-8 p-1.5 bg-black-Mirage dark:bg-white-LinkWater rounded-full flex items-center overflow-hidden"
         >
           <SunIcon
             ref={sunRef}

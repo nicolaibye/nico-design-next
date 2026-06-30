@@ -10,28 +10,27 @@ const ProjectNav = ({ info }: { info: ProjectNavProps }) => {
 
   return (
     <>
-      <nav className="fixed top-0 left-0 z-10 w-full bg-white-LinkWater dark:bg-black-Mirage">
+      <nav className="fixed top-0 left-0 z-10 w-full mix-blend-difference">
         <ul
-          className={`flex flex-col md:flex-row md:justify-center mt-5 mr-5 items-end md:items-center md:gap-10 h-20 ${LexendFont.className}`}
+          className={`flex flex-col md:flex-row justify-between md:justify-center mt-5 mr-5 items-end md:items-center md:gap-10 h-20 ${LexendFont.className}`}
         >
           {info.navigation.map((navItem, i) => (
             <li key={navItem.title}>
               <button
                 onClick={() => setActiveCard(activeCard === i ? null : i)}
-                className={`uppercase font-lexend ${activeCard === i ? `text-red-CoralRed` : `text-black-Mirage dark:text-white-LinkWater`} hover:text-red-CoralRed cursor-pointer`}
+                className={`uppercase font-lexend ${activeCard === i ? `text-[#00D7AF]` : `text-white-LinkWater`} hover:text-[#00D7AF] cursor-pointer`}
               >
                 {navItem.title}
               </button>
             </li>
           ))}
         </ul>
-        <div className="relative">
-          <div className="w-full h-40 absolute -top-px bg-linear-to-b from-white-LinkWater via-white-LinkWater/50 to-transparent dark:bg-linear-to-b dark:from-black-Mirage dark:via-black-Mirage/50 dark:to-transparent pointer-events-none transition-colors duration-500" />
-        </div>
       </nav>
       {/* Expanded content */}
       {activeCard !== null && (
-        <div className="my-40">{info.navigation[activeCard].content}</div>
+        <div className="mb-5 mt-30 md:mt-60 md:mb-30">
+          {info.navigation[activeCard].content}
+        </div>
       )}
     </>
   );
