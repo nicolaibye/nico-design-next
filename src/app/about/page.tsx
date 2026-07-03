@@ -113,21 +113,24 @@ const About = () => {
                   className={`w-2.5 h-2.5 rounded-full ${
                     currentSlide === index + 1
                       ? "bg-red-CoralRed"
-                      : "bg-gray-400 hover:bg-gray-600"
+                      : "bg-gray-400 hover:bg-gray-600 cursor-pointer"
                   }`}
                 />
               ))}
             </div>
           </div>
           <Carousel
+            opts={{ duration: 20 }}
             className="w-full outline outline-black-Mirage dark:outline-white-LinkWater rounded-lg"
             setApi={setApi}
           >
-            <CarouselContent className="p-5 sm:p-10 -ml-5 sm:-ml-10">
+            <CarouselContent
+              viewportClassName="p-5 sm:p-10"
+              className="-ml-5 sm:-ml-10 transition-none"
+            >
               {slides.map((slide, index) => (
                 <CarouselItem
-                  className="pl-5 sm:pl-10 h-fit rounded font-lexend flex flex-col
-                  gap-5 sm:justify-between"
+                  className="pl-5 sm:pl-10 rounded font-lexend grid grid-row-[1fr_1fr] gap-5 sm:gap-10"
                   key={index}
                 >
                   <Image
@@ -135,14 +138,16 @@ const About = () => {
                     alt={slide.title}
                     width={1000}
                     height={1000}
-                    className="w-auto hidden sm:block h-40 md:h-80 object-contain rounded-lg"
+                    className="w-4/5 hidden md:block h-auto object-contain rounded-lg self-center justify-self-center"
                   />
-                  <h3 className="font-semibold text-2xl sm:text-4xl">
-                    {slide.title}
-                  </h3>
-                  <p className="leading-tight text-sm sm:text-base">
-                    {slide.description}
-                  </p>
+                  <div className="flex flex-col gap-2 sm:gap-5  md:self-center">
+                    <h3 className="font-semibold text-2xl sm:text-4xl">
+                      {slide.title}
+                    </h3>
+                    <p className="leading-tight text-sm sm:text-base">
+                      {slide.description}
+                    </p>
+                  </div>
                 </CarouselItem>
               ))}
             </CarouselContent>

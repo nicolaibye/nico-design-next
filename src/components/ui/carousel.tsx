@@ -13,6 +13,9 @@ type CarouselApi = UseEmblaCarouselType[1];
 type UseCarouselParameters = Parameters<typeof useEmblaCarousel>;
 type CarouselOptions = UseCarouselParameters[0];
 type CarouselPlugin = UseCarouselParameters[1];
+type CarouselContentProps = React.ComponentProps<"div"> & {
+  viewportClassName?: string;
+};
 
 type CarouselProps = {
   opts?: CarouselOptions;
@@ -132,13 +135,17 @@ function Carousel({
   );
 }
 
-function CarouselContent({ className, ...props }: React.ComponentProps<"div">) {
+function CarouselContent({
+  className,
+  viewportClassName,
+  ...props
+}: CarouselContentProps) {
   const { carouselRef, orientation } = useCarousel();
 
   return (
     <div
       ref={carouselRef}
-      className="overflow-hidden"
+      className={cn("overflow-hidden", viewportClassName)}
       data-slot="carousel-content"
     >
       <div
