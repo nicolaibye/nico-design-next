@@ -151,14 +151,8 @@ const About = () => {
                 </CarouselItem>
               ))}
             </CarouselContent>
-            <CarouselPrevious
-              size={"icon-lg"}
-              className="bg-black-Mirage text-white-LinkWater dark:bg-white-LinkWater dark:text-black-Mirage"
-            />
-            <CarouselNext
-              size={"icon-lg"}
-              className="bg-black-Mirage text-white-LinkWater dark:bg-white-LinkWater dark:text-black-Mirage"
-            />
+            <CarouselPrevious />
+            <CarouselNext />
           </Carousel>
         </div>
       </div>
