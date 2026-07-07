@@ -9,7 +9,7 @@ const AboutMeHome = () => {
         <div>
           <h2 className="font-lexend uppercase tracking-widest leading-9 md:leading-none font-extralight text-[1.60rem] md:text-5xl">
             To not be like <br />
-            <span className="font-leckerli tracking-normal text-[2.65rem] md:text-6xl text-red-CoralRed uppercase">
+            <span className="font-redaction-10  tracking-normal text-[2.65rem] md:text-6xl text-red-CoralRed uppercase">
               every
               <wbr />
               one <br />
