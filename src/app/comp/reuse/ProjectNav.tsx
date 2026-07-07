@@ -3,9 +3,6 @@ import Link from "next/link";
 import Image from "next/image";
 import { usePathname } from "next/navigation";
 import { portfolioProjectsData as projects } from "../../../data/portfolioProjectsDataNew.ts";
-import { Lexend } from "next/font/google";
-
-const lexend = Lexend({ subsets: ["latin"], variable: "--font-lexend" });
 
 const ProjectNav = () => {
   const pathname = usePathname();
@@ -21,9 +18,7 @@ const ProjectNav = () => {
 
   return (
     <div className="w-full px-5 pb-6 md:pb-0 md:px-20 md:mb-10 text-black-Mirage">
-      <div
-        className={`flex flex-row justify-between items-center mt-5 ${lexend.variable}`}
-      >
+      <div className={`flex flex-row justify-between items-center mt-5`}>
         {/* Prev */}
         <Link
           href={prev.href}

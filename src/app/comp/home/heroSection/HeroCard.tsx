@@ -1,17 +1,10 @@
 "use client";
 import Link from "next/link";
 import { HeroCard } from "../../../../data/heroCards.js";
-import { Lexend } from "next/font/google";
 import { useCurrentTime } from "../../../hook/useCurrentTime.ts";
 import gsap from "gsap";
 import { useEffect } from "react";
 import { ScrollToPlugin } from "gsap/dist/ScrollToPlugin";
-
-const lexend = Lexend({
-  subsets: ["latin"],
-  weight: ["400", "500", "600", "700"],
-  variable: "--font-lexend",
-});
 
 interface HeroCardProps {
   card: HeroCard;

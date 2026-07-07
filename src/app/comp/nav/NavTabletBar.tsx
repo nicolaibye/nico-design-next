@@ -3,10 +3,7 @@
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { navlinks } from "../../../data/navLinks";
-import { Lexend } from "next/font/google";
 import Image from "next/image";
-
-const lexend = Lexend({ subsets: ["latin"], variable: "--font-lexend" });
 
 const NavTabletBar = () => {
   const pathname = usePathname();
@@ -19,7 +16,7 @@ const NavTabletBar = () => {
         id="tablet-nav"
         className="fixed bottom-5 w-full flex justify-center z-999"
       >
-        <ul className={`flex flex-row gap-2 ${lexend.variable}`}>
+        <ul className={`flex flex-row gap-2`}>
           {navlinks.map((link) => {
             const Icon = link.icon;
             const isActive = pathname === link.href;

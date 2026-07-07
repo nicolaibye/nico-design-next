@@ -1,15 +1,12 @@
-import { Lexend } from "next/font/google";
 import Image from "next/image";
 import Link from "next/link";
 import { footerCards, footerLinks } from "../../data/footerData";
 import SectionDivider from "./reuse/SectionDivider";
 
-const lexend = Lexend({ subsets: ["latin"], variable: "--font-lexend" });
-
 const Footer = () => {
   return (
     <footer
-      className={`absolute lg:static z-1000 lg:z-auto bg-linear-to-t from-black-Mirage via-blue-NileBlue to-green-RiverBed text-white-LinkWater p-10 ${lexend.variable}`}
+      className={`absolute lg:static z-1000 lg:z-auto bg-linear-to-t from-black-Mirage via-blue-NileBlue to-green-RiverBed text-white-LinkWater p-10`}
     >
       <div className="flex flex-col gap-8 justify-center max-w-280 mx-auto">
         <SectionDivider>

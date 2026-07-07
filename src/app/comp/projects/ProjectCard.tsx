@@ -2,12 +2,6 @@
 import Link from "next/link";
 import Image from "next/image";
 import { Project } from "../../../data/portfolioProjectsDataNew";
-import { Lexend } from "next/font/google";
-
-const lexend = Lexend({
-  subsets: ["latin"],
-  variable: "--font-lexend",
-});
 
 const ProjectCard = ({
   project,
@@ -18,7 +12,7 @@ const ProjectCard = ({
 }) => (
   <Link
     href={project.href}
-    className={`${lexend.variable} h-full flex ${reverse ? "flex-col md:flex-row-reverse" : "flex-col md:flex-row"} items-center gap-10`}
+    className={`h-full flex ${reverse ? "flex-col md:flex-row-reverse" : "flex-col md:flex-row"} items-center gap-10`}
   >
     <div className="relative md:w-1/2 h-auto group">
       <Image
