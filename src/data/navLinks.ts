@@ -16,6 +16,7 @@ export const navlinks = [
   },
   {
     name: "Project",
+    tabletName: "Work",
     href: "/projects",
     icon: KanbanIcon,
     color: "bg-green-RiverBed",

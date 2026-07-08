@@ -22,8 +22,14 @@
   --color-mtg: #ff1c2e;
   --font-lexend: var(--font-lexend);
   --font-majorono: var(--font-majorono);
-  --font-leckerli: var(--font-leckerli);
   --font-sofiasans: var(--font-sofiasans);
+  --font-redaction: var(--font-redaction);
+  --font-redaction-10: var(--font-redaction-10);
+  --font-redaction-20: var(--font-redaction-20);
+  --font-redaction-35: var(--font-redaction-35);
+  --font-redaction-50: var(--font-redaction-50);
+  --font-redaction-70: var(--font-redaction-70);
+  --font-redaction-100: var(--font-redaction-100);
   --background-image-dotted-line: repeating-linear-gradient(
     to right,
     #dce1eb 0,

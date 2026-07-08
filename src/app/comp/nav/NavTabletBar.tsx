@@ -38,7 +38,9 @@ const NavTabletBar = () => {
                   ) : (
                     <>
                       <Icon size={22} weight="bold" />
-                      <span>{link.name}</span>
+                      <span>
+                        {link.tabletName ? link.tabletName : link.name}
+                      </span>
                     </>
                   )}
                 </Link>

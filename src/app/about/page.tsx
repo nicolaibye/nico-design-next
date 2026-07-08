@@ -1,8 +1,6 @@
 "use client";
 
 import React from "react";
-import { Lexend } from "next/font/google";
-import { Leckerli_One } from "next/font/google";
 import {
   Carousel,
   CarouselApi,
@@ -13,18 +11,6 @@ import {
 } from "@/components/ui/carousel";
 import Image from "next/image";
 import useTypewriter from "../hook/useTypewriter";
-
-const fontLexend = Lexend({
-  subsets: ["latin"],
-  weight: ["400", "500", "600", "700"],
-  variable: "--font-lexend",
-});
-
-const leckerliOne = Leckerli_One({
-  subsets: ["latin"],
-  weight: ["400"],
-  variable: "--font-leckerli",
-});
 
 const slides = [
   {
@@ -78,19 +64,19 @@ const About = () => {
     <>
       <h1 className="visually-hidden">About Page</h1>
       <div
-        className={`flex flex-col justify-center items-center w-full min-h-screen ${fontLexend.variable} ${leckerliOne.variable}`}
+        className={`flex flex-col justify-center items-center w-full min-h-screen`}
       >
         <div className="grid grid-cols-1 gap-5 sm:gap-10 w-full md:w-200 p-5 sm:p-10 md:p-20">
           <div className="flex gap-5 items-end justify-between">
             <h2 className="font-lexend uppercase text-3xl sm:text-6xl min-w-fit tracking-widest h-25 sm:h-46 sm:leading-16">
               The
               <br />
-              <div className="text-red-CoralRed">
+              <div className="text-red-CoralRed font-redaction-50 normal-case text-4xl sm:text-7xl sm:leading-18 translate-y-0.5">
                 <span className="inline-block">
                   {typedWord}
                   <span
                     aria-hidden="true"
-                    className={`inline-block w-0.75 sm:w-1 h-5.5 sm:h-10 bg-current ${
+                    className={`inline-block w-0.75 sm:w-1 h-5.75 sm:h-10 bg-current ${
                       isBlinking ? "animate-cursor-blink" : "opacity-100"
                     }`}
                   />
