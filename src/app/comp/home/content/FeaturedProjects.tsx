@@ -1,15 +1,12 @@
 import React from "react";
 import Image from "next/image";
 import { featuredProjects as projects } from "../../../../data/featuredProjectsData.ts";
-import { Lexend } from "@next/font/google";
 import { ArrowUpRightIcon } from "@phosphor-icons/react/dist/ssr";
-
-const lexend = Lexend({ subsets: ["latin"], variable: "--font-lexend" });
 
 const FeaturedProjects = () => {
   return (
     <section
-      className={`${lexend.variable} min-h-screen my-auto flex flex-col`}
+      className={`min-h-screen my-auto flex flex-col`}
     >
       <div className="w-full flex justify-center">
         <h2 className="font-lexend font-light uppercase text-3xl tracking-[0.3em] my-16 text-center">

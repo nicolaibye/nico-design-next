@@ -1,31 +1,16 @@
-import React from "react";
-import { Lexend, Major_Mono_Display, Leckerli_One } from "next/font/google";
 import Image from "next/image";
-
-const lexend = Lexend({ subsets: ["latin"], variable: "--font-lexend" });
-const majorMonoDisplay = Major_Mono_Display({
-  subsets: ["latin"],
-  weight: ["400"],
-  variable: "--font-majorono",
-});
-
-const leckerliOne = Leckerli_One({
-  subsets: ["latin"],
-  weight: ["400"],
-  variable: "--font-leckerli",
-});
 
 const AboutMeHome = () => {
   return (
     <section
-      className={`${lexend.variable} ${majorMonoDisplay.variable} ${leckerliOne.variable} min-h-screen w-fit flex items-center justify-center mx-auto p-10 md:p-5 my-10 md:my-14 lg:my-24`}
+      className={`min-h-screen w-fit flex items-center justify-center mx-auto p-10 md:p-5 my-10 md:my-14 lg:my-24`}
     >
       <div className="flex flex-col-reverse md:flex-row gap-4 md:gap-12">
         <div>
-          <h2 className="font-lexend uppercase tracking-widest leading-9 md:leading-none font-light text-[1.60rem] md:text-5xl">
+          <h2 className="font-lexend uppercase tracking-widest leading-9 md:leading-none font-extralight text-[1.60rem] md:text-5xl">
             To not be like <br />
-            <span className="font-leckerli tracking-normal text-[2.65rem] md:text-6xl text-red-CoralRed uppercase">
-              every
+            <span className="font-redaction-50 tracking-normal text-[2.65rem] md:text-6xl text-red-CoralRed uppercase">
+              Every
               <wbr />
               one <br />
             </span>

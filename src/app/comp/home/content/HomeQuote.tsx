@@ -1,30 +1,9 @@
 import React from "react";
-import { Lexend, Major_Mono_Display, Leckerli_One } from "next/font/google";
 import SectionDivider from "../../reuse/SectionDivider";
-
-const fontLexend = Lexend({
-  subsets: ["latin"],
-  weight: ["400", "500", "600", "700"],
-  variable: "--font-lexend",
-});
-
-const fontMajorono = Major_Mono_Display({
-  subsets: ["latin"],
-  weight: ["400"],
-  variable: "--font-majorono",
-});
-
-const fontLeckerli = Leckerli_One({
-  subsets: ["latin"],
-  weight: ["400"],
-  variable: "--font-leckerli",
-});
 
 const HomeQuote = () => {
   return (
-    <section
-      className={`${fontLexend.variable} ${fontMajorono.variable} ${fontLeckerli.variable}`}
-    >
+    <section>
       <div
         id="quote"
         className="max-w-230 mx-auto p-10 md:p-5 my-10 md:my-14 lg:my-24 flex flex-col gap-16 justify-center"
