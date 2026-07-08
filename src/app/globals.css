@@ -43,6 +43,7 @@
   --grid-auto-rows-screen-mobile: calc((100svh - 12rem) / 2.5);
   --max-width-wide: 1440px;
   --animate-cursor-blink: cursor-blink 1s steps(2, jump-none) infinite;
+  --animate-scroll-x: scroll-x var(--scroll-duration, 40s) linear infinite;
   --font-heading: var(--font-sans);
   --font-sans: var(--font-sans);
   --color-sidebar-ring: var(--sidebar-ring);
@@ -93,6 +94,15 @@
   50%,
   100% {
     opacity: 0;
+  }
+}
+
+@keyframes scroll-x {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(-50%);
   }
 }
 
