@@ -71,7 +71,7 @@ const About = () => {
             <h2 className="font-lexend uppercase text-3xl sm:text-6xl min-w-fit tracking-widest h-25 sm:h-46 sm:leading-16">
               The
               <br />
-              <div className="text-red-CoralRed font-redaction-50 normal-case text-4xl sm:text-7xl sm:leading-18 translate-y-0.5">
+              <div className="text-red-CoralRed font-redaction-50 font-bold normal-case text-4xl sm:text-7xl sm:leading-18 translate-y-0.5">
                 <span className="inline-block">
                   {typedWord}
                   <span

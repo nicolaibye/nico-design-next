@@ -12,21 +12,21 @@ const Blog = () => {
             durationSeconds={80}
           />
 
-          <div className="absolute flex flex-col md:flex-row items-center justify-center md:gap-12 w-full h-full z-10 mix-blend-difference">
+          <div className="absolute flex flex-col md:flex-row items-center justify-center md:gap-12 w-full h-full z-10 mix-blend-difference  font-redaction-50 font-bold text-[10rem] leading-[1.2] text-red-CoralRed uppercase">
             <h1
               aria-label="Blog"
               className="flex flex-col md:flex-row items-center md:gap-12"
             >
               <span
                 aria-hidden="true"
-                className="flex flex-row gap-16 md:gap-12 font-lexend font-bold text-[10rem] leading-[1.2] text-red-CoralRed uppercase"
+                className="flex flex-row gap-16 md:gap-12"
               >
                 <span>b</span>
                 <span>l</span>
               </span>
               <span
                 aria-hidden="true"
-                className="flex flex-row gap-12 font-lexend font-bold text-[10rem] leading-[1.2] text-red-CoralRed uppercase"
+                className="flex flex-row gap-12"
               >
                 <span>o</span>
                 <span>g</span>
