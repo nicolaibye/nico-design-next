@@ -1,8 +1,8 @@
 "use client";
 import { ProjectInfo } from "@/types/projectDataType";
-import SoriaMoriaBriefContent from "@/app/projects/soria_moria/SoriaMoriaBriefContent";
-import SoriaMoriaChallengeContent from "@/app/projects/soria_moria/SoriaMoriaChallengeContent";
-import SoriaMoriaOutcomeContent from "@/app/projects/soria_moria/SoriaMoriaOutcomeContent";
+import SoriaMoriaBriefContent from "@/app/(website)/projects/soria_moria/SoriaMoriaBriefContent";
+import SoriaMoriaChallengeContent from "@/app/(website)/projects/soria_moria/SoriaMoriaChallengeContent";
+import SoriaMoriaOutcomeContent from "@/app/(website)/projects/soria_moria/SoriaMoriaOutcomeContent";
 
 export const soriaMoriaInfo: ProjectInfo = {
   stats: [

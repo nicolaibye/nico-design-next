@@ -1,8 +1,8 @@
 "use client";
 import { ProjectInfo } from "@/types/projectDataType";
-import MTGBriefContent from "@/app/projects/mtg_nm/MTGBriefContent";
-import MTGChallengeContent from "@/app/projects/mtg_nm/MTGChallengeContent";
-import MTGOutcomeContent from "@/app/projects/mtg_nm/MTGOutcomeContent";
+import MTGBriefContent from "@/app/(website)/projects/mtg_nm/MTGBriefContent";
+import MTGChallengeContent from "@/app/(website)/projects/mtg_nm/MTGChallengeContent";
+import MTGOutcomeContent from "@/app/(website)/projects/mtg_nm/MTGOutcomeContent";
 
 export const mtgInfo: ProjectInfo = {
   stats: [

@@ -1,8 +1,8 @@
 "use client";
 import { ProjectInfo } from "@/types/projectDataType";
-import SablaBraBriefContent from "@/app/projects/sabla_bra/SablaBraBriefContent";
-import SablaBraChallengeContent from "@/app/projects/sabla_bra/SablaBraChallengeContent";
-import SablaBraOutcomeContent from "@/app/projects/sabla_bra/SablaBraOutcomeContent";
+import SablaBraBriefContent from "@/app/(website)/projects/sabla_bra/SablaBraBriefContent";
+import SablaBraChallengeContent from "@/app/(website)/projects/sabla_bra/SablaBraChallengeContent";
+import SablaBraOutcomeContent from "@/app/(website)/projects/sabla_bra/SablaBraOutcomeContent";
 
 export const sablaBraInfo: ProjectInfo = {
   stats: [

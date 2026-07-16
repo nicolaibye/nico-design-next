@@ -1,8 +1,8 @@
 "use client";
 import { ProjectInfo } from "@/types/projectDataType";
-import HolidazeBriefContent from "@/app/projects/holidaze/HolidazeBriefContent";
-import HolidazeChallengeContent from "@/app/projects/holidaze/HolidazeChallengeContent";
-import HolidazeOutcomeContent from "@/app/projects/holidaze/HolidazeOutcomeContent";
+import HolidazeBriefContent from "@/app/(website)/projects/holidaze/HolidazeBriefContent";
+import HolidazeChallengeContent from "@/app/(website)/projects/holidaze/HolidazeChallengeContent";
+import HolidazeOutcomeContent from "@/app/(website)/projects/holidaze/HolidazeOutcomeContent";
 
 export const holidazeInfo: ProjectInfo = {
   stats: [
