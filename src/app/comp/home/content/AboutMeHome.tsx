@@ -7,14 +7,14 @@ const AboutMeHome = () => {
     >
       <div className="flex flex-col-reverse md:flex-row gap-4 md:gap-12">
         <div>
-          <h2 className="font-lexend uppercase tracking-widest leading-9 md:leading-none font-extralight text-[1.60rem] md:text-5xl">
+          <h2 className=" font-lexend uppercase tracking-widest leading-9 md:leading-none font-extralight text-[1.60rem] md:text-5xl">
             To not be like <br />
-            <span className="font-redaction-50 tracking-normal text-[2.65rem] md:text-6xl text-red-CoralRed uppercase">
+            <span className="font-redaction-50 MD:leading-18 font-bold tracking-normal text-[2.65rem] md:text-6xl text-red-CoralRed uppercase">
               Every
               <wbr />
               one <br />
             </span>
-            <span className="absolute -translate-y-2 md:relative">else</span>
+            <span className="-translate-y-2 md:relative">else</span>
           </h2>
           <p className="mt-12 md:mt-4 md:max-w-lg font-lexend text-left text-sm">
             Hi!
