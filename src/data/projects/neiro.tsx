@@ -1,8 +1,8 @@
 "use client";
 import { ProjectInfo } from "@/types/projectDataType";
-import NeiroBriefContent from "@/app/projects/neiro/NeiroBriefContent";
-import NeiroChallengeContent from "@/app/projects/neiro/NeiroChallengeContent";
-import NeiroOutcomeContent from "@/app/projects/neiro/NeiroOutcomeContent";
+import NeiroBriefContent from "@/app/(website)/projects/neiro/NeiroBriefContent";
+import NeiroChallengeContent from "@/app/(website)/projects/neiro/NeiroChallengeContent";
+import NeiroOutcomeContent from "@/app/(website)/projects/neiro/NeiroOutcomeContent";
 
 export const neiroInfo: ProjectInfo = {
   stats: [
