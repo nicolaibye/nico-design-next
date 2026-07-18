@@ -10,7 +10,7 @@ export const ImageGalleryExpand = ({ images }: { images: GalleryImage[] }) => {
   const [active, setActive] = useState<number | undefined>(undefined);
 
   return (
-    <ul className="flex flex-col lg:flex-row lg:h-140 gap-5 w-[85%] lg:w-[75%] mx-auto my-10">
+    <ul className="flex flex-col lg:flex-row h-[75vh] lg:h-140 gap-5 w-[85%] lg:w-[75%] mx-auto my-10">
       {images.map((img, i) => {
         const alignmentClass =
           img.alignment === "top-left"
@@ -38,7 +38,7 @@ export const ImageGalleryExpand = ({ images }: { images: GalleryImage[] }) => {
             key={i}
             onClick={() => setActive((prev) => (prev === i ? undefined : i))}
             className={`overflow-hidden rounded-lg cursor-pointer duration-700! basis-0 ${
-              active === i ? "lg:grow-4" : "lg:grow"
+              active === i ? "grow-4" : "grow"
             }`}
           >
             <Image

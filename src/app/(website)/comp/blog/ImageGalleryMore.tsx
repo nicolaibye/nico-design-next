@@ -87,7 +87,7 @@ export const ImageGalleryMore = ({ images }: { images: GalleryImage[] }) => {
               aria-selected={currentSlide === index + 1}
               aria-controls={`slide-${index + 1}`}
               onClick={() => api?.scrollTo(index)}
-              className={`w-2.5 h-2.5 rounded-full ${
+              className={`w-2 h-2 rounded-full ${
                 currentSlide === index + 1
                   ? "bg-red-CoralRed"
                   : "bg-gray-400 hover:bg-gray-600 cursor-pointer"
