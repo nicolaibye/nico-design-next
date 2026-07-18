@@ -33,8 +33,8 @@ export default async function BlogPostPage({
             width={1000}
             height={1000}
           />
-          <div className="flex flex-col w-[85%] max-w-wide lg:w-[75%] mx-auto pt-6 md:pt-10 gap-10 mb-5">
-            <ul className="hidden md:flex flex-row justify-between w-full text-sm font-lexend font-light">
+          <div className="flex flex-col w-[85%] max-w-wide lg:w-[75%] mx-auto pt-6 md:pt-10 gap-5 sm:gap-10 mb-5">
+            <ul className="grid grid-cols-2 gap-5 sm:flex flex-row justify-between w-full text-sm font-lexend font-light">
               <li className="capitalize">
                 <strong className="uppercase font-medium">Category</strong>
                 <br />
@@ -63,7 +63,7 @@ export default async function BlogPostPage({
                 </>
               )}
             </ul>
-            <h1 className="font-lexend text-5xl">{post.title}</h1>
+            <h1 className="font-lexend font-semibold text-4xl sm:text-5xl">{post.title}</h1>
             <p className="font-lexend text-xl font-regular">{post.ingress}</p>
           </div>
         </div>

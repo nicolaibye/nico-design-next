@@ -51,7 +51,7 @@ const Blog = async () => {
           </div>
         </div>
       </section>
-      <section>
+      <section className="min-h-[50vh] flex my-10">
         <ul className="flex flex-wrap justify-center items-center gap-6 max-w-[calc(100%-40px)] md:max-w-[80%] mx-auto mb-5 mt-5 md:mt-10 dark:text-black-Mirage">
           {posts.map((post) => (
             <li key={post.id} className="w-full sm:w-auto">

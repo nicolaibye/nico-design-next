@@ -43,7 +43,10 @@ const NavMobileButton = () => {
       <ul ref={navRef} className="z-999">
         {orderedLinks.map((link) => {
           const Icon = link.icon;
-          const isActive = pathname === link.href;
+          const isActive =
+            link.href === "/"
+              ? pathname === "/"
+              : pathname === link.href || pathname.startsWith(link.href + "/");
           return (
             <li
               key={link.name}

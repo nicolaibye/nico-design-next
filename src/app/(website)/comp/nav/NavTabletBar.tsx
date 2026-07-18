@@ -19,7 +19,11 @@ const NavTabletBar = () => {
         <ul className={`flex flex-row gap-2`}>
           {navlinks.map((link) => {
             const Icon = link.icon;
-            const isActive = pathname === link.href;
+            const isActive =
+              link.href === "/"
+                ? pathname === "/"
+                : pathname === link.href ||
+                  pathname.startsWith(link.href + "/");
             return (
               <li
                 key={link.name}
