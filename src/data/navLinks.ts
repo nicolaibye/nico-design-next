@@ -20,21 +20,23 @@ export const navlinks = [
     href: "/projects",
     icon: KanbanIcon,
     color: "bg-green-RiverBed",
-    hoverDistance: "hover:-translate-x-20",
+    hoverDistance: "hover:-translate-x-20.5",
   },
   {
-    name: "Gold",
-    href: "/gold",
+    name: "Contact",
+    href: "/contact",
     icon: null,
     color: "bg-white",
     image: goldGif,
+    textColor: "text-yellow-DarkGold dark:text-yellow-GoldSand",
+    hoverDistance: "hover:-translate-x-23",
   },
   {
     name: "About",
     href: "/about",
     icon: SmileyMeltingIcon,
     color: "bg-blue-NileBlue",
-    hoverDistance: "hover:-translate-x-16",
+    hoverDistance: "hover:-translate-x-16.5",
   },
   {
     name: "Blog",
@@ -42,7 +44,7 @@ export const navlinks = [
     icon: QuotesIcon,
     color: "bg-black-Mirage dark:bg-white-LinkWater",
     textColor: "text-white-LinkWater dark:text-black-Mirage",
-    hoverDistance: "hover:-translate-x-13.5",
+    hoverDistance: "hover:-translate-x-14",
   },
 ];
 
