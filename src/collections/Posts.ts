@@ -8,6 +8,33 @@ export const Posts: CollectionConfig = {
   admin: { useAsTitle: "title" },
   fields: [
     {
+      name: "slug",
+      type: "text",
+      required: true,
+      unique: true,
+      index: true,
+      admin: { position: "sidebar" },
+      hooks: {
+        beforeValidate: [
+          ({ value, data }) => {
+            if (value) return value;
+            return data?.title
+              ?.toLowerCase()
+              .replace(/[^a-z0-9]+/g, "-")
+              .replace(/(^-|-$)/g, "");
+          },
+        ],
+      },
+    },
+    { name: "publishedDate", type: "date", admin: { position: "sidebar" } },
+    {
+      name: "status",
+      type: "select",
+      options: ["draft", "published"],
+      defaultValue: "draft",
+      admin: { position: "sidebar" },
+    },
+    {
       type: "tabs",
       tabs: [
         {
@@ -41,13 +68,12 @@ export const Posts: CollectionConfig = {
             },
             { name: "coverImageAlt", type: "text" },
             {
-              name: "Info",
-              type: "group",
+              name: "stats",
+              type: "array",
+              minRows: 1,
               fields: [
-                { name: "Custom Title 1", type: "text", required: true },
-                { name: "Custom Text 1", type: "text" },
-                { name: "Custom Title 2", type: "text", required: true },
-                { name: "Custom Text 2", type: "text" },
+                { name: "title", type: "text", required: true },
+                { name: "text", type: "text" },
               ],
             },
             { name: "title", type: "text", required: true },
@@ -55,8 +81,11 @@ export const Posts: CollectionConfig = {
               name: "ingress",
               type: "textarea",
               required: true,
-              unique: true,
-              index: true,
+              label: "Summary",
+              admin: {
+                description:
+                  "Short summary shown on the blog card and post preview.",
+              },
             },
             {
               name: "content",
@@ -67,13 +96,6 @@ export const Posts: CollectionConfig = {
                   BlocksFeature({ blocks: [ImageGallery] }),
                 ],
               }),
-            },
-            { name: "publishedDate", type: "date" },
-            {
-              name: "status",
-              type: "select",
-              options: ["draft", "published"],
-              defaultValue: "draft",
             },
           ],
         },

@@ -3,14 +3,24 @@ import InfiniteScrollBackground from "@/app/(website)/comp/blog/InfiniteScrollBa
 import { getPayload } from "payload";
 import config from "../../../../payload.config";
 import Image from "next/image";
+import redArrow from "@/public/arrows/big_arrow_45_red.svg";
+import greenArrow from "@/public/arrows/big_arrow_45_green.svg";
+import blueArrow from "@/public/arrows/big_arrow_45_blue.svg";
+import blackArrow from "@/public/arrows/big_arrow_45_black.svg";
 
 const Blog = async () => {
   const payload = await getPayload({ config });
   const { docs: posts } = await payload.find({
     collection: "posts",
-    where: { status: { equals: "draft" } },
+    where: { status: { equals: "published" } },
   });
-  console.log("posts", posts);
+
+  const categoryArrows: Record<string, typeof redArrow> = {
+    design: redArrow,
+    lifestyle: greenArrow,
+    career: blueArrow,
+    other: blackArrow,
+  };
   return (
     <>
       <section>
@@ -41,18 +51,38 @@ const Blog = async () => {
           </div>
         </div>
       </section>
-      <section className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 items-center justify-center gap-4 p-12 min-h-1/2">
-        {posts.map((post) => (
-          <Link key={post.id} href={`/blog/${post.slug}`} className="flex flex-col gap-4">
-            <Image
-              src={post.coverImageUrl}
-              alt={post.coverImageAlt || "Cover image"}
-              width={1000}
-              height={1000}
-            />
-            {post.title}
-          </Link>
-        ))}
+      <section>
+        <ul className="flex flex-wrap justify-center items-center gap-6 max-w-[calc(100%-40px)] md:max-w-[80%] mx-auto mb-5 mt-5 md:mt-10 dark:text-black-Mirage">
+          {posts.map((post) => (
+            <li key={post.id} className="w-full sm:w-auto">
+              <Link
+                href={`/blog/${post.slug}`}
+                className="flex flex-row items-center w-full sm:w-85 h-35 rounded-2xl bg-white overflow-hidden relative drop-shadow-[0_8px_12px_rgba(0,0,0,0.14)] lg:hover:scale-105"
+              >
+                <Image
+                  src={post.cardImageUrl}
+                  alt={post.cardImageAlt || "Cover image"}
+                  className="w-35 h-35 object-cover object-bottom"
+                  width={1000}
+                  height={1000}
+                />
+                <div className="flex flex-col justify-start h-full p-5">
+                  <h2 className="font-lexend font-regular leading-[1.2] text-base">
+                    {post.cardTitle}
+                  </h2>
+                  <p className="font-lexend font-light text-base capitalize">
+                    {post.category}
+                  </p>
+                  <Image
+                    src={categoryArrows[post.category] ?? blackArrow}
+                    alt={`Arrow for ${post.category} category`}
+                    className="absolute bottom-2 right-2 w-6 h-6"
+                  />
+                </div>
+              </Link>
+            </li>
+          ))}
+        </ul>
       </section>
     </>
   );
