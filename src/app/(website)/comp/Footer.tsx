@@ -52,14 +52,14 @@ const Footer = () => {
             <p className="text-center col-span-3 md:col-start-2 md:col-span-1 max-w-80 mx-auto">
               <a
                 href="mailto:nicolai@nicodesign.no"
-                className="underline hover:text-red-CoralRed"
+                className="underline text-white-LinkWater! hover:text-red-CoralRed!"
               >
                 Get in touch
               </a>{" "}
               and let&apos;s make{" "}
               <Link
                 href="/projects"
-                className="underline hover:text-red-CoralRed"
+                className="underline text-white-LinkWater! hover:text-red-CoralRed!"
               >
                 something great!
               </Link>

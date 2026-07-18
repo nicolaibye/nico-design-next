@@ -3,14 +3,24 @@ import InfiniteScrollBackground from "@/app/(website)/comp/blog/InfiniteScrollBa
 import { getPayload } from "payload";
 import config from "../../../../payload.config";
 import Image from "next/image";
+import redArrow from "@/public/arrows/big_arrow_45_red.svg";
+import greenArrow from "@/public/arrows/big_arrow_45_green.svg";
+import blueArrow from "@/public/arrows/big_arrow_45_blue.svg";
+import blackArrow from "@/public/arrows/big_arrow_45_black.svg";
 
 const Blog = async () => {
   const payload = await getPayload({ config });
   const { docs: posts } = await payload.find({
     collection: "posts",
-    where: { status: { equals: "draft" } },
+    where: { status: { equals: "published" } },
   });
 
+  const categoryArrows: Record<string, typeof redArrow> = {
+    design: redArrow,
+    lifestyle: greenArrow,
+    career: blueArrow,
+    other: blackArrow,
+  };
   return (
     <>
       <section>
@@ -64,19 +74,9 @@ const Blog = async () => {
                     {post.category}
                   </p>
                   <Image
-                    src={
-                      post.category === "design"
-                        ? "./arrows/big_arrow_45_red.svg"
-                        : post.category === "lifestyle"
-                          ? "./arrows/big_arrow_45_green.svg"
-                          : post.category === "lifestyle"
-                            ? "./public/arrows/big_arrow_45_blue.svg"
-                            : "./public/arrows/big_arrow_45_black.svg"
-                    }
+                    src={categoryArrows[post.category] ?? blackArrow}
                     alt={`Arrow for ${post.category} category`}
                     className="absolute bottom-2 right-2 w-6 h-6"
-                    width={1000}
-                    height={1000}
                   />
                 </div>
               </Link>
