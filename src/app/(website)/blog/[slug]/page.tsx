@@ -22,9 +22,6 @@ export default async function BlogPostPage({
   const post = docs[0];
   if (!post) return null; // BUILD A FUNCTION THAT RETUSN 404 PAGE
 
-  console.log("post", post);
-  console.log("post.content", post.content.root.children);
-
   return (
     <>
       <section>
@@ -32,7 +29,7 @@ export default async function BlogPostPage({
           <Image
             src="https://res.cloudinary.com/dg0c4lry9/image/upload/t_blog_header/mirror_gang_b6k9ec"
             alt="The gang in the mirror in Japan"
-            className="w-full h-[50vh] object-cover object-bottom"
+            className="w-full h-[50vh] object-cover"
             width={1000}
             height={1000}
           />

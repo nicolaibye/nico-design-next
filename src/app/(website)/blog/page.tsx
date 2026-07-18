@@ -66,14 +66,14 @@ const Blog = async () => {
                   <Image
                     src={
                       post.category === "design"
-                        ? "/red-arrow.svg"
+                        ? "./arrows/big_arrow_45_red.svg"
                         : post.category === "lifestyle"
-                          ? "/green-arrow.svg"
+                          ? "./arrows/big_arrow_45_green.svg"
                           : post.category === "lifestyle"
-                            ? "/blue-arrow.svg"
-                            : "/black-arrow.svg"
+                            ? "./public/arrows/big_arrow_45_blue.svg"
+                            : "./public/arrows/big_arrow_45_black.svg"
                     }
-                    alt="Red arrow"
+                    alt={`Arrow for ${post.category} category`}
                     className="absolute bottom-2 right-2 w-6 h-6"
                     width={1000}
                     height={1000}

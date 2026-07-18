@@ -1,7 +1,7 @@
 // components/ImageGallery.tsx
 import Image from "next/image";
 import type { ImageGalleryBlock } from "@/payload-types";
-import { ImageGalleryThree } from "./ImageGalleryThree";
+import { ImageGalleryExpand } from "./ImageGalleryExpand";
 
 type GalleryImage = ImageGalleryBlock["images"][number];
 
@@ -25,11 +25,11 @@ export const ImageGallery = ({ images }: { images: GalleryImage[] }) => {
   }
 
   if (count === 2) {
-    return <ImageGalleryThree images={images} />;
+    return <ImageGalleryExpand images={images} />;
   }
 
   if (count === 3) {
-    return <ImageGalleryThree images={images} />;
+    return <ImageGalleryExpand images={images} />;
   }
 
   // 4+ images

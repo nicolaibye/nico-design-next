@@ -6,11 +6,11 @@ import type { ImageGalleryBlock } from "@/payload-types";
 
 type GalleryImage = ImageGalleryBlock["images"][number];
 
-export const ImageGalleryThree = ({ images }: { images: GalleryImage[] }) => {
+export const ImageGalleryExpand = ({ images }: { images: GalleryImage[] }) => {
   const [active, setActive] = useState<number | undefined>(undefined);
 
   return (
-    <ul className="flex flex-col lg:flex-row lg:h-100 gap-5 w-[85%] lg:w-[75%] mx-auto my-10 lg:my-20">
+    <ul className="flex flex-col lg:flex-row lg:h-140 gap-5 w-[85%] lg:w-[75%] mx-auto my-10">
       {images.map((img, i) => {
         const alignmentClass =
           img.alignment === "top-left"

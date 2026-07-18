@@ -28,7 +28,7 @@ export const RichText = ({
         ...defaultConverters,
         // override how <p> renders, to add your Tailwind classes
         paragraph: ({ node, nodesToJSX }) => (
-          <p className="font-lexend text-lg font-light w-[85%] max-w-wide lg:w-[75%] mx-auto mb-5">
+          <p className="font-lexend text-lg font-light w-[85%] max-w-wide lg:w-[75%] mx-auto">
             {nodesToJSX({ nodes: node.children })}
           </p>
         ),
