@@ -63,7 +63,7 @@ export default async function BlogPostPage({
                 </>
               )}
             </ul>
-            <h1 className="font-lexend text-5xl leading-1">{post.title}</h1>
+            <h1 className="font-lexend text-5xl">{post.title}</h1>
             <p className="font-lexend text-xl font-regular">{post.ingress}</p>
           </div>
         </div>

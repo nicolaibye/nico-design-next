@@ -2,6 +2,7 @@
 import Image from "next/image";
 import type { ImageGalleryBlock } from "@/payload-types";
 import { ImageGalleryExpand } from "./ImageGalleryExpand";
+import { ImageGalleryMore } from "./ImageGalleryMore";
 
 type GalleryImage = ImageGalleryBlock["images"][number];
 
@@ -12,13 +13,12 @@ export const ImageGallery = ({ images }: { images: GalleryImage[] }) => {
 
   if (count === 1) {
     return (
-      <div className="w-[85%] max-w-wide lg:w-[75%] mx-auto mb-5">
+      <div className="relative w-[85%] max-w-wide h-[75vh] lg:w-[75%] mx-auto my-10">
         <Image
           src={images[0].imageUrl}
           alt={images[0].imageAlt ?? ""}
-          width={1600}
-          height={900}
-          className="w-full h-auto object-cover rounded-lg"
+          fill
+          className="object-cover rounded-lg"
         />
       </div>
     );
@@ -33,18 +33,5 @@ export const ImageGallery = ({ images }: { images: GalleryImage[] }) => {
   }
 
   // 4+ images
-  return (
-    <div className="w-[85%] max-w-wide lg:w-[75%] mx-auto mb-5 grid grid-cols-2 md:grid-cols-4 gap-4">
-      {images.map((img, i) => (
-        <Image
-          key={i}
-          src={img.imageUrl}
-          alt={img.imageAlt ?? ""}
-          width={600}
-          height={600}
-          className="w-full h-full object-cover rounded-lg"
-        />
-      ))}
-    </div>
-  );
+  return <ImageGalleryMore images={images} />;
 };

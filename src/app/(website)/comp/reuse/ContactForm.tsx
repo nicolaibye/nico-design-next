@@ -66,7 +66,6 @@ const ContactForm = () => {
 
   const onSubmit = async (data: ContactFormData) => {
     try {
-      console.log("Form Data:", data);
       setSubmitStatus({
         type: "success",
         message: "Message sent! I'll be in touch soon.",
