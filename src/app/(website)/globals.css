@@ -131,7 +131,7 @@
   --muted-foreground: oklch(0.556 0 0);
   --accent: oklch(0.97 0 0);
   --accent-foreground: oklch(0.205 0 0);
-  --destructive: oklch(0.577 0.245 27.325);
+  --destructive: #ff2850;
   --border: #191e28;
   --input: #dce1eb;
   --ring: oklch(0.708 0 0);
@@ -221,7 +221,7 @@
   input,
   textarea,
   select {
-    @apply bg-white-LinkWater p-3 rounded-sm text-black-Mirage hover:cursor-pointer hover:bg-white;
+    @apply text-white-LinkWater dark:text-black-Mirage;
   }
 
   input::placeholder,

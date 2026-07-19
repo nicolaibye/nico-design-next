@@ -1,11 +1,8 @@
 import "./globals.css";
+import Script from "next/script";
 import Nav from "./comp/nav/Nav";
 import Footer from "./comp/Footer";
-import {
-  Geist,
-  Lexend,
-  Major_Mono_Display,
-} from "next/font/google";
+import { Geist, Lexend, Major_Mono_Display } from "next/font/google";
 import { cn } from "@/lib/utils";
 import localFont from "next/font/local";
 
@@ -185,7 +182,9 @@ export default function RootLayout({
       )}
     >
       <head>
-        <script
+        <Script
+          id="theme-init"
+          strategy="beforeInteractive"
           dangerouslySetInnerHTML={{
             __html: `
             (function() {

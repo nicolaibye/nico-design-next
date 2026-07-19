@@ -14,7 +14,7 @@ const ContactSectionHome = () => {
           </span>
         </h2>
       </div>
-      <ContactForm />
+      {/* <ContactForm /> */}
     </section>
   );
 };
