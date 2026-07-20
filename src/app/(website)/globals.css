@@ -133,7 +133,7 @@
   --accent-foreground: oklch(0.205 0 0);
   --destructive: #ff2850;
   --border: #191e28;
-  --input: #dce1eb;
+  --input: #191e28;
   --ring: oklch(0.708 0 0);
   --chart-1: oklch(0.87 0 0);
   --chart-2: oklch(0.556 0 0);
@@ -221,7 +221,7 @@
   input,
   textarea,
   select {
-    @apply text-white-LinkWater dark:text-black-Mirage;
+    @apply dark:text-white-LinkWater text-black-Mirage;
   }
 
   input::placeholder,

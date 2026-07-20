@@ -113,6 +113,7 @@ export const ContactForm = ({ form }: { form: PayloadForm | undefined }) => {
   };
 
   if (status === "success") {
+    setTimeout(() => setStatus("idle"), 5000);
     return <p className="font-lexend">Thanks — I'll get back to you soon.</p>;
   }
 
@@ -140,7 +141,7 @@ export const ContactForm = ({ form }: { form: PayloadForm | undefined }) => {
                       ) : field.blockType === "select" ? (
                         <Select
                           onValueChange={rhfField.onChange}
-                          defaultValue={rhfField.value}
+                          value={rhfField.value ?? ""}
                         >
                           <SelectTrigger className="w-full">
                             <SelectValue placeholder="Select an option" />

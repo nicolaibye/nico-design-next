@@ -50,7 +50,7 @@ const AboutMeHome = () => {
             <br />
             <a
               href="/about"
-              className="py-2 px-4 inline-block rounded-lg border border-black-Mirage dark:border-white-LinkWater hover:bg-black-Mirage dark:hover:bg-white-LinkWater hover:text-white-LinkWater dark:hover:text-black-Mirage font-lexend uppercase"
+              className="py-2 px-4 inline-block rounded-lg border no-underline border-black-Mirage dark:border-white-LinkWater hover:bg-black-Mirage dark:hover:bg-white-LinkWater hover:text-white-LinkWater dark:hover:text-black-Mirage font-lexend uppercase text-black-Mirage dark:text-white-LinkWater"
             >
               Dig deeper
             </a>

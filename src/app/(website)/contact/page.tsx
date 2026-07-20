@@ -20,7 +20,7 @@ const ContactPage = async () => {
 
   return (
     <section className="flex flex-col items-center justify-center min-h-screen">
-      <div className="font-lexend max-w-wide sm:w-3/4 lg:w-1/2 text-white-LinkWater bg-black-Mirage pt-19 p-5 sm:pt-10 p-10 sm:rounded-lg">
+      <div className="font-lexend max-w-wide sm:w-3/4 lg:w-1/2 sm:pt-10">
         <h1 className="text-3xl sm:text-5xl mb-8">
           Time to not be like{" "}
           <strong className="text-red-CoralRed font-redaction-50 uppercase">
