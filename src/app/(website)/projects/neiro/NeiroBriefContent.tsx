@@ -1,24 +1,17 @@
 import AnimatedText from "@/app/(website)/comp/reuse/AnimatedText";
 import SectionDivider from "@/app/(website)/comp/reuse/SectionDivider";
-import { Lexend } from "next/font/google";
 import { wrapText } from "@/app/(website)/js/helper/wrapText";
-
-const fontLexend = Lexend({
-  subsets: ["latin"],
-  weight: ["400", "500", "600", "700"],
-  variable: "--font-lexend",
-});
 
 const NeiroBriefContent = () => {
   return (
     <section>
       <div
-        className={`flex justify-center items-center p-20 md:px-40 h-screen ${fontLexend.variable}`}
+        className={`flex justify-center items-center p-10 sm:pt-40 sm:px-40`}
       >
         <div className="block xl:hidden">
           <AnimatedText
             lines={wrapText(
-              `"...create a brand and visual identity for a new electronic dance music (EDM) festival with a Japanese theme that is aimed at young adults both in the West and East, creating an interest for both backgrounds."`,
+              `"...create a brand and visual identity for a new electronic dance music (EDM) festival with an Eastern theme that is aimed at young adults both in the West and East, creating an interest for both backgrounds."`,
               39,
             )}
             uppercase
@@ -30,7 +23,7 @@ const NeiroBriefContent = () => {
         <div className="hidden xl:block">
           <AnimatedText
             lines={wrapText(
-              `"...create a brand and visual identity for a new electronic dance music (EDM) festival with a Japanese theme that is aimed at young adults both in the West and East, creating an interest for both backgrounds."`,
+              `"...create a brand and visual identity for a new electronic dance music (EDM) festival with an Eastern theme that is aimed at young adults both in the West and East, creating an interest for both backgrounds."`,
               39,
             )}
             uppercase
@@ -41,7 +34,7 @@ const NeiroBriefContent = () => {
         </div>
       </div>
       <div
-        className={`flex flex-col justify-center items-center my-auto h-screen px-10 lg:px-40`}
+        className={`flex flex-col justify-center items-center px-10 sm:py-40 lg:px-40`}
       >
         <SectionDivider lineClass="outline-black-Mirage dark:outline-white-LinkWater">
           <h2 className="font-lexend uppercase text-xs min-w-fit tracking-widest">

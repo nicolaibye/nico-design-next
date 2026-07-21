@@ -38,8 +38,8 @@ const slides = [
 
 const About = () => {
   const [api, setApi] = React.useState<CarouselApi>();
-  const [currentSlide, setCurrentSlide] = React.useState(0);
-  const [count, setCount] = React.useState(0);
+  const [currentSlide, setCurrentSlide] = React.useState(1);
+  const count = slides.length;
   const { text: typedWord, isBlinking } = useTypewriter([
     "Colourful",
     "Creative",
@@ -53,11 +53,18 @@ const About = () => {
   React.useEffect(() => {
     if (!api) return;
 
-    setCount(api.scrollSnapList().length);
-    setCurrentSlide(api.selectedScrollSnap() + 1);
-    api.on("select", () => {
+    const updateCurrentSlide = () => {
       setCurrentSlide(api.selectedScrollSnap() + 1);
-    });
+    };
+
+    const timeoutId = window.setTimeout(updateCurrentSlide, 0);
+
+    api.on("select", updateCurrentSlide);
+
+    return () => {
+      api.off("select", updateCurrentSlide);
+      window.clearTimeout(timeoutId);
+    };
   }, [api]);
 
   return (
@@ -99,7 +106,7 @@ const About = () => {
                   className={`w-2 h-2 rounded-full ${
                     currentSlide === index + 1
                       ? "bg-red-CoralRed"
-                      : "bg-gray-400 hover:bg-gray-600 cursor-pointer"
+                      : "bg-black-Mirage/20 dark:bg-white-LinkWater/20 hover:bg-black-Mirage/60 hover:dark:bg-white-LinkWater/60 cursor-pointer"
                   }`}
                 />
               ))}
@@ -112,11 +119,11 @@ const About = () => {
           >
             <CarouselContent
               viewportClassName="p-5 sm:p-10"
-              className="-ml-5 sm:-ml-10 transition-none"
+              className="-ml-5 sm:-ml-10 transition-none!"
             >
               {slides.map((slide, index) => (
                 <CarouselItem
-                  className="pl-5 sm:pl-10 rounded font-lexend grid grid-row-[1fr_1fr] gap-5 sm:gap-10"
+                  className="pl-5 sm:pl-10 rounded font-lexend grid gap-5 sm:gap-10"
                   key={index}
                 >
                   <Image

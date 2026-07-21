@@ -1,18 +1,14 @@
 "use client";
-import { Lexend } from "next/font/google";
 import SectionDivider from "@/app/(website)/comp/reuse/SectionDivider";
 import AnimatedText from "@/app/(website)/comp/reuse/AnimatedText";
 import { wrapText } from "@/app/(website)/js/helper/wrapText";
 import SoMoMediaShowcase from "@/app/(website)/comp/projects/project_focus/outcome/SoMoMediaShowcase";
-import Image from "next/image";
-
-const fontLexend = Lexend({ subsets: ["latin"], variable: "--font-lexend" });
 
 const HolidazeChallengeContent = () => {
   return (
-    <section className={`${fontLexend.variable}`}>
+    <section>
       <div
-        className={`flex justify-center items-center p-20 md:px-40 min-h-[50vh] ${fontLexend.variable}`}
+        className={`flex justify-center items-center p-10 md:px-40 min-h-[50vh]`}
       >
         <AnimatedText
           lines={wrapText(
@@ -25,7 +21,7 @@ const HolidazeChallengeContent = () => {
         />
       </div>
       <div
-        className={`flex flex-col justify-center items-center my-auto min-h-[50vh] px-10 lg:px-40`}
+        className={`flex flex-col justify-center items-center px-10 lg:px-40`}
       >
         <SectionDivider lineClass="outline-black-Mirage dark:outline-white-LinkWater">
           <h2 className="font-lexend uppercase text-xs min-w-fit tracking-widest">
@@ -34,7 +30,7 @@ const HolidazeChallengeContent = () => {
         </SectionDivider>
         <p className="font-lexend font-light text-black-Mirage dark:text-white-LinkWater lg:px-40 mt-10">
           The biggest and most pressing challenge with this brief was the
-          targeted audience. While researching similar events, it became clear
+          target audience. While researching similar events, it became clear
           that one often lost one or the other end of it. Our target audience
           was children from the ages of 5 to 16, hitting both children who had
           barely started school, all the way to teenagers getting ready for high
@@ -55,7 +51,7 @@ const HolidazeChallengeContent = () => {
       </div>
       <SoMoMediaShowcase />
       <div
-        className={`flex flex-col justify-center items-center mt-20 md:mt-auto min-h-[50vh] px-10 lg:px-40`}
+        className={`flex flex-col justify-center items-center px-10 md:py-0 lg:px-40`}
       >
         <SectionDivider lineClass="outline-black-Mirage dark:outline-white-LinkWater">
           <h2 className="font-lexend uppercase text-xs min-w-fit tracking-widest">

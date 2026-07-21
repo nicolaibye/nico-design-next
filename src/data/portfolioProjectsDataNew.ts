@@ -19,7 +19,7 @@ export type Project = {
 export const portfolioProjectsData = [
   {
     name: "MTG Norgesmesterskap",
-    subtitle: "Logo design",
+    subtitle: "Logo Design",
     role: "Designer",
     href: "/projects/mtg_nm",
     color: "bg-mtg",
@@ -34,7 +34,7 @@ export const portfolioProjectsData = [
   },
   {
     name: "Holidaze",
-    subtitle: "Website",
+    subtitle: "Brand & Web",
     role: "Designer / Dev",
     href: "/projects/holidaze",
     color: "bg-holi",
@@ -49,7 +49,7 @@ export const portfolioProjectsData = [
   },
   {
     name: "Sabla Bra",
-    subtitle: "Brand update",
+    subtitle: "Brand Update",
     role: "Designer",
     href: "/projects/sabla_bra",
     color: "bg-sabla",
@@ -64,7 +64,7 @@ export const portfolioProjectsData = [
   },
   {
     name: "Blå Kors: Soria Moria",
-    subtitle: "Campaign visuals",
+    subtitle: "Campaign Identity",
     role: "Creative",
     href: "/projects/soria_moria",
     color: "bg-soria",
@@ -79,7 +79,7 @@ export const portfolioProjectsData = [
   },
   {
     name: "Neiro",
-    subtitle: "Identity design",
+    subtitle: "Brand Identity",
     role: "Designer",
     href: "/projects/neiro",
     color: "bg-neiro",

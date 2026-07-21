@@ -1,19 +1,12 @@
 import AnimatedText from "@/app/(website)/comp/reuse/AnimatedText";
 import SectionDivider from "@/app/(website)/comp/reuse/SectionDivider";
-import { Lexend } from "next/font/google";
 import { wrapText } from "@/app/(website)/js/helper/wrapText";
-
-const fontLexend = Lexend({
-  subsets: ["latin"],
-  weight: ["400", "500", "600", "700"],
-  variable: "--font-lexend",
-});
 
 const SablaBraBriefContent = () => {
   return (
     <section>
       <div
-        className={`flex justify-center items-center p-20 md:px-40 h-screen ${fontLexend.variable}`}
+        className={`flex justify-center items-center p-10 sm:pt-40 sm:px-40`}
       >
         <div className="block xl:hidden">
           <AnimatedText
@@ -41,7 +34,7 @@ const SablaBraBriefContent = () => {
         </div>
       </div>
       <div
-        className={`flex flex-col justify-center items-center my-auto h-screen px-10 lg:px-40`}
+        className={`flex flex-col justify-center items-center lg:h-screen px-10 sm:py-40 lg:px-40`}
       >
         <SectionDivider lineClass="outline-black-Mirage dark:outline-white-LinkWater">
           <h2 className="font-lexend uppercase text-xs min-w-fit tracking-widest">
@@ -52,8 +45,8 @@ const SablaBraBriefContent = () => {
           During my time at S & B - N, I had the pleasure of working with a
           group of creative souls on the Sabla Bra committee. Sabla Bra is a
           southern Norwegian initiative/competition where we celebrate the great
-          work created within MarCom. Everything, from TV campaigns to visual
-          identities, gets its moment to shine once a year at the awards
+          work created within market communication. Everything, from TV campaigns to visual
+          identities gets its moment to shine once a year at the awards
           ceremony. My role on the committee involved being part of the design
           team, primarily working through our communication channels. However,
           there was also an opportunity to explore the committee&apos;s
@@ -62,7 +55,7 @@ const SablaBraBriefContent = () => {
           <br />I took on the challenge of designing a visual identity that
           captures the essence of Sabla Bra. I focused on the committee&apos;s
           logo, colour palette, and supporting graphics, aiming for a cohesive
-          design language to be used for years.
+          design language to be used for years to come.
         </p>
       </div>
     </section>

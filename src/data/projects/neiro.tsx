@@ -17,7 +17,7 @@ export const neiroInfo: ProjectInfo = {
   cards: [
     {
       title: "Brief",
-      body: "A Japanese-inspired EDM festival.",
+      body: "A Eastern-inspired EDM festival.",
       content: <NeiroBriefContent />,
     },
     {

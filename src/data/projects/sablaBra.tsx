@@ -22,7 +22,7 @@ export const sablaBraInfo: ProjectInfo = {
     },
     {
       title: "Challenge",
-      body: "Fundamentals, nuance and boldness.",
+      body: "Minimalistic but bold.",
       content: <SablaBraChallengeContent />,
     },
     {

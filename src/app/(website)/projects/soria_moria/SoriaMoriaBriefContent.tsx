@@ -1,19 +1,12 @@
 import AnimatedText from "@/app/(website)/comp/reuse/AnimatedText";
 import SectionDivider from "@/app/(website)/comp/reuse/SectionDivider";
-import { Lexend } from "next/font/google";
 import { wrapText } from "@/app/(website)/js/helper/wrapText";
-
-const fontLexend = Lexend({
-  subsets: ["latin"],
-  weight: ["400", "500", "600", "700"],
-  variable: "--font-lexend",
-});
 
 const HolidazeBriefContent = () => {
   return (
     <section>
       <div
-        className={`flex justify-center items-center p-20 md:px-40 h-screen ${fontLexend.variable}`}
+        className={`flex justify-center items-center p-10 sm:pt-40 sm:px-40`}
       >
         <div className="block xl:hidden">
           <AnimatedText
@@ -41,7 +34,7 @@ const HolidazeBriefContent = () => {
         </div>
       </div>
       <div
-        className={`flex flex-col justify-center items-center my-auto h-screen px-10 lg:px-40`}
+        className={`flex flex-col justify-center items-center px-10 sm:py-40 lg:px-40`}
       >
         <SectionDivider lineClass="outline-black-Mirage dark:outline-white-LinkWater">
           <h2 className="font-lexend uppercase text-xs min-w-fit tracking-widest">
@@ -52,10 +45,10 @@ const HolidazeBriefContent = () => {
           The year was 2022, after years plagued by the pandemic and global
           unrest, many children had been deeply affected by the world
           surrounding them. Blå Kors, in light of this, wanted to create the
-          largest children&apos;s art exhibition in Norway. Through collaboration
-          between children and professional artists, they wanted to create a
-          space for expression, creativity and inclusion. Making room for
-          children to express their emotions after these trying times.
+          largest children&apos;s art exhibition in Norway. Through
+          collaboration between children and professional artists, they wanted
+          to create a space for expression, creativity and inclusion. Making
+          room for children to express their emotions after these trying times.
           <br />
           <br />
           The agency I was working at, and I was tasked with helping them with

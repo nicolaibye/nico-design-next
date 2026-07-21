@@ -20,7 +20,7 @@ export const holidazeInfo: ProjectInfo = {
   cards: [
     {
       title: "Brief",
-      body: "A SaaS host & booking platform.",
+      body: "An online host & booking platform.",
       content: <HolidazeBriefContent />,
     },
     {

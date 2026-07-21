@@ -1,18 +1,15 @@
-import { Lexend } from "next/font/google";
 import SectionDivider from "@/app/(website)/comp/reuse/SectionDivider";
 import AnimatedText from "@/app/(website)/comp/reuse/AnimatedText";
 import { wrapText } from "@/app/(website)/js/helper/wrapText";
 import InteractiveLogoProcess from "@/app/(website)/comp/reuse/InteractiveLogoProcess";
 
-const fontLexend = Lexend({ subsets: ["latin"], variable: "--font-lexend" });
-
 const MTGChallengeContent = () => {
   return (
-    <section className={`${fontLexend.variable}`}>
+    <section>
       <div
-        className={`flex justify-center items-center p-20 md:px-40 min-h-[50vh] ${fontLexend.variable}`}
+        className={`flex justify-center items-center p-20 md:px-40 min-h-[50vh]`}
       >
-        <div className="block md:hidden">
+        <div className="block sm:hidden">
           <AnimatedText
             lines={wrapText(`"...“unmistakably” Norwegian."`, 10)}
             focusLine={2}
@@ -21,7 +18,7 @@ const MTGChallengeContent = () => {
             align="left"
           />
         </div>
-        <div className="hidden md:block">
+        <div className="hidden sm:block">
           <AnimatedText
             lines={wrapText(`"...“unmistakably” Norwegian."`, 10)}
             focusLine={2}
@@ -32,7 +29,7 @@ const MTGChallengeContent = () => {
         </div>
       </div>
       <div
-        className={`flex flex-col justify-center items-center my-auto min-h-[50vh] px-10 lg:px-40`}
+        className={`flex flex-col justify-center items-center px-10 lg:px-40`}
       >
         <SectionDivider lineClass="outline-black-Mirage dark:outline-white-LinkWater">
           <h2 className="font-lexend uppercase text-xs min-w-fit tracking-widest">
@@ -48,7 +45,7 @@ const MTGChallengeContent = () => {
           <br />
           Building on this challenge, during my sketching and research, I
           explored concepts inspired by landmarks, notable buildings,
-          Norway&apos;s winter landscape, mountains, fjords, and the coat of
+          Norway&apos;s winter landscape, mountains, fjords, and coat of
           arms. However, the design came together when I chose the moose as the
           central element.
           <br />
@@ -62,17 +59,17 @@ const MTGChallengeContent = () => {
       </div>
       <InteractiveLogoProcess />
       <div
-        className={`flex flex-col justify-center items-center mt-20 md:mt-auto min-h-[50vh] px-10 lg:px-40`}
+        className={`flex flex-col justify-center items-center px-10 md:py-40 lg:px-40`}
       >
         <SectionDivider lineClass="outline-black-Mirage dark:outline-white-LinkWater">
           <h2 className="font-lexend uppercase text-xs min-w-fit tracking-widest">
             The Brand
           </h2>
         </SectionDivider>
-        <p className="font-lexend font-light text-black-Mirage dark:text-white-LinkWater lg:px-40 my-10">
+        <p className="font-lexend font-light text-black-Mirage dark:text-white-LinkWater lg:px-40 mt-10">
           As a result, the final brand mark features two intertwined antlers
-          symbolising the moose as &quot;king of the forest&quot;, with a
-          crystal at the top representing Norway&apos;s winters. The design also
+          symbolising the moose as &quot;King of the forest&quot;, with a
+          crystal at the top representing Norway&apos;s winters. The crystal also
           references the card game Magic: The Gathering and is presented atop a
           trophy base, creating a distinctive prize for the winner.
         </p>

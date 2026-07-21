@@ -35,7 +35,7 @@ const FeaturedProjects = () => {
                   </p>
                 </div>
 
-                <div className="absolute w-54 lg:w-60 lg:group-hover:w-102 -bottom-5 -right-24 lg:right-1/2 lg:translate-x-1/2 lg:bottom-[5%] rotate-[-20deg] lg:group-hover:rotate-10">
+                <div className="absolute w-54 lg:w-60 lg:group-hover:w-110 -bottom-5 -right-24 lg:right-1/2 lg:translate-x-1/2 lg:bottom-[5%] rotate-[-20deg] lg:group-hover:rotate-5">
                   <div className="relative w-full aspect-square">
                     <Image
                       src={project.image.src}

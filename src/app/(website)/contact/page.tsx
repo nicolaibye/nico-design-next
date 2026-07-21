@@ -21,12 +21,12 @@ const ContactPage = async () => {
   return (
     <section className="flex flex-col items-center justify-center min-h-screen">
       <div className="font-lexend max-w-wide sm:w-3/4 lg:w-1/2 sm:pt-10">
-        <h1 className="text-3xl sm:text-5xl mb-8">
-          Time to not be like{" "}
-          <strong className="text-red-CoralRed font-redaction-50 uppercase">
-            everyone
-          </strong>{" "}
-          else
+        <h1 className="font-lexend uppercase tracking-widest leading-9 md:leading-16 font-extralight text-[1.60rem] md:text-5xl mb-8">
+          &quot;To not be like <wbr /> <br />
+          <span className="font-redaction-50 tracking-normal text-[2.65rem] md:text-7xl text-red-CoralRed uppercase">
+            everyone{" "}
+          </span>
+          else&quot;
         </h1>
         <p className="text-lg mb-8">
           Are you ready for your next creative partner? Fill out the form below

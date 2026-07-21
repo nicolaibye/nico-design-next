@@ -1,12 +1,9 @@
 "use client";
-import { Lexend } from "next/font/google";
 import SectionDivider from "@/app/(website)/comp/reuse/SectionDivider";
 import AnimatedText from "@/app/(website)/comp/reuse/AnimatedText";
 import { wrapText } from "@/app/(website)/js/helper/wrapText";
 import { useState } from "react";
 import AccordionItem from "@/app/(website)/comp/reuse/AccordionItem";
-
-const fontLexend = Lexend({ subsets: ["latin"], variable: "--font-lexend" });
 
 const userProfiles = [
   {
@@ -82,9 +79,9 @@ const HolidazeChallengeContent = () => {
   };
 
   return (
-    <section className={`${fontLexend.variable}`}>
+    <section>
       <div
-        className={`flex justify-center items-center p-20 md:px-40 min-h-[50vh] ${fontLexend.variable}`}
+        className={`flex justify-center items-center p-10 md:px-40 min-h-[50vh]`}
       >
         <AnimatedText
           lines={wrapText(
@@ -97,7 +94,7 @@ const HolidazeChallengeContent = () => {
         />
       </div>
       <div
-        className={`flex flex-col justify-center items-center my-auto min-h-[50vh] px-10 lg:px-40`}
+        className={`flex flex-col justify-center items-center my-auto px-10 lg:px-40`}
       >
         <SectionDivider lineClass="outline-black-Mirage dark:outline-white-LinkWater">
           <h2 className="font-lexend uppercase text-xs min-w-fit tracking-widest">
@@ -110,7 +107,8 @@ const HolidazeChallengeContent = () => {
           websites, and ultimately what demographics they attracted. After
           distilling some main takeaways from this, accompanied by market
           research into hotel trends, it became clear that a tailored experience
-          would be necessary to engage a wider audience.
+          would differentiate us from the competition to engage a wider
+          audience.
           <br />
           <br />
           To better grasp the needs for different audiences, I worked out 5 user
@@ -130,7 +128,7 @@ const HolidazeChallengeContent = () => {
           booking process.
         </p>
       </div>
-      <div className="relative max-w-200 flex flex-col justify-center m-10 lg:mx-auto min-h-[75vh] rounded-lg">
+      <div className="relative max-w-200 flex flex-col justify-center m-10 lg:mx-auto md:min-h-[75vh] rounded-lg">
         {/* Profile name switcher */}
         <div className="flex flex-col md:flex-row gap-2 md:gap-4 mb-6 items-start md:items-center justify-center">
           {userProfiles.map((profile, i) => (
@@ -193,7 +191,7 @@ const HolidazeChallengeContent = () => {
         })()}
       </div>
       <div
-        className={`flex flex-col justify-center items-center mt-20 md:mt-auto min-h-[50vh] px-10 lg:px-40`}
+        className={`flex flex-col justify-center items-center px-10 md:py-40 md:pt-0 lg:px-40`}
       >
         <SectionDivider lineClass="outline-black-Mirage dark:outline-white-LinkWater">
           <h2 className="font-lexend uppercase text-xs min-w-fit tracking-widest">
@@ -201,17 +199,23 @@ const HolidazeChallengeContent = () => {
           </h2>
         </SectionDivider>
         <p className="font-lexend font-light text-black-Mirage dark:text-white-LinkWater lg:px-40 my-10">
-          My approach to branding became focused on being grounded in community
-          and sustainability. Holidazes’ brand would pride itself on the great
-          benefits of travelling and exploring the world outside of your own
-          borders. Not only evolving as individuals, but also learning the
-          importance of taking care of our world.
+          My approach to the branding became focused on being grounded in
+          community and sustainability. Holidazes&apos; brand would pride itself
+          on the great benefits of travelling and exploring the world outside of
+          your own borders. Not only evolving as individuals, but also learning
+          the importance of taking care of our world.
           <br />
           <br />
           The final brand aimed to communicate as a warm summer sunrise, the
           start of a bright and beautiful day, with endless opportunities lying
           in wait. Standing out as more than just a booking website, but a
           lifestyle of connecting.
+          <br />
+          <br />
+          This is how we would engage with our wider audience, playing on the
+          exploration to find inner peace or your next adventure. Holidaze aimed
+          to attract as many travellers as possible not discriminating but
+          bringing together all kinds of explorers.
         </p>
       </div>
     </section>
