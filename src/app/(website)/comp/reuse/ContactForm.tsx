@@ -52,6 +52,8 @@ function widthToSpan(width: number | null | undefined) {
   return width === 50 ? "col-span-2 sm:col-span-1" : "col-span-2";
 }
 
+type ContactFormField = NonNullable<PayloadForm["fields"]>[number];
+
 function FieldHeader({ label }: { label: string }) {
   const { error } = useFormField();
 
@@ -70,30 +72,38 @@ function FieldHeader({ label }: { label: string }) {
 export const ContactForm = ({ form }: { form: PayloadForm | undefined }) => {
   const [status, setStatus] = useState<"idle" | "success" | "error">("idle");
 
-  if (!form) {
-    return <p>Contact form is not available right now.</p>;
-  }
+  const fields: ContactFormField[] = form?.fields ?? [];
+  const formId = form?.id ?? "";
+  const schema = buildSchema(fields);
 
-  const schema = buildSchema(form.fields);
-
-  const rhf = useForm<Record<string, string>>({
+  const rhf = useForm<Record<string, unknown>>({
     resolver: zodResolver(schema),
-    defaultValues: Object.fromEntries(
-      (form.fields ?? []).map((f) => [
-        f.name,
-        // only select keeps its defaultValue as a real starting value —
-        // everything else starts blank, defaultValue becomes a placeholder instead
-        f.blockType === "select" && "defaultValue" in f && f.defaultValue
-          ? f.defaultValue
-          : "",
-      ]),
-    ),
+    defaultValues: {
+      ...Object.fromEntries(
+        fields.map((field) => [
+          field.name,
+          field.blockType === "select" &&
+          "defaultValue" in field &&
+          field.defaultValue
+            ? field.defaultValue
+            : "",
+        ]),
+      ),
+      _honeypot: "", // not a real Payload field — never sent to submissionData
+    },
   });
 
-  const onSubmit = async (data: Record<string, string>) => {
+  const onSubmit = async (data: Record<string, unknown>) => {
+    const { _honeypot, ...formValues } = data;
+
+    if (typeof _honeypot === "string" && _honeypot) {
+      setStatus("success"); // fake success, no error shown, no request sent
+      return;
+    }
+
     setStatus("idle");
 
-    const submissionData = Object.entries(data).map(([field, value]) => ({
+    const submissionData = Object.entries(formValues).map(([field, value]) => ({
       field,
       value,
     }));
@@ -101,7 +111,7 @@ export const ContactForm = ({ form }: { form: PayloadForm | undefined }) => {
     const res = await fetch("/api/form-submissions", {
       method: "POST",
       headers: { "Content-Type": "application/json" },
-      body: JSON.stringify({ form: form.id, submissionData }),
+      body: JSON.stringify({ form: formId, submissionData }),
     });
 
     if (res.ok) {
@@ -111,6 +121,10 @@ export const ContactForm = ({ form }: { form: PayloadForm | undefined }) => {
       setStatus("error");
     }
   };
+
+  if (!form) {
+    return <p>Contact form is not available right now.</p>;
+  }
 
   if (status === "success") {
     setTimeout(() => setStatus("idle"), 5000);
