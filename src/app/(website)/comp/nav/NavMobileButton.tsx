@@ -1,5 +1,5 @@
 "use client";
-import React, { useRef, useState } from "react";
+import React, { useRef, useState, useEffect } from "react";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { navlinks } from "../../../../data/navLinks";
@@ -11,12 +11,13 @@ import { useGSAP } from "@gsap/react";
 gsap.registerPlugin(useGSAP);
 
 const orderedLinks = [...navlinks].sort(
-  (a, b) => (a.name === "Gold" ? 1 : 0) - (b.name === "Gold" ? 0 : 1),
+  (a, b) => (a.name === "Contact" ? 1 : 0) - (b.name === "Contact" ? 0 : 1),
 );
 
 const NavMobileButton = () => {
   const pathname = usePathname();
   const navRef = useRef<HTMLUListElement>(null);
+  const navContainerRef = useRef<HTMLElement>(null);
   const [isNavOpen, setIsNavOpen] = useState(false);
 
   useGSAP(
@@ -36,10 +37,36 @@ const NavMobileButton = () => {
     { scope: navRef, dependencies: [isNavOpen] },
   );
 
+  // close on any route change, no matter what triggered it
+  useEffect(() => {
+    setIsNavOpen(false);
+  }, [pathname]);
+
+  // close on click outside the nav
+  useEffect(() => {
+    if (!isNavOpen) return;
+
+    const handleClickOutside = (e: MouseEvent) => {
+      if (
+        navContainerRef.current &&
+        !navContainerRef.current.contains(e.target as Node)
+      ) {
+        setIsNavOpen(false);
+      }
+    };
+
+    document.addEventListener("mousedown", handleClickOutside);
+    return () => document.removeEventListener("mousedown", handleClickOutside);
+  }, [isNavOpen]);
+
   const toggleNav = () => setIsNavOpen((prev) => !prev);
 
   return (
-    <nav aria-label="Mobile Navigation Bar" className="block sm:hidden">
+    <nav
+      ref={navContainerRef}
+      aria-label="Mobile Navigation Bar"
+      className="block sm:hidden"
+    >
       <ul ref={navRef} className="z-999">
         {orderedLinks.map((link) => {
           const Icon = link.icon;
@@ -50,12 +77,11 @@ const NavMobileButton = () => {
           return (
             <li
               key={link.name}
-              className={`z-999 fixed bottom-5 right-5 aspect-square ${link.image ? "" : `${link.color}`} ${isActive ? "rounded-3xl" : "rounded-lg"} transition-all opacity-0 ${isNavOpen ? "" : "pointer-events-none"} ${link.name !== "Gold" ? "shadow-md shadow-black-Mirage/30" : ""}`}
+              className={`z-999 fixed bottom-5 right-5 aspect-square ${link.image ? "" : `${link.color}`} ${isActive ? "rounded-3xl" : "rounded-lg"} transition-all opacity-0 ${isNavOpen ? "" : "pointer-events-none"} ${link.name !== "Contact" ? "shadow-md shadow-black-Mirage/30" : ""}`}
             >
               <Link
                 href={link.href}
                 className={`w-10 h-full flex flex-col items-center justify-center ${link.textColor ? link.textColor : "text-white-LinkWater"}`}
-                onClick={link.href === "/" ? toggleNav : undefined}
               >
                 {link.image ? (
                   <Image

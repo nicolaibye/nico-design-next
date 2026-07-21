@@ -1,193 +1,205 @@
+// components/ContactForm.tsx
 "use client";
 
-import { useState, useEffect } from "react";
+import { useState } from "react";
 import { useForm } from "react-hook-form";
+import { zodResolver } from "@hookform/resolvers/zod";
+import { z } from "zod";
+import {
+  Form,
+  FormField,
+  FormItem,
+  FormLabel,
+  FormControl,
+  FormMessage,
+  useFormField,
+} from "@/components/ui/form";
+import { Input } from "@/components/ui/input";
+import { Textarea } from "@/components/ui/textarea";
+import { Button } from "@/components/ui/button";
+import {
+  Select,
+  SelectTrigger,
+  SelectValue,
+  SelectContent,
+  SelectItem,
+} from "@/components/ui/select";
+import type { Form as PayloadForm } from "@/payload-types";
 
-type ContactFormData = {
-  name: string;
-  email: string;
-  budget: string;
-  timeline: string;
-  message: string;
-};
+function buildSchema(fields: PayloadForm["fields"]) {
+  const shape: Record<string, z.ZodTypeAny> = {};
 
-type SubmitStatus =
-  | { type: "success"; message: string }
-  | { type: "error"; message: string }
-  | null;
+  fields?.forEach((field) => {
+    let validator: z.ZodTypeAny = z.string();
 
-const BUDGET_OPTIONS = [
-  "Under £1,000",
-  "£1,000 - £3,000",
-  "£3,000 - £5,000",
-  "Over £5,000",
-];
+    if (field.blockType === "email") {
+      validator = z.string().email("Enter a valid email");
+    }
 
-const TIMELINE_OPTIONS = [
-  "Within 1 month",
-  "1 - 3 months",
-  "3 - 6 months",
-  "6+ months",
-];
+    if (!field.required) {
+      validator = validator.optional().or(z.literal(""));
+    } else {
+      validator = (validator as z.ZodString).min(1, "This field is required");
+    }
 
-function useTimedState<T>(duration = 4000) {
-  const [value, setValue] = useState<T | null>(null);
+    shape[field.name] = validator;
+  });
 
-  useEffect(() => {
-    if (!value) return;
-    const timer = setTimeout(() => setValue(null), duration);
-    return () => clearTimeout(timer);
-  }, [value, duration]);
-
-  return [value, setValue] as const;
+  return z.object(shape);
 }
 
-const ContactForm = () => {
-  const [submitStatus, setSubmitStatus] = useTimedState<SubmitStatus>(4000);
+function widthToSpan(width: number | null | undefined) {
+  return width === 50 ? "col-span-2 sm:col-span-1" : "col-span-2";
+}
 
-  const {
-    register,
-    handleSubmit,
-    reset,
-    clearErrors,
-    formState: { errors },
-  } = useForm<ContactFormData>({
+type ContactFormField = NonNullable<PayloadForm["fields"]>[number];
+
+function FieldHeader({ label }: { label: string }) {
+  const { error } = useFormField();
+
+  return (
+    <div className="flex items-baseline justify-between gap-2">
+      <FormLabel>{label}</FormLabel>
+      {error?.message && (
+        <span className="hidden sm:inline text-destructive text-sm text-right">
+          – {String(error.message)}
+        </span>
+      )}
+    </div>
+  );
+}
+
+export const ContactForm = ({ form }: { form: PayloadForm | undefined }) => {
+  const [status, setStatus] = useState<"idle" | "success" | "error">("idle");
+
+  const fields: ContactFormField[] = form?.fields ?? [];
+  const formId = form?.id ?? "";
+  const schema = buildSchema(fields);
+
+  const rhf = useForm<Record<string, unknown>>({
+    resolver: zodResolver(schema),
     defaultValues: {
-      budget: "",
-      timeline: "",
+      ...Object.fromEntries(
+        fields.map((field) => [
+          field.name,
+          field.blockType === "select" &&
+          "defaultValue" in field &&
+          field.defaultValue
+            ? field.defaultValue
+            : "",
+        ]),
+      ),
+      _honeypot: "", // not a real Payload field — never sent to submissionData
     },
   });
 
-  useEffect(() => {
-    if (!Object.keys(errors).length) return;
-    const timer = setTimeout(() => clearErrors(), 4000);
-    return () => clearTimeout(timer);
-  }, [errors, clearErrors]);
+  const onSubmit = async (data: Record<string, unknown>) => {
+    const { _honeypot, ...formValues } = data;
 
-  const onSubmit = async (data: ContactFormData) => {
-    try {
-      setSubmitStatus({
-        type: "success",
-        message: "Message sent! I'll be in touch soon.",
-      });
-      reset();
-    } catch {
-      setSubmitStatus({
-        type: "error",
-        message:
-          "Something went wrong, please try again. If the issue persists, feel free to email me directly at contact@nicodesign.no.",
-      });
+    if (typeof _honeypot === "string" && _honeypot) {
+      setStatus("success"); // fake success, no error shown, no request sent
+      return;
+    }
+
+    setStatus("idle");
+
+    const submissionData = Object.entries(formValues).map(([field, value]) => ({
+      field,
+      value,
+    }));
+
+    const res = await fetch("/api/form-submissions", {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({ form: formId, submissionData }),
+    });
+
+    if (res.ok) {
+      setStatus("success");
+      rhf.reset();
+    } else {
+      setStatus("error");
     }
   };
 
+  if (!form) {
+    return <p>Contact form is not available right now.</p>;
+  }
+
+  if (status === "success") {
+    setTimeout(() => setStatus("idle"), 5000);
+    return <p className="font-lexend">Thanks — I'll get back to you soon.</p>;
+  }
+
   return (
-    <form onSubmit={handleSubmit(onSubmit)} className="flex flex-col gap-4">
-      <div className="flex flex-col md:flex-row gap-4 w-full">
-        <div className="flex flex-col gap-1 w-full">
-          <input
-            {...register("name", {
-              required: "Name is required",
-              minLength: {
-                value: 3,
-                message: "Name must be at least 3 characters",
-              },
-            })}
-            type="text"
-            placeholder="Your Name"
-            className="w-full"
-          />
-          {errors.name && (
-            <p className="text-white-LinkWater text-xs font-lexend">
-              {errors.name.message}
-            </p>
-          )}
+    <Form {...rhf}>
+      <form onSubmit={rhf.handleSubmit(onSubmit)} className="space-y-6">
+        <div className="grid grid-cols-2 gap-x-4 gap-y-6">
+          {form.fields?.map((field) => {
+            const placeholder =
+              "defaultValue" in field && field.defaultValue
+                ? field.defaultValue
+                : undefined;
+
+            return (
+              <FormField
+                key={field.id ?? field.name}
+                control={rhf.control}
+                name={field.name}
+                render={({ field: rhfField }) => (
+                  <FormItem className={widthToSpan(field.width)}>
+                    <FieldHeader label={field.label} />
+                    <FormControl>
+                      {field.blockType === "textarea" ? (
+                        <Textarea placeholder={placeholder} {...rhfField} />
+                      ) : field.blockType === "select" ? (
+                        <Select
+                          onValueChange={rhfField.onChange}
+                          value={rhfField.value ?? ""}
+                        >
+                          <SelectTrigger className="w-full">
+                            <SelectValue placeholder="Select an option" />
+                          </SelectTrigger>
+                          <SelectContent>
+                            {field.options?.map((opt) => (
+                              <SelectItem
+                                key={opt.id ?? opt.value}
+                                value={opt.value}
+                              >
+                                {opt.label}
+                              </SelectItem>
+                            ))}
+                          </SelectContent>
+                        </Select>
+                      ) : (
+                        <Input
+                          type={field.blockType === "email" ? "email" : "text"}
+                          placeholder={placeholder}
+                          {...rhfField}
+                        />
+                      )}
+                    </FormControl>
+                    <FormMessage className="sm:hidden" />
+                  </FormItem>
+                )}
+              />
+            );
+          })}
         </div>
-        <div className="flex flex-col gap-1 w-full">
-          <input
-            {...register("email", {
-              required: "Email is required",
-              pattern: {
-                value: /^[^\s@]+@[^\s@]+\.[^\s@]+$/,
-                message: "Enter a valid email",
-              },
-            })}
-            type="email"
-            placeholder="Your Email"
-            className="w-full"
-          />
-          {errors.email && (
-            <p className="text-white-LinkWater text-xs font-lexend">
-              {errors.email.message}
-            </p>
-          )}
-        </div>
-      </div>
-      <div className="flex flex-col md:flex-row gap-4 w-full">
-        <div className="flex flex-col gap-1 w-full">
-          <select
-            {...register("budget", {
-              required: "Please select a budget range",
-              validate: (v) => v !== "" || "Please select a budget range",
-            })}
-            className="w-full"
-          >
-            <option value="">Est. Budget (GBP)</option>
-            {BUDGET_OPTIONS.map((option) => (
-              <option key={option} value={option}>
-                {option}
-              </option>
-            ))}
-          </select>
-          {errors.budget && (
-            <p className="text-white-LinkWater text-xs font-lexend">
-              {errors.budget.message}
-            </p>
-          )}
-        </div>
-        <div className="flex flex-col gap-1 w-full">
-          <select
-            {...register("timeline", {
-              required: "Please select a timeline",
-              validate: (v) => v !== "" || "Please select a timeline",
-            })}
-            className="w-full"
-          >
-            <option value="">Est. Timeline</option>
-            {TIMELINE_OPTIONS.map((option) => (
-              <option key={option} value={option}>
-                {option}
-              </option>
-            ))}
-          </select>
-          {errors.timeline && (
-            <p className="text-white-LinkWater text-xs font-lexend">
-              {errors.timeline.message}
-            </p>
-          )}
-        </div>
-      </div>
-      <textarea
-        {...register("message")}
-        placeholder="Your Project Details"
-        rows={5}
-        className="w-full"
-      />
-      <div className="flex flex-col gap-1 w-full">
-        <button
-          type="submit"
-          className="cursor-pointer py-2 px-4 inline-block rounded-lg border border-white-LinkWater hover:bg-white-LinkWater hover:text-black-Mirage font-lexend uppercase"
-        >
-          Send Message
-        </button>
-        {submitStatus && (
-          <p
-            className={`text-xs font-lexend ${submitStatus.type === "success" ? "text-green-500" : "text-white-LinkWater"}`}
-          >
-            {submitStatus.message}
+
+        <Button type="submit" disabled={rhf.formState.isSubmitting}>
+          {rhf.formState.isSubmitting
+            ? "Sending..."
+            : form.submitButtonLabel || "Submit"}
+        </Button>
+
+        {status === "error" && (
+          <p className="text-red-CoralRed text-sm">
+            Something went wrong — please try again.
           </p>
         )}
-      </div>
-    </form>
+      </form>
+    </Form>
   );
 };
 

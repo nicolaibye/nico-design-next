@@ -27,11 +27,11 @@ export default async function BlogPostPage({
       <section>
         <div>
           <Image
-            src="https://res.cloudinary.com/dg0c4lry9/image/upload/t_blog_header/mirror_gang_b6k9ec"
-            alt="The gang in the mirror in Japan"
+            src={post.coverImageUrl}
+            alt={post.coverImageAlt || post.title}
             className="w-full h-[50vh] object-cover"
-            width={1000}
-            height={1000}
+            width={2000}
+            height={2000}
           />
           <div className="flex flex-col w-[85%] max-w-wide lg:w-[75%] mx-auto pt-6 md:pt-10 gap-5 sm:gap-10 mb-5">
             <ul className="grid grid-cols-2 gap-5 sm:flex flex-row justify-between w-full text-sm font-lexend font-light">
@@ -50,20 +50,29 @@ export default async function BlogPostPage({
               {post.stats && post.stats.length > 0 && (
                 <>
                   {post.stats.map(
-                    (stat: { title: string; text: string }, index: string) => (
+                    (
+                      stat: {
+                        title: string;
+                        text?: string | null;
+                        id?: string | null;
+                      },
+                      index: number,
+                    ) => (
                       <li key={index}>
                         <strong className="uppercase font-medium">
                           {stat.title}
                         </strong>
                         <br />
-                        {stat.text}
+                        {stat.text ?? ""}
                       </li>
                     ),
                   )}
                 </>
               )}
             </ul>
-            <h1 className="font-lexend font-semibold text-4xl sm:text-5xl">{post.title}</h1>
+            <h1 className="font-lexend font-semibold text-4xl sm:text-5xl">
+              {post.title}
+            </h1>
             <p className="font-lexend text-xl font-regular">{post.ingress}</p>
           </div>
         </div>

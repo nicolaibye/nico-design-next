@@ -21,6 +21,15 @@ const Blog = async () => {
     career: blueArrow,
     other: blackArrow,
   };
+
+  console.log("posts", posts);
+
+  const postsByDate = posts.sort((a, b) => {
+    const dateA = new Date(a.publishedDate ?? 0);
+    const dateB = new Date(b.publishedDate ?? 0);
+    return dateB.getTime() - dateA.getTime();
+  });
+
   return (
     <>
       <section>
@@ -51,13 +60,13 @@ const Blog = async () => {
           </div>
         </div>
       </section>
-      <section className="min-h-[50vh] flex my-10">
-        <ul className="flex flex-wrap justify-center items-center gap-6 max-w-[calc(100%-40px)] md:max-w-[80%] mx-auto mb-5 mt-5 md:mt-10 dark:text-black-Mirage">
-          {posts.map((post) => (
+      <section className="min-h-[50vh] items-center flex my-10">
+        <ul className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 max-w-[calc(100%-40px)] md:max-w-[80%] h-fit mx-auto mb-5 dark:text-black-Mirage">
+          {postsByDate.map((post) => (
             <li key={post.id} className="w-full sm:w-auto">
               <Link
                 href={`/blog/${post.slug}`}
-                className="flex flex-row items-center w-full sm:w-85 h-35 rounded-2xl bg-white overflow-hidden relative drop-shadow-[0_8px_12px_rgba(0,0,0,0.14)] lg:hover:scale-105"
+                className="flex flex-row items-center w-full sm:w-85 h-35 rounded-2xl bg-white overflow-hidden relative drop-shadow-[0_4px_6px_rgba(0,0,0,0.14)] lg:hover:scale-105"
               >
                 <Image
                   src={post.cardImageUrl}

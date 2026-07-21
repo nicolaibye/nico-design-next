@@ -6,7 +6,7 @@ import { navlinks } from "../../../../data/navLinks";
 import Image from "next/image";
 
 const orderedLinks = [...navlinks].sort(
-  (a, b) => (a.name === "Gold" ? 1 : 0) - (b.name === "Gold" ? 1 : 0),
+  (a, b) => (a.name === "Contact" ? 1 : 0) - (b.name === "Contact" ? 1 : 0),
 );
 
 const NavDesktopBar = () => {
@@ -27,12 +27,16 @@ const NavDesktopBar = () => {
           return (
             <li key={link.name}>
               {link.image ? (
-                <Link href={link.href}>
+                <Link
+                  href={link.href}
+                  className={`${link.hoverDistance} flex items-center gap-2 w-fit font-lexend ${link.textColor ? link.textColor : "text-white-LinkWater"} uppercase font-normal text-sm tracking-wider`}
+                >
                   <Image
                     src={link.image}
                     alt={`${link.name} icon`}
                     className="h-10 w-10 p-1"
                   />
+                  <span>{link.name}</span>
                 </Link>
               ) : (
                 <Link

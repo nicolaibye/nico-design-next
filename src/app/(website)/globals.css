@@ -11,6 +11,7 @@
   --color-blue-NileBlue: #283750;
   --color-black-Mirage: #191e28;
   --color-yellow-GoldSand: #f9d77e;
+  --color-yellow-DarkGold: #d38913;
   --color-neiro: #ff0068;
   --color-soria: #0077ff;
   --color-boen: #ff8103;
@@ -130,9 +131,9 @@
   --muted-foreground: oklch(0.556 0 0);
   --accent: oklch(0.97 0 0);
   --accent-foreground: oklch(0.205 0 0);
-  --destructive: oklch(0.577 0.245 27.325);
+  --destructive: #ff2850;
   --border: #191e28;
-  --input: #dce1eb;
+  --input: #191e28;
   --ring: oklch(0.708 0 0);
   --chart-1: oklch(0.87 0 0);
   --chart-2: oklch(0.556 0 0);
@@ -220,7 +221,7 @@
   input,
   textarea,
   select {
-    @apply bg-white-LinkWater p-3 rounded-sm text-black-Mirage hover:cursor-pointer hover:bg-white;
+    @apply dark:text-white-LinkWater text-black-Mirage;
   }
 
   input::placeholder,

@@ -1,20 +1,34 @@
+import { getPayload } from "payload";
+import config from "@payload-config";
 import ContactForm from "../../reuse/ContactForm";
 
-const ContactSectionHome = () => {
+const ContactSectionHome = async () => {
+  const payload = await getPayload({ config });
+
+  const { docs } = await payload.find({
+    collection: "forms",
+    where: { title: { equals: "Time to not be like everyone else!" } }, // match whatever you name it in /admin
+    limit: 1,
+  });
+
+  const form = docs[0];
+
+  if (!form) {
+    return <p>Contact form not found — create one in /admin first.</p>;
+  }
   return (
     <section
-      id="contact"
-      className={`bg-blue-NileBlue w-[calc(100%-4rem)] lg:max-w-5xl mx-auto p-5 sm:p-10 md:p-20 my-10 md:my-14 lg:my-24 grid grid-cols-1 lg:grid-cols-2 gap-5 md:gap-10 justify-between rounded-lg text-white-LinkWater font-lexend`}
+      className={`border border-black-Mirage w-[calc(100%-4rem)] lg:max-w-5xl mx-auto p-5 sm:p-10 md:p-20 my-10 md:my-14 lg:my-24 grid grid-cols-1  gap-5 md:gap-10 rounded-lg`}
     >
       <div>
-        <h2 className="font-lexend uppercase tracking-widest leading-9 text-center lg:text-left md:leading-none font-extralight text-[1.60rem] md:text-5xl">
+        <h2 className="font-lexend uppercase tracking-widest leading-9 text-center md:leading-none font-extralight text-[1.60rem] md:text-5xl">
           Lets make <br /> your brand <br />
           <span className="font-redaction-50 tracking-normal text-[2.65rem] md:text-6xl text-red-CoralRed uppercase">
             stand out <br />
           </span>
         </h2>
       </div>
-      <ContactForm />
+      <ContactForm form={form} />
     </section>
   );
 };
