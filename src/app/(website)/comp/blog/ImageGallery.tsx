@@ -18,6 +18,7 @@ export const ImageGallery = ({ images }: { images: GalleryImage[] }) => {
           src={images[0].imageUrl}
           alt={images[0].imageAlt ?? ""}
           fill
+          sizes="(min-width: 1024px) 75vw, 85vw"
           className="object-cover rounded-lg"
         />
       </div>

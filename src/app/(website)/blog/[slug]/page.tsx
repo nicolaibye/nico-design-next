@@ -33,6 +33,7 @@ export default async function BlogPostPage({
             className="w-full h-[50vh] object-cover"
             width={2000}
             height={2000}
+            loading="eager"
           />
           <div className="flex flex-col w-[85%] max-w-wide lg:w-[75%] mx-auto pt-6 md:pt-10 gap-5 sm:gap-10 mb-5">
             <ul className="grid grid-cols-2 gap-5 sm:flex flex-row justify-between w-full text-sm font-lexend font-light">
