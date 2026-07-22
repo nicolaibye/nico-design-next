@@ -1,5 +1,4 @@
 "use client";
-import { Lexend } from "next/font/google";
 import SectionDivider from "@/app/(website)/comp/reuse/SectionDivider";
 import AnimatedText from "@/app/(website)/comp/reuse/AnimatedText";
 import { wrapText } from "@/app/(website)/js/helper/wrapText";
@@ -7,25 +6,23 @@ import { useDraggable } from "@/app/(website)/hook/useDraggable";
 import DraggableItem from "@/app/(website)/comp/reuse/DraggableItem";
 import Image from "next/image";
 
-const fontLexend = Lexend({ subsets: ["latin"], variable: "--font-lexend" });
-
 const sketches = [
   {
     src: "https://res.cloudinary.com/dg0c4lry9/image/upload/v1777300910/3d_draggable_cube_2_wodqcc.png",
     alt: "3d cube",
-    width: "w-60",
+    width: "w-40 sm:w-60",
     position: "top-3/4 left-2/5 -translate-x-1/2 -translate-y-1/2",
   },
   {
     src: "https://res.cloudinary.com/dg0c4lry9/image/upload/v1777300911/3d_draggable_sphere_i4ub4i.png",
     alt: "3d sphere",
-    width: "w-56",
+    width: "w-36 sm:w-56",
     position: "top-1/2 left-3/4 -translate-x-1/2 -translate-y-1/2",
   },
   {
     src: "https://res.cloudinary.com/dg0c4lry9/image/upload/v1777300911/3d_draggable_triangle_2_ixbcff.png",
     alt: "3d triangle",
-    width: "w-62",
+    width: "w-42 sm:w-62",
     position: "top-1/3 left-1/4 -translate-x-1/2 -translate-y-1/2",
   },
 ];
@@ -34,9 +31,9 @@ const SablaBraChallengeContent = () => {
   useDraggable("sketches");
 
   return (
-    <section className={`${fontLexend.variable}`}>
+    <section>
       <div
-        className={`flex justify-center items-center p-20 md:px-40 min-h-[50vh] ${fontLexend.variable}`}
+        className={`flex justify-center items-center p-10 md:px-40 min-h-[50vh]`}
       >
         <AnimatedText
           lines={wrapText(
@@ -51,7 +48,7 @@ const SablaBraChallengeContent = () => {
         />
       </div>
       <div
-        className={`flex flex-col justify-center items-center my-auto min-h-[50vh] px-10 lg:px-40`}
+        className={`flex flex-col justify-center items-center px-10 lg:px-40`}
       >
         <SectionDivider lineClass="outline-black-Mirage dark:outline-white-LinkWater">
           <h2 className="font-lexend uppercase text-xs min-w-fit tracking-widest">
@@ -71,11 +68,10 @@ const SablaBraChallengeContent = () => {
           <br />
           <br />
           Each element takes shape as part of the greater visual identity.
-          Instead of a single main logo lockup, the identity features three,
-          each with its own distinct basic shape. Much creativity can emerge
-          from three simple shapes: triangles, squares, and circles. This pays
-          homage to the fundamentals all creatives start with for their future
-          work.
+          Instead of a single main logo, the identity features three, each with
+          its own distinct basic shape. Much creativity can emerge from three
+          simple shapes: triangles, squares, and circles. This pays homage to
+          the fundamentals all creatives start with for their future work.
         </p>
       </div>
       <div
@@ -102,24 +98,23 @@ const SablaBraChallengeContent = () => {
         <p className="font-lexend font-light text-black-Mirage dark:text-white-LinkWater lg:px-40 my-10">
           Building on this, I developed a colour palette meant to be jarring. I
           chose a sharp, neon-based palette to allude to the endless Post-it
-          Notes used in brainstorming, and to stand out with a strong, loud
-          visual identity. It serves as a calling card for creatives, saying “we
-          are here and proud” to be colourful and “extra.”
+          Notes used in brainstorming, and to stand out with a strong, loud but
+          visually clear identity.
           <br />
           <br />
           Finally, the concept of seeing things through a different lens, or
           looking through the looking glass, if you will. As creatives, we are
-          constantly challenged to communicate with many people we have never
-          met, and to ensure we can, we have to adapt, twist, and adjust our
+          constantly challenged to communicate with audiences we have never met,
+          and to ensure we can, we have to adapt, twist, and adjust our
           communication in ways that have never been seen or heard of before. To
-          create truly uniqe experiencess that stay with people. This is where
-          the supporting graphics of 3D glass form came into play, as a nod to
-          the lens through which we develop our concepts and ideas.
+          create truly unique experiencess that stay with people. This is where
+          the supporting graphics of 3D glass came into play, as a nod to the
+          lens through which we develop our concepts and ideas.
           <br />
           <br />
           The visual identity was used throughout our communication for Sabla
           Bra 2023 and received general excitement and vocal approval from
-          several local creatives.
+          several leading local creatives.
         </p>
       </div>
     </section>

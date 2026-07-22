@@ -1,13 +1,10 @@
 "use client";
-import { Lexend } from "next/font/google";
 import SectionDivider from "@/app/(website)/comp/reuse/SectionDivider";
 import AnimatedText from "@/app/(website)/comp/reuse/AnimatedText";
 import { wrapText } from "@/app/(website)/js/helper/wrapText";
 import { useDraggable } from "@/app/(website)/hook/useDraggable";
 import DraggableItem from "@/app/(website)/comp/reuse/DraggableItem";
 import Image from "next/image";
-
-const fontLexend = Lexend({ subsets: ["latin"], variable: "--font-lexend" });
 
 const sketches = [
   {
@@ -46,9 +43,9 @@ const NeiroChallengeContent = () => {
   useDraggable("sketches");
 
   return (
-    <section className={`${fontLexend.variable}`}>
+    <section>
       <div
-        className={`flex justify-center items-center p-20 md:px-40 min-h-[50vh] ${fontLexend.variable}`}
+        className={`flex justify-center items-center p-10 md:px-40 min-h-[50vh]`}
       >
         <AnimatedText
           lines={wrapText(
@@ -60,7 +57,7 @@ const NeiroChallengeContent = () => {
         />
       </div>
       <div
-        className={`flex flex-col justify-center items-center my-auto min-h-[50vh] px-10 lg:px-40`}
+        className={`flex flex-col justify-center items-center px-10 lg:px-40`}
       >
         <SectionDivider lineClass="outline-black-Mirage dark:outline-white-LinkWater">
           <h2 className="font-lexend uppercase text-xs min-w-fit tracking-widest">
@@ -95,7 +92,7 @@ const NeiroChallengeContent = () => {
         ))}
       </div>
       <div
-        className={`flex flex-col justify-center items-center mt-10 md:mt-auto min-h-[50vh] px-10 lg:px-40`}
+        className={`flex flex-col justify-center items-center px-10 md:py-0 lg:px-40`}
       >
         <SectionDivider lineClass="outline-black-Mirage dark:outline-white-LinkWater">
           <h2 className="font-lexend uppercase text-xs min-w-fit tracking-widest">
@@ -107,11 +104,12 @@ const NeiroChallengeContent = () => {
           methods throughout the years. Shortly summarised, traditional
           orientalism is the depiction of temples, ninjas, geisha, kimono, etc.,
           fetishising the “exotic” East. Techno-orientalism is the depiction of
-          the Japanese people as soulless machines working under an authority
+          the eastern people as soulless machines working under an authority
           with no real emotions. Lastly, wacky-orientalism covers the modern
           form of orientalist thinking seen in memes like “because Japan” and
-          “WTF Japan”, depicting them as weird people we don’t associate with. I
-          would argue that we are moving into a new wave of orientalism.
+          “WTF Japan”, depicting them as weird people we don&apos;t associate with.
+          Past these, I would even argue that we are moving into a new wave of
+          orientalism.
           <br />
           <br />
           In recent years, post the pandemic, this alienation has started to

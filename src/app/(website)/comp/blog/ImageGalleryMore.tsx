@@ -66,6 +66,7 @@ export const ImageGalleryMore = ({ images }: { images: GalleryImage[] }) => {
                     src={img.imageUrl}
                     alt={img.imageAlt ?? ""}
                     fill
+                    sizes="(min-width: 1024px) 75vw, (min-width: 640px) 50vw, 100vw"
                     className="object-cover rounded-lg"
                   />
                 </div>
@@ -111,6 +112,7 @@ export const ImageGalleryMore = ({ images }: { images: GalleryImage[] }) => {
               src={activeImage.imageUrl}
               alt={activeImage.imageAlt ?? ""}
               fill
+              sizes="(min-width: 1024px) 75vw, (min-width: 640px) 50vw, 100vw"
               className="object-contain"
             />
           </div>

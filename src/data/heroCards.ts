@@ -27,7 +27,7 @@ export const heroCards: HeroCard[] = [
   {
     id: "project-card",
     title: "Projects",
-    year: "2015-2026",
+    year: "2020-2026",
     subtitle: "Creative thinker",
     color: "bg-green-RiverBed",
     outlineColor: "outline-green-RiverBed",

@@ -3,6 +3,7 @@ import { getPayload } from "payload";
 import config from "@payload-config";
 import Image from "next/image";
 import { RichText } from "@/app/(website)/comp/blog/RichText";
+import BlogPostNav from "../../comp/blog/BlogPostNav";
 
 export default async function BlogPostPage({
   params,
@@ -32,6 +33,7 @@ export default async function BlogPostPage({
             className="w-full h-[50vh] object-cover"
             width={2000}
             height={2000}
+            loading="eager"
           />
           <div className="flex flex-col w-[85%] max-w-wide lg:w-[75%] mx-auto pt-6 md:pt-10 gap-5 sm:gap-10 mb-5">
             <ul className="grid grid-cols-2 gap-5 sm:flex flex-row justify-between w-full text-sm font-lexend font-light">
@@ -41,7 +43,7 @@ export default async function BlogPostPage({
                 {post.category}
               </li>
               <li>
-                <strong className="uppercase font-medium">Period</strong>
+                <strong className="uppercase font-medium">Published</strong>
                 <br />
                 {post.publishedDate
                   ? new Date(post.publishedDate).getFullYear()
@@ -80,6 +82,7 @@ export default async function BlogPostPage({
       <section>
         <RichText data={post.content} />
       </section>
+      <BlogPostNav slug={post.slug} />
     </>
   );
 }

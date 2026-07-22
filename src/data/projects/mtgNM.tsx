@@ -10,7 +10,7 @@ export const mtgInfo: ProjectInfo = {
     { label: "Role", value: "Designer" },
     {
       label: "Tools",
-      value: "Affinity Vector",
+      value: "Affinity, Cavalry",
     },
     {
       label: "Services",
@@ -25,12 +25,12 @@ export const mtgInfo: ProjectInfo = {
     },
     {
       title: "Challenge",
-      body: "Represent the tournament and Norway.",
+      body: `"King of the forest" concept.`,
       content: <MTGChallengeContent />,
     },
     {
       title: "Outcome",
-      body: "Logo design and brand styleguide.",
+      body: "Logo suite and applications.",
       content: <MTGOutcomeContent />,
     },
   ],

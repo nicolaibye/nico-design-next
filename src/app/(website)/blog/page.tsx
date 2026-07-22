@@ -1,12 +1,7 @@
-import Link from "next/link";
 import InfiniteScrollBackground from "@/app/(website)/comp/blog/InfiniteScrollBackground";
 import { getPayload } from "payload";
 import config from "../../../../payload.config";
-import Image from "next/image";
-import redArrow from "@/public/arrows/big_arrow_45_red.svg";
-import greenArrow from "@/public/arrows/big_arrow_45_green.svg";
-import blueArrow from "@/public/arrows/big_arrow_45_blue.svg";
-import blackArrow from "@/public/arrows/big_arrow_45_black.svg";
+import { BlogCard } from "../comp/blog/BlogCard";
 
 const Blog = async () => {
   const payload = await getPayload({ config });
@@ -14,15 +9,6 @@ const Blog = async () => {
     collection: "posts",
     where: { status: { equals: "published" } },
   });
-
-  const categoryArrows: Record<string, typeof redArrow> = {
-    design: redArrow,
-    lifestyle: greenArrow,
-    career: blueArrow,
-    other: blackArrow,
-  };
-
-  console.log("posts", posts);
 
   const postsByDate = posts.sort((a, b) => {
     const dateA = new Date(a.publishedDate ?? 0);
@@ -63,33 +49,7 @@ const Blog = async () => {
       <section className="min-h-[50vh] items-center flex my-10">
         <ul className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 max-w-[calc(100%-40px)] md:max-w-[80%] h-fit mx-auto mb-5 dark:text-black-Mirage">
           {postsByDate.map((post) => (
-            <li key={post.id} className="w-full sm:w-auto">
-              <Link
-                href={`/blog/${post.slug}`}
-                className="flex flex-row items-center w-full sm:w-85 h-35 rounded-2xl bg-white overflow-hidden relative drop-shadow-[0_4px_6px_rgba(0,0,0,0.14)] lg:hover:scale-105"
-              >
-                <Image
-                  src={post.cardImageUrl}
-                  alt={post.cardImageAlt || "Cover image"}
-                  className="w-35 h-35 object-cover object-bottom"
-                  width={1000}
-                  height={1000}
-                />
-                <div className="flex flex-col justify-start h-full p-5">
-                  <h2 className="font-lexend font-regular leading-[1.2] text-base">
-                    {post.cardTitle}
-                  </h2>
-                  <p className="font-lexend font-light text-base capitalize">
-                    {post.category}
-                  </p>
-                  <Image
-                    src={categoryArrows[post.category] ?? blackArrow}
-                    alt={`Arrow for ${post.category} category`}
-                    className="absolute bottom-2 right-2 w-6 h-6"
-                  />
-                </div>
-              </Link>
-            </li>
+            <BlogCard key={post.id} post={post} />
           ))}
         </ul>
       </section>

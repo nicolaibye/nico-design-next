@@ -258,7 +258,7 @@ export default function LogoShowcase() {
   const exploreItems = logoStart.slice(1);
 
   return (
-    <section className="flex min-h-screen items-center justify-center">
+    <section className="flex py-20 items-center justify-center">
       <div className="w-full">
         {/* Hero */}
         <div className="relative flex justify-center items-center">

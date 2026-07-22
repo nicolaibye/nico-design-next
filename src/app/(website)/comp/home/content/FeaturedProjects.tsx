@@ -5,7 +5,7 @@ import { ArrowUpRightIcon } from "@phosphor-icons/react/dist/ssr";
 
 const FeaturedProjects = () => {
   return (
-    <section className={`min-h-screen my-auto flex flex-col`}>
+    <section className={`lg:min-h-screen my-auto flex flex-col`}>
       <div className="w-full flex justify-center">
         <h2 className="font-lexend font-light uppercase text-3xl tracking-[0.3em] my-16 text-center">
           Featured Projects
@@ -35,7 +35,7 @@ const FeaturedProjects = () => {
                   </p>
                 </div>
 
-                <div className="absolute w-54 lg:w-60 lg:group-hover:w-102 -bottom-5 -right-24 lg:right-1/2 lg:translate-x-1/2 lg:bottom-[5%] rotate-[-20deg] lg:group-hover:rotate-10">
+                <div className="absolute w-54 lg:w-60 lg:group-hover:w-110 -bottom-5 -right-24 lg:right-1/2 lg:translate-x-1/2 lg:bottom-[5%] rotate-[-20deg] lg:group-hover:rotate-5">
                   <div className="relative w-full aspect-square">
                     <Image
                       src={project.image.src}

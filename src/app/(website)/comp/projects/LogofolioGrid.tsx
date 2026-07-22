@@ -4,7 +4,7 @@ import Image from "next/image";
 
 const LogofolioGrid = () => {
   return (
-    <div className="h-full px-20">
+    <div className="h-full px-20 pb-20">
       <h1 className="visually-hidden">Logofolio Grid</h1>
       <ul className="flex flex-row flex-wrap items-center justify-center gap-30">
         {logos.map((logo) => (

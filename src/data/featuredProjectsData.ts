@@ -2,19 +2,6 @@
 
 export const featuredProjects = [
   {
-    name: "Neiro",
-    subtitle: "Identity design",
-    href: "/projects/neiro/",
-    color: "bg-neiro",
-    image: {
-      src: "https://res.cloudinary.com/dg0c4lry9/image/upload/v1774357425/Neiro_festival_snapback_jr5yy3.png",
-      alt: "Neiro Festival Snapback",
-    },
-    border: "border border-x-0 border-black-Mirage dark:border-white-LinkWater",
-    borderGradient:
-      "xl:[border-image:linear-gradient(to_right,#DCE1EB,#191E28)_1] xl:dark:[border-image:linear-gradient(to_right,#191E28,#DCE1EB)_1]",
-  },
-  {
     name: "Sabla Bra",
     subtitle: "Brand update",
     href: "/projects/sabla_bra/",
@@ -23,9 +10,9 @@ export const featuredProjects = [
       src: "https://res.cloudinary.com/dg0c4lry9/image/upload/a_50/v1755182360/sb_home_page_mgcbk9.png",
       alt: "Sabla Bra phone mockup",
     },
-    border:
-      "border border-x-0 border-t-0 lg:border-t-[1px] lg:border-l-[1px] border-black-Mirage dark:border-white-LinkWater",
-    borderGradient: "",
+    border: "border border-x-0 border-black-Mirage dark:border-white-LinkWater",
+    borderGradient:
+      "xl:[border-image:linear-gradient(to_right,#DCE1EB,#191E28)_1] xl:dark:[border-image:linear-gradient(to_right,#191E28,#DCE1EB)_1]",
   },
   {
     name: "Holidaze",
@@ -33,7 +20,7 @@ export const featuredProjects = [
     href: "/projects/holidaze/",
     color: "bg-holi",
     image: {
-      src: "https://res.cloudinary.com/dg0c4lry9/image/upload/t_blog_header/holi_home_mockup_w0hsvf.png",
+      src: "https://res.cloudinary.com/dg0c4lry9/image/upload/v1784658497/holi_home_mockup_w0hsvf.png",
       alt: "Holidaze website mockup",
     },
     border:
