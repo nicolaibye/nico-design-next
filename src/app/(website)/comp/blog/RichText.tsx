@@ -4,7 +4,6 @@ import type {
   DefaultNodeTypes,
   SerializedBlockNode,
 } from "@payloadcms/richtext-lexical";
-import Image from "next/image";
 import { ImageGallery } from "./ImageGallery";
 
 type ImageGalleryBlock = {
@@ -16,19 +15,24 @@ type ImageGalleryBlock = {
 
 type NodeTypes = DefaultNodeTypes | SerializedBlockNode<ImageGalleryBlock>;
 
-export const RichText = ({
-  data,
-}: {
+type RichTextProps = {
   data: Parameters<typeof RichTextConverter>[0]["data"];
-}) => {
+  className?: string;
+};
+
+export const RichText = ({ data, className }: RichTextProps) => {
   return (
     <RichTextConverter<NodeTypes>
       data={data}
       converters={({ defaultConverters }) => ({
         ...defaultConverters,
-        // override how <p> renders, to add your Tailwind classes
         paragraph: ({ node, nodesToJSX }) => (
-          <p className="font-lexend text-lg font-light w-[85%] max-w-wide lg:w-[75%] mx-auto">
+          <p
+            className={
+              className ??
+              "font-lexend text-lg font-light w-[85%] max-w-wide lg:w-[75%] mx-auto"
+            }
+          >
             {nodesToJSX({ nodes: node.children })}
           </p>
         ),

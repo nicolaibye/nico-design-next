@@ -38,9 +38,10 @@ const NavMobileButton = () => {
   );
 
   // close on any route change, no matter what triggered it
-  useEffect(() => {
-    setIsNavOpen(false);
-  }, [pathname]);
+
+  // useEffect(() => {
+  //   setIsNavOpen(false);
+  // }, [pathname]);
 
   // close on click outside the nav
   useEffect(() => {
@@ -81,6 +82,7 @@ const NavMobileButton = () => {
             >
               <Link
                 href={link.href}
+                onClick={() => setIsNavOpen(false)}
                 className={`w-10 h-full flex flex-col items-center justify-center ${link.textColor ? link.textColor : "text-white-LinkWater"}`}
               >
                 {link.image ? (
@@ -90,9 +92,7 @@ const NavMobileButton = () => {
                     loading="eager"
                   />
                 ) : (
-                  <>
-                    <Icon size={22} weight="bold" />
-                  </>
+                  <>{Icon && <Icon size={22} weight="bold" />}</>
                 )}
               </Link>
             </li>

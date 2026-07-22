@@ -1,4 +1,3 @@
-// components/ContactForm.tsx
 "use client";
 
 import { useState } from "react";
@@ -24,12 +23,21 @@ import {
   SelectContent,
   SelectItem,
 } from "@/components/ui/select";
-import type { Form as PayloadForm } from "@/payload-types";
+import { RichText } from "@/app/(website)/comp/blog/RichText";
+import type { Form as PayloadForm } from "@/types/payload-types.ts";
+import type { Resolver } from "react-hook-form";
 
-function buildSchema(fields: PayloadForm["fields"]) {
+type FormFieldBlock = NonNullable<PayloadForm["fields"]>[number];
+type InputFieldBlock = Exclude<FormFieldBlock, { blockType: "message" }>;
+
+function isInputField(field: FormFieldBlock): field is InputFieldBlock {
+  return field.blockType !== "message";
+}
+
+function buildSchema(fields: InputFieldBlock[]) {
   const shape: Record<string, z.ZodTypeAny> = {};
 
-  fields?.forEach((field) => {
+  fields.forEach((field) => {
     let validator: z.ZodTypeAny = z.string();
 
     if (field.blockType === "email") {
@@ -45,14 +53,14 @@ function buildSchema(fields: PayloadForm["fields"]) {
     shape[field.name] = validator;
   });
 
+  shape._honeypot = z.string().optional();
+
   return z.object(shape);
 }
 
 function widthToSpan(width: number | null | undefined) {
   return width === 50 ? "col-span-2 sm:col-span-1" : "col-span-2";
 }
-
-type ContactFormField = NonNullable<PayloadForm["fields"]>[number];
 
 function FieldHeader({
   label,
@@ -67,7 +75,7 @@ function FieldHeader({
     <div className="flex items-baseline justify-between gap-2">
       <FormLabel>
         {label}
-        {required && <span className="text-destructive">*</span>}
+        {required && <span className="text-destructive ml-0.5">*</span>}
       </FormLabel>
       {error?.message && (
         <span className="hidden sm:inline text-destructive text-sm text-right">
@@ -81,46 +89,48 @@ function FieldHeader({
 export const ContactForm = ({ form }: { form: PayloadForm | undefined }) => {
   const [status, setStatus] = useState<"idle" | "success" | "error">("idle");
 
-  const fields: ContactFormField[] = form?.fields ?? [];
-  const formId = form?.id ?? "";
-  const schema = buildSchema(fields);
+  const inputFields = form?.fields?.filter(isInputField) ?? [];
+  const schema = buildSchema(inputFields);
 
-  const rhf = useForm<Record<string, unknown>>({
-    resolver: zodResolver(schema),
+  type FormValues = Record<string, string>;
+
+  const rhf = useForm<FormValues>({
+    resolver: zodResolver(schema) as unknown as Resolver<FormValues>,
     defaultValues: {
       ...Object.fromEntries(
-        fields.map((field) => [
-          field.name,
-          field.blockType === "select" &&
-          "defaultValue" in field &&
-          field.defaultValue
-            ? field.defaultValue
-            : "",
+        inputFields.map((f) => [
+          f.name,
+          f.blockType === "select" && f.defaultValue ? f.defaultValue : "",
         ]),
       ),
-      _honeypot: "", // not a real Payload field — never sent to submissionData
+      _honeypot: "",
     },
   });
 
-  const onSubmit = async (data: Record<string, unknown>) => {
-    const { _honeypot, ...formValues } = data;
+  if (!form) {
+    return <p>Contact form is not available right now.</p>;
+  }
 
-    if (typeof _honeypot === "string" && _honeypot) {
-      setStatus("success"); // fake success, no error shown, no request sent
+  if (!form) {
+    return <p>Contact form is not available right now.</p>;
+  }
+
+  const onSubmit = async (data: Record<string, string>) => {
+    if (data._honeypot) {
+      setStatus("success");
       return;
     }
 
     setStatus("idle");
 
-    const submissionData = Object.entries(formValues).map(([field, value]) => ({
-      field,
-      value,
-    }));
+    const submissionData = Object.entries(data)
+      .filter(([field]) => field !== "_honeypot")
+      .map(([field, value]) => ({ field, value }));
 
     const res = await fetch("/api/form-submissions", {
       method: "POST",
       headers: { "Content-Type": "application/json" },
-      body: JSON.stringify({ form: formId, submissionData }),
+      body: JSON.stringify({ form: form.id, submissionData }),
     });
 
     if (res.ok) {
@@ -131,16 +141,12 @@ export const ContactForm = ({ form }: { form: PayloadForm | undefined }) => {
     }
   };
 
-  if (!form) {
-    return <p>Contact form is not available right now.</p>;
-  }
-
   if (status === "success") {
-    setTimeout(() => setStatus("idle"), 5000);
-    return (
-      <p className="font-lexend">
-        {form.confirmationMessage.root.children[0].children[0].text}
-      </p>
+    setTimeout(() => setStatus("idle"), 3000);
+    return form.confirmationMessage ? (
+      <RichText className="mx-auto!" data={form.confirmationMessage} />
+    ) : (
+      <p className="font-lexend">Thanks — I&apos;ll get back to you soon.</p>
     );
   }
 
@@ -148,9 +154,21 @@ export const ContactForm = ({ form }: { form: PayloadForm | undefined }) => {
     <Form {...rhf}>
       <form onSubmit={rhf.handleSubmit(onSubmit)} className="space-y-6">
         <div className="grid grid-cols-2 gap-x-4 gap-y-6">
-          {form.fields?.map((field) => {
+          <div className="hidden" aria-hidden="true">
+            <label htmlFor="_honeypot">Leave this field empty</label>
+            <input
+              id="_honeypot"
+              type="text"
+              tabIndex={-1}
+              autoComplete="off"
+              {...rhf.register("_honeypot")}
+            />
+          </div>
+
+          {inputFields.map((field) => {
             const placeholder =
-              "defaultValue" in field && field.defaultValue
+              (field.blockType === "text" || field.blockType === "textarea") &&
+              field.defaultValue
                 ? field.defaultValue
                 : undefined;
 
@@ -162,8 +180,8 @@ export const ContactForm = ({ form }: { form: PayloadForm | undefined }) => {
                 render={({ field: rhfField }) => (
                   <FormItem className={widthToSpan(field.width)}>
                     <FieldHeader
-                      label={field.label}
-                      required={field.required}
+                      label={field.label ?? field.name}
+                      required={!!field.required}
                     />
                     <FormControl>
                       {field.blockType === "textarea" ? (
@@ -171,7 +189,7 @@ export const ContactForm = ({ form }: { form: PayloadForm | undefined }) => {
                       ) : field.blockType === "select" ? (
                         <Select
                           onValueChange={rhfField.onChange}
-                          value={rhfField.value ?? ""}
+                          value={rhfField.value}
                         >
                           <SelectTrigger className="w-full">
                             <SelectValue placeholder="Select an option" />

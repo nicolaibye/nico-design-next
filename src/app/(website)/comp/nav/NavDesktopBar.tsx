@@ -43,7 +43,7 @@ const NavDesktopBar = () => {
                   href={link.href}
                   className={`${link.hoverDistance} flex items-center gap-3 p-2.25 w-fit ${link.color} font-lexend ${link.textColor ? link.textColor : "text-white-LinkWater"} uppercase font-normal text-sm tracking-wider ${isActive ? "rounded-l-3xl" : "rounded-l-lg"} transition-all`}
                 >
-                  <Icon size={20} weight="bold" />
+                  {Icon && <Icon size={20} weight="bold" />}
                   <span>{link.name}</span>
                 </Link>
               )}

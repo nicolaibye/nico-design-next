@@ -2,7 +2,6 @@
 
 import { useState, useEffect } from "react";
 import Image from "next/image";
-import type { ImageGalleryBlock } from "@/payload-types";
 import {
   Carousel,
   CarouselContent,
@@ -11,20 +10,16 @@ import {
   CarouselPrevious,
   type CarouselApi,
 } from "@/components/ui/carousel";
-
-type GalleryImage = ImageGalleryBlock["images"][number];
+import type { GalleryImage } from "@/types/payloadTypes.ts";
 
 export const ImageGalleryMore = ({ images }: { images: GalleryImage[] }) => {
   const [activeImage, setActiveImage] = useState<GalleryImage | null>(null);
   const [api, setApi] = useState<CarouselApi>();
-  const [currentSlide, setCurrentSlide] = useState(0);
-  const [count, setCount] = useState(0);
+  const [currentSlide, setCurrentSlide] = useState(1);
+  const count = images.length;
 
   useEffect(() => {
     if (!api) return;
-
-    setCount(api.scrollSnapList().length);
-    setCurrentSlide(api.selectedScrollSnap() + 1);
 
     const handleSelect = () => {
       setCurrentSlide(api.selectedScrollSnap() + 1);

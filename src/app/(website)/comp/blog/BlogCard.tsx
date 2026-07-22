@@ -8,7 +8,7 @@ type BlogPost = {
   id: string | number;
   slug: string;
   cardImageUrl: string;
-  cardImageAlt?: string;
+  cardImageAlt?: string | null;
   cardTitle: string;
   category: string;
 };

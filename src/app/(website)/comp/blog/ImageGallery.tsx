@@ -1,10 +1,8 @@
 // components/ImageGallery.tsx
 import Image from "next/image";
-import type { ImageGalleryBlock } from "@/payload-types";
 import { ImageGalleryExpand } from "./ImageGalleryExpand";
 import { ImageGalleryMore } from "./ImageGalleryMore";
-
-type GalleryImage = ImageGalleryBlock["images"][number];
+import type { GalleryImage } from "@/types/payloadTypes.ts";
 
 export const ImageGallery = ({ images }: { images: GalleryImage[] }) => {
   const count = images.length;
