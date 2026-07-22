@@ -3,6 +3,7 @@ import { getPayload } from "payload";
 import config from "@payload-config";
 import Image from "next/image";
 import { RichText } from "@/app/(website)/comp/blog/RichText";
+import BlogPostNav from "../../comp/blog/BlogPostNav";
 
 export default async function BlogPostPage({
   params,
@@ -41,7 +42,7 @@ export default async function BlogPostPage({
                 {post.category}
               </li>
               <li>
-                <strong className="uppercase font-medium">Period</strong>
+                <strong className="uppercase font-medium">Published</strong>
                 <br />
                 {post.publishedDate
                   ? new Date(post.publishedDate).getFullYear()
@@ -80,6 +81,7 @@ export default async function BlogPostPage({
       <section>
         <RichText data={post.content} />
       </section>
+      <BlogPostNav slug={post.slug} />
     </>
   );
 }

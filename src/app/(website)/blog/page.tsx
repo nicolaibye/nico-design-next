@@ -1,9 +1,6 @@
-import Link from "next/link";
 import InfiniteScrollBackground from "@/app/(website)/comp/blog/InfiniteScrollBackground";
 import { getPayload } from "payload";
 import config from "../../../../payload.config";
-import Image from "next/image";
-import { ArrowUpRightIcon } from "@phosphor-icons/react";
 import { BlogCard } from "../comp/blog/BlogCard";
 
 const Blog = async () => {
