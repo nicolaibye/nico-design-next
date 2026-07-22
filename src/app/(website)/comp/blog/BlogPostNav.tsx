@@ -63,7 +63,7 @@ const BlogPostNav = async ({ slug }: { slug: string }) => {
             </div>
           </Link>
         ) : (
-          <p className="font-lexend text-sm text-center sm:text-left italic max-w-50 text-black-Mirage/50">
+          <p className="font-lexend text-sm text-center sm:text-left italic max-w-50 text-black-Mirage/50 dark:text-white-LinkWater/50">
             Stay tuned for future thoughts and writeups!
           </p>
         )}
@@ -93,7 +93,7 @@ const BlogPostNav = async ({ slug }: { slug: string }) => {
             </div>
           </Link>
         ) : (
-          <p className="font-lexend text-sm italic text-center sm:text-right max-w-50 text-black-Mirage/50">
+          <p className="font-lexend text-sm italic text-center sm:text-right max-w-50 text-black-Mirage/50 dark:text-white-LinkWater/50">
             This is as far back as it goes on this blog!
           </p>
         )}

@@ -16,11 +16,13 @@ type ImageGalleryBlock = {
 type NodeTypes = DefaultNodeTypes | SerializedBlockNode<ImageGalleryBlock>;
 
 type RichTextProps = {
-  data: Parameters<typeof RichTextConverter>[0]["data"];
+  data: Parameters<typeof RichTextConverter>[0]["data"] | null | undefined;
   className?: string;
 };
 
 export const RichText = ({ data, className }: RichTextProps) => {
+  if (!data) return null;
+
   return (
     <RichTextConverter<NodeTypes>
       data={data}

@@ -111,10 +111,6 @@ export const ContactForm = ({ form }: { form: PayloadForm | undefined }) => {
     return <p>Contact form is not available right now.</p>;
   }
 
-  if (!form) {
-    return <p>Contact form is not available right now.</p>;
-  }
-
   const onSubmit = async (data: Record<string, string>) => {
     if (data._honeypot) {
       setStatus("success");
@@ -143,10 +139,18 @@ export const ContactForm = ({ form }: { form: PayloadForm | undefined }) => {
 
   if (status === "success") {
     setTimeout(() => setStatus("idle"), 3000);
-    return form.confirmationMessage ? (
-      <RichText className="mx-auto!" data={form.confirmationMessage} />
-    ) : (
-      <p className="font-lexend">Thanks — I&apos;ll get back to you soon.</p>
+    return (
+      <>
+        <RichText
+          className="font-lexend text-lg font-light w-[85%] max-w-wide lg:w-[75%] mx-auto"
+          data={form.confirmationMessage}
+        />
+        {!form.confirmationMessage && (
+          <p className="font-lexend">
+            Thanks — I&apos;ll get back to you soon.
+          </p>
+        )}
+      </>
     );
   }
 
