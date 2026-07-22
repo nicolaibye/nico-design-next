@@ -4,6 +4,7 @@ import config from "@payload-config";
 import Image from "next/image";
 import { RichText } from "@/app/(website)/comp/blog/RichText";
 import BlogPostNav from "../../comp/blog/BlogPostNav";
+import { notFound } from "next/navigation";
 
 export default async function BlogPostPage({
   params,
@@ -21,7 +22,7 @@ export default async function BlogPostPage({
   });
 
   const post = docs[0];
-  if (!post) return null; // BUILD A FUNCTION THAT RETUSN 404 PAGE
+  if (!post) notFound();
 
   return (
     <>
