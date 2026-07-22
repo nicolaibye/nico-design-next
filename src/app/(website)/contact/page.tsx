@@ -24,9 +24,8 @@ const ContactPage = async () => {
         <h1 className="font-lexend uppercase tracking-widest leading-9 md:leading-16 font-extralight text-[1.60rem] md:text-5xl mb-8">
           &quot;To not be like <wbr /> <br />
           <span className="font-redaction-50 tracking-normal text-[2.65rem] md:text-7xl text-red-CoralRed uppercase">
-            everyone{" "}
+            everyone&quot;
           </span>
-          else&quot;
         </h1>
         <p className="text-lg mb-8">
           Are you ready for your next creative partner? Fill out the form below

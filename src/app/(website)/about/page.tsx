@@ -14,25 +14,25 @@ import useTypewriter from "../hook/useTypewriter";
 
 const slides = [
   {
-    title: "A boy born in the cold north",
+    title: "Creativity around every corner",
     image:
       "https://res.cloudinary.com/dg0c4lry9/image/upload/v1755595786/NES_console_ovywjh.png",
     description:
-      "I was born in Skien and grew up in the coastal town of Kragerø, Norway—surrounded by creativity from the very start. My mum was forever ordering every craft kit under the sun, while my grandmother wrote satirical plays for the local community alongside my granduncle, a devoted journalist and poet. It was a childhood full of colour, imagination, and stories. My mum always told me to chase whatever I wanted to be, and I proudly declared, “I don't want to be like everyone else”—a promise to myself I've been keeping ever since.",
+      "I was born and raised in the coastal town of Kragerø, Norway. Surrounded by creativity from the very start. My mum was forever ordering every craft kit under the sun, while my grandmother wrote satirical plays for the local community alongside my granduncle, a devoted journalist and poet. It was a childhood full of colour, imagination, and stories. My mum always told me to chase whatever I wanted to be, and I proudly declared, “I don't want to be like everyone else”, a promise to myself I've been keeping ever since.",
   },
   {
-    title: "He hungered for creativity beyond the fjords",
+    title: "Igniting the spark of creativity",
     image:
-      "https://res.cloudinary.com/dg0c4lry9/image/upload/v1755595758/about_today_wv4c1h.png",
+      "https://res.cloudinary.com/dg0c4lry9/image/upload/v1755595757/on_our_way_zp9ezh.png",
     description:
-      "My creative path took shape in high school, where I studied Media and Communications. I got to explore the full spectrum of creative fields—film, photography, design—but it was design that truly clicked. With the encouragement of inspiring teachers and a chain of lucky breaks, I found myself in the UK studying Graphic Communications at the University for the Creative Arts in Farnham, Surrey. That experience not only sharpened my skills but also cemented my love for crafting visuals that connect with people.",
+      "My creative path took shape in high school, where I studied Media and Communications. I got to explore the full spectrum of creative fields: film, photography, design, but it was design that truly clicked. With the encouragement of inspiring teachers and a chain of lucky breaks, I found myself in the UK studying Graphic Communications at the University for the Creative Arts in Farnham, Surrey. That experience not only sharpened my skills but also cemented my love for crafting visuals that connect with people.",
   },
   {
     title: "Building towards a colourful, minimalist future",
     image:
-      "https://res.cloudinary.com/dg0c4lry9/image/upload/v1755595757/on_our_way_zp9ezh.png",
+      "https://res.cloudinary.com/dg0c4lry9/image/upload/v1755595758/about_today_wv4c1h.png",
     description:
-      "Today, I work at the intersection of design and development—crafting brands, websites, and experiences that balance clarity, creativity, and a touch of playfulness. Whether I'm refining a visual identity, coding an interactive interface, or exploring new creative tools, my goal is always the same: to create work that feels thoughtful, human, and memorable, while also enjoying my life to the fullest.",
+      "Today, I work at the intersection of design and development, crafting brands, websites, and experiences that balance clarity, creativity, and a touch of playfulness. Whether I'm refining a visual identity, coding an interactive interface, or exploring new creative tools, my goal is always the same: to create work that feels thoughtful, human, and memorable, while also enjoying my life to the fullest.",
   },
 ];
 
@@ -83,7 +83,7 @@ const About = () => {
                   {typedWord}
                   <span
                     aria-hidden="true"
-                    className={`inline-block w-0.75 sm:w-1 h-5.75 sm:h-10 bg-current ${
+                    className={`inline-block w-0.75 sm:w-1 h-6.5 sm:h-13 bg-current ${
                       isBlinking ? "animate-cursor-blink" : "opacity-100"
                     }`}
                   />
@@ -123,7 +123,7 @@ const About = () => {
             >
               {slides.map((slide, index) => (
                 <CarouselItem
-                  className="pl-5 sm:pl-10 rounded font-lexend grid gap-5 sm:gap-10 md:h-148.25"
+                  className="pl-5 sm:pl-10 rounded font-lexend grid gap-5 sm:gap-10 md:h-139.5"
                   key={index}
                 >
                   <Image
@@ -131,9 +131,9 @@ const About = () => {
                     alt={slide.title}
                     width={1000}
                     height={1000}
-                    className="w-4/5 hidden md:block h-auto object-contain rounded-lg self-center justify-self-center"
+                    className="w-4/5 hidden md:block h-auto object-contain rounded-lg self-end justify-self-center"
                   />
-                  <div className="flex flex-col gap-2 sm:gap-5  md:self-center">
+                  <div className="flex flex-col gap-2 sm:gap-5 md:self-end">
                     <h3 className="font-semibold text-2xl sm:text-4xl">
                       {slide.title}
                     </h3>

@@ -54,15 +54,24 @@ function widthToSpan(width: number | null | undefined) {
 
 type ContactFormField = NonNullable<PayloadForm["fields"]>[number];
 
-function FieldHeader({ label }: { label: string }) {
+function FieldHeader({
+  label,
+  required,
+}: {
+  label: string;
+  required?: boolean;
+}) {
   const { error } = useFormField();
 
   return (
     <div className="flex items-baseline justify-between gap-2">
-      <FormLabel>{label}</FormLabel>
+      <FormLabel>
+        {label}
+        {required && <span className="text-destructive">*</span>}
+      </FormLabel>
       {error?.message && (
         <span className="hidden sm:inline text-destructive text-sm text-right">
-          – {String(error.message)}
+          {String(error.message)}
         </span>
       )}
     </div>
@@ -128,7 +137,11 @@ export const ContactForm = ({ form }: { form: PayloadForm | undefined }) => {
 
   if (status === "success") {
     setTimeout(() => setStatus("idle"), 5000);
-    return <p className="font-lexend">Thanks — I'll get back to you soon.</p>;
+    return (
+      <p className="font-lexend">
+        {form.confirmationMessage.root.children[0].children[0].text}
+      </p>
+    );
   }
 
   return (
@@ -148,7 +161,10 @@ export const ContactForm = ({ form }: { form: PayloadForm | undefined }) => {
                 name={field.name}
                 render={({ field: rhfField }) => (
                   <FormItem className={widthToSpan(field.width)}>
-                    <FieldHeader label={field.label} />
+                    <FieldHeader
+                      label={field.label}
+                      required={field.required}
+                    />
                     <FormControl>
                       {field.blockType === "textarea" ? (
                         <Textarea placeholder={placeholder} {...rhfField} />
