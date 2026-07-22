@@ -3,20 +3,19 @@ import Image from "next/image";
 const AboutMeHome = () => {
   return (
     <section
-      className={`min-h-screen w-fit flex items-center justify-center mx-auto p-10 md:p-5 my-10 md:my-14 lg:my-24`}
+      className={`lg:min-h-screen w-fit flex items-center justify-center mx-auto p-10 md:p-5 my-10 md:my-14 lg:my-24`}
     >
       <div className="flex flex-col-reverse md:flex-row gap-4 md:gap-12">
         <div>
-          <h2 className=" font-lexend uppercase tracking-widest leading-9 md:leading-none font-extralight text-[1.60rem] md:text-5xl">
+          <h2 className="relative font-lexend uppercase tracking-widest leading-9 sm:leading-none font-extralight text-[1.60rem] sm:text-5xl sm:mt-5 md:mt-0">
             To not be like <br />
-            <span className="font-redaction-50 MD:leading-18 font-bold tracking-normal text-[2.65rem] md:text-6xl text-red-CoralRed uppercase">
+            <span className="font-redaction-50 sm:leading-18 font-bold tracking-normal text-[2.65rem] sm:text-6xl text-red-CoralRed uppercase">
               Every
               <wbr />
               one <br />
             </span>
-            <span className="-translate-y-2 md:relative">else</span>
           </h2>
-          <p className="mt-12 md:mt-4 md:max-w-lg font-lexend text-left text-sm">
+          <p className="mt-5 md:max-w-lg font-lexend text-left text-sm">
             Hi!
             <br />
             I&apos;m Nicolai, but most people just call me Nico. A colourful
@@ -26,7 +25,7 @@ const AboutMeHome = () => {
             <br />
             <br />
             Like many others, when I was a child, I was hit with the good old
-            “what do you want to become when you grow up?” Policemen? Doctor?
+            “what do you want to become when you grow up?” question. Policemen? Doctor?
             Singer? No thank you. There was only one thing I wanted in life. “To
             be not like everyone else.” A few decades later I would say I have
             successfully achieved my goal working with shapes and colours

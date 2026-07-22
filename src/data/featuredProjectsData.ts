@@ -20,7 +20,7 @@ export const featuredProjects = [
     href: "/projects/holidaze/",
     color: "bg-holi",
     image: {
-      src: "https://res.cloudinary.com/dg0c4lry9/image/upload/t_blog_header/holi_home_mockup_w0hsvf.png",
+      src: "https://res.cloudinary.com/dg0c4lry9/image/upload/v1784658497/holi_home_mockup_w0hsvf.png",
       alt: "Holidaze website mockup",
     },
     border:

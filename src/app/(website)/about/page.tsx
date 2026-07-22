@@ -123,7 +123,7 @@ const About = () => {
             >
               {slides.map((slide, index) => (
                 <CarouselItem
-                  className="pl-5 sm:pl-10 rounded font-lexend grid gap-5 sm:gap-10"
+                  className="pl-5 sm:pl-10 rounded font-lexend grid gap-5 sm:gap-10 md:h-148.25"
                   key={index}
                 >
                   <Image
