@@ -2,9 +2,7 @@
 
 import { useState } from "react";
 import Image from "next/image";
-import type { ImageGalleryBlock } from "@/payload-types";
-
-type GalleryImage = ImageGalleryBlock["images"][number];
+import type { GalleryImage } from "@/types/payloadTypes.ts";
 
 export const ImageGalleryExpand = ({ images }: { images: GalleryImage[] }) => {
   const [active, setActive] = useState<number | undefined>(undefined);

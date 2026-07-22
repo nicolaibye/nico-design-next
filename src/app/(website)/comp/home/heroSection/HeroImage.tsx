@@ -9,13 +9,16 @@ const HeroImage = () => {
   const [isDesktop, setIsDesktop] = useState(true);
 
   useEffect(() => {
-    setReady(true);
+    const frame = requestAnimationFrame(() => setReady(true));
 
     const update = () => setIsDesktop(window.innerWidth > 768);
     update();
 
     window.addEventListener("resize", update);
-    return () => window.removeEventListener("resize", update);
+    return () => {
+      window.removeEventListener("resize", update);
+      cancelAnimationFrame(frame);
+    };
   }, []);
 
   return (

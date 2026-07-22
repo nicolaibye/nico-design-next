@@ -8,18 +8,8 @@ import { ScrollToPlugin } from "gsap/dist/ScrollToPlugin";
 
 interface HeroCardProps {
   card: HeroCard;
+  index?: number;
 }
-
-const scrollToContent = (id: string) => {
-  gsap.to(window, {
-    duration: 1.25,
-    scrollTo: {
-      y: `#${id}`,
-      offsetY: 90,
-    },
-    ease: "power3.inOut",
-  });
-};
 
 const HeroCardComponent = ({ card }: HeroCardProps) => {
   // In HeroCard component, add:

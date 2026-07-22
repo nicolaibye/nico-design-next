@@ -10,10 +10,12 @@ type IconItem = {
 
 type IconGroupItem = {
   label: string;
-  align?: "center" | "bottom";
+  align?: string;
   featured?: boolean;
   icons: IconItem[];
   sizeOverride?: string;
+  dark?: string;
+  alt?: string;
 };
 
 const IconGroup = ({ groups }: { groups: IconGroupItem[] }) => (

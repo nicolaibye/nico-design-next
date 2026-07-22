@@ -4,7 +4,6 @@ import type {
   DefaultNodeTypes,
   SerializedBlockNode,
 } from "@payloadcms/richtext-lexical";
-import Image from "next/image";
 import { ImageGallery } from "./ImageGallery";
 
 type ImageGalleryBlock = {
@@ -15,6 +14,10 @@ type ImageGalleryBlock = {
 };
 
 type NodeTypes = DefaultNodeTypes | SerializedBlockNode<ImageGalleryBlock>;
+
+// Type '{ [k: string]: unknown; root: { type: string; children: { [k: string]: unknown; type: any; version: number; }[]; direction: "ltr" | "rtl" | null; format: "" | "start" | "left" | "center" | "right" | "end" | "justify"; indent: number; version: number; }; } | null | undefined' is not assignable to type 'SerializedEditorState<SerializedLexicalNode>'.
+//   Type 'undefined' is not assignable to type 'SerializedEditorState<SerializedLexicalNode>'.
+// RichText.tsx(21, 3): The expected type comes from property 'data' which is declared here on type 'IntrinsicAttributes & { data: SerializedEditorState<SerializedLexicalNode>; }'
 
 export const RichText = ({
   data,

@@ -1,7 +1,7 @@
 import Image from "next/image";
 
 type MockupItem = {
-  image: { src: string; alt: string; bg?: string };
+  image?: { src: string; alt: string; bg?: string };
   video?: { src: string };
   label?: string;
   description?: string;
@@ -37,7 +37,7 @@ const MockupGrid = ({ items }: { items: MockupItem[] }) => (
               playsInline
               className="w-full h-full object-cover"
             />
-          ) : (
+          ) : item.image ? (
             <Image
               src={item.image.src}
               alt={item.image.alt}
@@ -45,7 +45,7 @@ const MockupGrid = ({ items }: { items: MockupItem[] }) => (
               sizes="(max-width: 768px) 100vw, 50vw"
               className={`object-cover ${item.image.bg ?? ""}`}
             />
-          )}
+          ) : null}
         </div>
         {item.label && item.labelPosition === "below" && (
           <div className="flex flex-col-reverse xl:flex-row gap-3 xl:gap-20 w-[90%]">

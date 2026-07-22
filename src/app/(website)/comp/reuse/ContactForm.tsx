@@ -24,7 +24,7 @@ import {
   SelectContent,
   SelectItem,
 } from "@/components/ui/select";
-import type { Form as PayloadForm } from "@/payload-types";
+import type { Form as PayloadForm } from "@/types/payload-types.ts";
 
 function buildSchema(fields: PayloadForm["fields"]) {
   const shape: Record<string, z.ZodTypeAny> = {};
