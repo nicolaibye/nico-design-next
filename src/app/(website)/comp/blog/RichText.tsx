@@ -15,23 +15,24 @@ type ImageGalleryBlock = {
 
 type NodeTypes = DefaultNodeTypes | SerializedBlockNode<ImageGalleryBlock>;
 
-// Type '{ [k: string]: unknown; root: { type: string; children: { [k: string]: unknown; type: any; version: number; }[]; direction: "ltr" | "rtl" | null; format: "" | "start" | "left" | "center" | "right" | "end" | "justify"; indent: number; version: number; }; } | null | undefined' is not assignable to type 'SerializedEditorState<SerializedLexicalNode>'.
-//   Type 'undefined' is not assignable to type 'SerializedEditorState<SerializedLexicalNode>'.
-// RichText.tsx(21, 3): The expected type comes from property 'data' which is declared here on type 'IntrinsicAttributes & { data: SerializedEditorState<SerializedLexicalNode>; }'
-
-export const RichText = ({
-  data,
-}: {
+type RichTextProps = {
   data: Parameters<typeof RichTextConverter>[0]["data"];
-}) => {
+  className?: string;
+};
+
+export const RichText = ({ data, className }: RichTextProps) => {
   return (
     <RichTextConverter<NodeTypes>
       data={data}
       converters={({ defaultConverters }) => ({
         ...defaultConverters,
-        // override how <p> renders, to add your Tailwind classes
         paragraph: ({ node, nodesToJSX }) => (
-          <p className="font-lexend text-lg font-light w-[85%] max-w-wide lg:w-[75%] mx-auto">
+          <p
+            className={
+              className ??
+              "font-lexend text-lg font-light w-[85%] max-w-wide lg:w-[75%] mx-auto"
+            }
+          >
             {nodesToJSX({ nodes: node.children })}
           </p>
         ),
