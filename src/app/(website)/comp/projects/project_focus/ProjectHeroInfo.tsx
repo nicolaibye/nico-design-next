@@ -45,7 +45,7 @@ const ProjectHeroInfo = ({ info }: { info: ProjectInfo }) => {
       </ul>
 
       {/* Mobile stats */}
-      <ul className="md:hidden flex flex-col gap-3 w-full text-sm font-lexend font-light text-black-Mirage my-10 dark:text-white-LinkWater px-5">
+      <ul className="md:hidden flex flex-col gap-3 w-full text-sm font-lexend font-light text-black-Mirage mb-10 my-5 dark:text-white-LinkWater px-5">
         {info.stats.map((stat) => (
           <li key={stat.label} className="flex flex-row justify-between">
             <p className="uppercase font-medium">{stat.label}</p>

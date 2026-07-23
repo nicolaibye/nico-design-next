@@ -43,7 +43,7 @@ const NeiroChallengeContent = () => {
   useDraggable("sketches");
 
   return (
-    <section>
+    <section className="px-5 md:px-0 flex flex-col gap-10">
       <div
         className={`flex justify-center items-center p-10 md:px-40 min-h-[50vh]`}
       >
@@ -57,7 +57,7 @@ const NeiroChallengeContent = () => {
         />
       </div>
       <div
-        className={`flex flex-col justify-center items-center px-10 lg:px-40`}
+        className={`flex flex-col justify-center items-center sm:px-10 lg:px-40`}
       >
         <SectionDivider lineClass="outline-black-Mirage dark:outline-white-LinkWater">
           <h2 className="font-lexend uppercase text-xs min-w-fit tracking-widest">
@@ -92,14 +92,14 @@ const NeiroChallengeContent = () => {
         ))}
       </div>
       <div
-        className={`flex flex-col justify-center items-center px-10 md:py-0 lg:px-40`}
+        className={`flex flex-col justify-center items-center sm:px-10 md:py-40 lg:px-40`}
       >
         <SectionDivider lineClass="outline-black-Mirage dark:outline-white-LinkWater">
           <h2 className="font-lexend uppercase text-xs min-w-fit tracking-widest">
             The East and Orientalism
           </h2>
         </SectionDivider>
-        <p className="font-lexend font-light text-black-Mirage dark:text-white-LinkWater lg:px-40 my-10">
+        <p className="font-lexend font-light text-black-Mirage dark:text-white-LinkWater lg:px-40 mt-10">
           The West has a long history of alienating the East through different
           methods throughout the years. Shortly summarised, traditional
           orientalism is the depiction of temples, ninjas, geisha, kimono, etc.,
@@ -107,9 +107,9 @@ const NeiroChallengeContent = () => {
           the eastern people as soulless machines working under an authority
           with no real emotions. Lastly, wacky-orientalism covers the modern
           form of orientalist thinking seen in memes like “because Japan” and
-          “WTF Japan”, depicting them as weird people we don&apos;t associate with.
-          Past these, I would even argue that we are moving into a new wave of
-          orientalism.
+          “WTF Japan”, depicting them as weird people we don&apos;t associate
+          with. Past these, I would even argue that we are moving into a new
+          wave of orientalism.
           <br />
           <br />
           In recent years, post the pandemic, this alienation has started to
