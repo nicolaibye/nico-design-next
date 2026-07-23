@@ -33,7 +33,7 @@ const SablaBraChallengeContent = () => {
   return (
     <section className="px-5 md:px-0 flex flex-col gap-10">
       <div
-        className={`flex justify-center items-center p-10 md:px-40 min-h-[50vh]`}
+        className={`flex justify-center items-center p-10 lg:px-40`}
       >
         <AnimatedText
           lines={wrapText(

@@ -81,7 +81,7 @@ const HolidazeChallengeContent = () => {
   return (
     <section className="px-5 md:px-0 flex flex-col gap-10">
       <div
-        className={`flex justify-center items-center p-10 md:px-40 min-h-[50vh]`}
+        className={`flex justify-center items-center p-10 lg:px-40`}
       >
         <AnimatedText
           lines={wrapText(
@@ -94,7 +94,7 @@ const HolidazeChallengeContent = () => {
         />
       </div>
       <div
-        className={`flex flex-col justify-center items-center lg:px-40`}
+        className={`flex flex-col justify-center items-center sm:px-10 lg:px-40`}
       >
         <SectionDivider lineClass="outline-black-Mirage dark:outline-white-LinkWater">
           <h2 className="font-lexend uppercase text-xs min-w-fit tracking-widest">
@@ -191,7 +191,7 @@ const HolidazeChallengeContent = () => {
         })()}
       </div>
       <div
-        className={`flex flex-col justify-center items-center md:py-40 md:pt-0 lg:px-40`}
+        className={`flex flex-col justify-center items-center sm:px-10 md:py-40 lg:px-40`}
       >
         <SectionDivider lineClass="outline-black-Mirage dark:outline-white-LinkWater">
           <h2 className="font-lexend uppercase text-xs min-w-fit tracking-widest">

@@ -3,11 +3,11 @@ import Image from "next/image";
 const AboutMeHome = () => {
   return (
     <section
-      className={`lg:min-h-screen w-fit flex items-center justify-center mx-auto p-10 md:p-5 my-10 md:my-14 lg:my-24`}
+      className={`lg:min-h-screen w-fit flex items-center justify-center mx-auto px-5 sm:px-10 my-10 lg:my-24`}
     >
       <div className="flex flex-col-reverse md:flex-row gap-4 md:gap-12">
         <div>
-          <h2 className="relative font-lexend uppercase tracking-widest leading-9 sm:leading-none font-extralight text-[1.60rem] sm:text-5xl sm:mt-5 md:mt-0">
+          <h2 className="relative font-lexend uppercase tracking-widest leading-9 sm:leading-none font-extralight text-[1.60rem] sm:text-5xl sm:mt-5 lg:mt-0">
             To not be like <br />
             <span className="font-redaction-50 sm:leading-18 font-bold tracking-normal text-[2.65rem] sm:text-6xl text-red-CoralRed uppercase">
               Every
