@@ -5,9 +5,9 @@ import InteractiveLogoProcess from "@/app/(website)/comp/reuse/InteractiveLogoPr
 
 const MTGChallengeContent = () => {
   return (
-    <section>
+    <section className="px-5 md:px-0 flex flex-col gap-10">
       <div
-        className={`flex justify-center items-center p-20 md:px-40 min-h-[50vh]`}
+        className={`flex justify-center items-center p-10 lg:px-40`}
       >
         <div className="block sm:hidden">
           <AnimatedText
@@ -29,7 +29,7 @@ const MTGChallengeContent = () => {
         </div>
       </div>
       <div
-        className={`flex flex-col justify-center items-center px-10 lg:px-40`}
+        className={`flex flex-col justify-center items-center sm:px-10 lg:px-40`}
       >
         <SectionDivider lineClass="outline-black-Mirage dark:outline-white-LinkWater">
           <h2 className="font-lexend uppercase text-xs min-w-fit tracking-widest">
@@ -59,7 +59,7 @@ const MTGChallengeContent = () => {
       </div>
       <InteractiveLogoProcess />
       <div
-        className={`flex flex-col justify-center items-center px-10 md:py-40 lg:px-40`}
+        className={`flex flex-col justify-center items-center sm:px-10 md:py-40 lg:px-40`}
       >
         <SectionDivider lineClass="outline-black-Mirage dark:outline-white-LinkWater">
           <h2 className="font-lexend uppercase text-xs min-w-fit tracking-widest">

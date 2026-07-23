@@ -32,7 +32,7 @@ export const RichText = ({ data, className }: RichTextProps) => {
           <p
             className={
               className ??
-              "font-lexend text-lg font-light w-[85%] max-w-wide lg:w-[75%] mx-auto"
+              "font-lexend font-light w-[85%] max-w-wide lg:w-[75%] mx-auto"
             }
           >
             {nodesToJSX({ nodes: node.children })}

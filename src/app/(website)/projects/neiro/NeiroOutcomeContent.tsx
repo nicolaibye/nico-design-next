@@ -48,7 +48,7 @@ const NeiroOutcomeContent = () => {
       </div>
 
       <section>
-        <div className="w-[75%] max-w-wide mx-auto flex flex-col gap-20 my-16 xl:my-32">
+        <div className="w-full px-5 sm:px-0 sm:w-[75%] max-w-wide mx-auto flex flex-col gap-20 my-16 xl:my-32">
           <LogoShowcase
             primary={neiroOutcome.logos.primary}
             secondary={neiroOutcome.logos.secondary}

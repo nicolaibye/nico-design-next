@@ -79,9 +79,9 @@ const HolidazeChallengeContent = () => {
   };
 
   return (
-    <section>
+    <section className="px-5 md:px-0 flex flex-col gap-10">
       <div
-        className={`flex justify-center items-center p-10 md:px-40 min-h-[50vh]`}
+        className={`flex justify-center items-center p-10 lg:px-40`}
       >
         <AnimatedText
           lines={wrapText(
@@ -94,7 +94,7 @@ const HolidazeChallengeContent = () => {
         />
       </div>
       <div
-        className={`flex flex-col justify-center items-center my-auto px-10 lg:px-40`}
+        className={`flex flex-col justify-center items-center sm:px-10 lg:px-40`}
       >
         <SectionDivider lineClass="outline-black-Mirage dark:outline-white-LinkWater">
           <h2 className="font-lexend uppercase text-xs min-w-fit tracking-widest">
@@ -128,7 +128,7 @@ const HolidazeChallengeContent = () => {
           booking process.
         </p>
       </div>
-      <div className="relative max-w-200 flex flex-col justify-center m-10 lg:mx-auto md:min-h-[75vh] rounded-lg">
+      <div className="relative max-w-200 flex flex-col justify-center sm:m-10 lg:mx-auto md:min-h-[75vh] rounded-lg">
         {/* Profile name switcher */}
         <div className="flex flex-col md:flex-row gap-2 md:gap-4 mb-6 items-start md:items-center justify-center">
           {userProfiles.map((profile, i) => (
@@ -191,14 +191,14 @@ const HolidazeChallengeContent = () => {
         })()}
       </div>
       <div
-        className={`flex flex-col justify-center items-center px-10 md:py-40 md:pt-0 lg:px-40`}
+        className={`flex flex-col justify-center items-center sm:px-10 md:py-40 lg:px-40`}
       >
         <SectionDivider lineClass="outline-black-Mirage dark:outline-white-LinkWater">
           <h2 className="font-lexend uppercase text-xs min-w-fit tracking-widest">
             True Exploration
           </h2>
         </SectionDivider>
-        <p className="font-lexend font-light text-black-Mirage dark:text-white-LinkWater lg:px-40 my-10">
+        <p className="font-lexend font-light text-black-Mirage dark:text-white-LinkWater lg:px-40 mt-10">
           My approach to the branding became focused on being grounded in
           community and sustainability. Holidazes&apos; brand would pride itself
           on the great benefits of travelling and exploring the world outside of

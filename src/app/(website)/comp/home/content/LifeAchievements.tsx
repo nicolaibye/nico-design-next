@@ -19,7 +19,7 @@ const fontSofiaSans = Sofia_Sans({
 const LifeAchievements = () => {
   return (
     <section className={`${fontLexend.variable} ${fontSofiaSans.variable}`}>
-      <div className="max-w-230 mx-auto p-10 md:p-5 my-10 md:my-14 lg:my-24 flex flex-col gap-16 justify-center">
+      <div className="max-w-230 mx-auto p-5 sm:p-10 my-10 md:my-14 lg:my-24 flex flex-col gap-16 justify-center">
         <SectionDivider lineClass="outline-black-Mirage dark:outline-white-LinkWater">
           <h2 className="font-lexend uppercase text-xs min-w-fit tracking-widest">
             Life achievements

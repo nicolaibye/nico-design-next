@@ -4,9 +4,9 @@ import { wrapText } from "@/app/(website)/js/helper/wrapText";
 
 const NeiroBriefContent = () => {
   return (
-    <section>
+    <section className="px-5 md:px-0 flex flex-col gap-10">
       <div
-        className={`flex justify-center items-center p-10 sm:pt-40 sm:px-40`}
+        className={`flex justify-center items-center p-10 lg:pt-40 sm:px-40`}
       >
         <div className="block xl:hidden">
           <AnimatedText
@@ -34,7 +34,7 @@ const NeiroBriefContent = () => {
         </div>
       </div>
       <div
-        className={`flex flex-col justify-center items-center px-10 sm:py-40 lg:px-40`}
+        className={`flex flex-col justify-center items-center sm:px-10 md:py-40 lg:px-40`}
       >
         <SectionDivider lineClass="outline-black-Mirage dark:outline-white-LinkWater">
           <h2 className="font-lexend uppercase text-xs min-w-fit tracking-widest">
@@ -46,8 +46,8 @@ const NeiroBriefContent = () => {
           given the opportunity to create my own project for our FMP (Final
           Major Project). At the time I was 21 years old and had recently
           discovered the wonderful world of music festivals. As an aspiring
-          brand designer, I couldn’t imagine a better project than to work on
-          the branding for a music festival.
+          brand designer, I couldn&apos;t imagine a better project than to work
+          on the branding for a music festival.
           <br />
           <br />
           During my initial research into the project, I unveiled the huge EDM

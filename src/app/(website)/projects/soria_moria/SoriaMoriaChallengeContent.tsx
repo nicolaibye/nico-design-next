@@ -6,9 +6,9 @@ import SoMoMediaShowcase from "@/app/(website)/comp/projects/project_focus/outco
 
 const HolidazeChallengeContent = () => {
   return (
-    <section>
+    <section className="px-5 md:px-0 flex flex-col gap-10">
       <div
-        className={`flex justify-center items-center p-10 md:px-40 min-h-[50vh]`}
+        className={`flex justify-center items-center p-10 lg:px-40`}
       >
         <AnimatedText
           lines={wrapText(
@@ -21,7 +21,7 @@ const HolidazeChallengeContent = () => {
         />
       </div>
       <div
-        className={`flex flex-col justify-center items-center px-10 lg:px-40`}
+        className={`flex flex-col justify-center items-center sm:px-10 lg:px-40`}
       >
         <SectionDivider lineClass="outline-black-Mirage dark:outline-white-LinkWater">
           <h2 className="font-lexend uppercase text-xs min-w-fit tracking-widest">
@@ -51,14 +51,14 @@ const HolidazeChallengeContent = () => {
       </div>
       <SoMoMediaShowcase />
       <div
-        className={`flex flex-col justify-center items-center px-10 md:py-0 lg:px-40`}
+        className={`flex flex-col justify-center items-center sm:px-10 md:py-40 lg:px-40`}
       >
         <SectionDivider lineClass="outline-black-Mirage dark:outline-white-LinkWater">
           <h2 className="font-lexend uppercase text-xs min-w-fit tracking-widest">
             Text with a personality
           </h2>
         </SectionDivider>
-        <p className="font-lexend font-light text-black-Mirage dark:text-white-LinkWater lg:px-40 my-10">
+        <p className="font-lexend font-light text-black-Mirage dark:text-white-LinkWater lg:px-40 mt-10">
           Instead of having a mascot up in the audience&apos;s faces, we hid
           one. We created a typeface-based branding where we played with the
           text itself to create a recognisable figure amongst the lettermark.

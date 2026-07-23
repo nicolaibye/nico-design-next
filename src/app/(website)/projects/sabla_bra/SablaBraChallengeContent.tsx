@@ -31,9 +31,9 @@ const SablaBraChallengeContent = () => {
   useDraggable("sketches");
 
   return (
-    <section>
+    <section className="px-5 md:px-0 flex flex-col gap-10">
       <div
-        className={`flex justify-center items-center p-10 md:px-40 min-h-[50vh]`}
+        className={`flex justify-center items-center p-10 lg:px-40`}
       >
         <AnimatedText
           lines={wrapText(
@@ -48,7 +48,7 @@ const SablaBraChallengeContent = () => {
         />
       </div>
       <div
-        className={`flex flex-col justify-center items-center px-10 lg:px-40`}
+        className={`flex flex-col justify-center items-center sm:px-10 lg:px-40`}
       >
         <SectionDivider lineClass="outline-black-Mirage dark:outline-white-LinkWater">
           <h2 className="font-lexend uppercase text-xs min-w-fit tracking-widest">
@@ -88,14 +88,14 @@ const SablaBraChallengeContent = () => {
         ))}
       </div>
       <div
-        className={`flex flex-col justify-center items-center mt-10 md:mt-auto min-h-[50vh] px-10 lg:px-40`}
+        className={`flex flex-col justify-center items-center sm:px-10 md:py-40 lg:px-40`}
       >
         <SectionDivider lineClass="outline-black-Mirage dark:outline-white-LinkWater">
           <h2 className="font-lexend uppercase text-xs min-w-fit tracking-widest">
             Neon and 3d
           </h2>
         </SectionDivider>
-        <p className="font-lexend font-light text-black-Mirage dark:text-white-LinkWater lg:px-40 my-10">
+        <p className="font-lexend font-light text-black-Mirage dark:text-white-LinkWater lg:px-40 mt-10">
           Building on this, I developed a colour palette meant to be jarring. I
           chose a sharp, neon-based palette to allude to the endless Post-it
           Notes used in brainstorming, and to stand out with a strong, loud but
