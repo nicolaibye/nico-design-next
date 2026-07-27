@@ -12,6 +12,12 @@ import {
 import Image from "next/image";
 import useTypewriter from "../hook/useTypewriter";
 
+export const metadata = {
+  title: "NICO Design | About",
+  description:
+    "Nicolai (Nico) is a Norwegian designer specializing in brand identity and web design. ",
+};
+
 const slides = [
   {
     title: "Creativity around every corner",
