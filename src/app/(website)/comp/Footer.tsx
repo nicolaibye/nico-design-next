@@ -10,7 +10,10 @@ const Footer = () => {
     >
       <div className="flex flex-col gap-8 justify-center max-w-280 mx-auto">
         <SectionDivider>
-          <div className="flex flex-row items-center gap-1">
+          <div
+            className="flex flex-row items-center gap-1"
+            aria-label="Available for"
+          >
             <p className="font-lexend uppercase text-xs min-w-fit tracking-widest text-white-LinkWater">
               Available f
             </p>
@@ -51,7 +54,7 @@ const Footer = () => {
           <div className="grid grid-cols-2 md:grid-cols-3 gap-y-10 text-white-LinkWater font-lexend uppercase text-xs tracking-[0.22em]">
             <p className="text-center col-span-3 md:col-start-2 md:col-span-1 max-w-80 mx-auto">
               <a
-                href="mailto:nicolai@nicodesign.no"
+                href="/contact"
                 className="underline text-white-LinkWater! hover:text-red-CoralRed!"
               >
                 Get in touch

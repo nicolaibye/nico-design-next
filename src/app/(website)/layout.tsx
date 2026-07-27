@@ -197,6 +197,27 @@ export default function RootLayout({
           `,
           }}
         />
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify({
+              "@context": "https://schema.org",
+              "@type": "Person",
+              name: "Nicolai Bye",
+              jobTitle: "Brand Identity & Web Designer",
+              url: "https://nicodesign.no",
+              sameAs: [
+                "https://www.instagram.com/nicolai_designs/",
+                "https://www.linkedin.com/in/nicolai-bye/",
+              ],
+              address: {
+                "@type": "PostalAddress",
+                addressLocality: "Kristiansand",
+                addressCountry: "NO",
+              },
+            }),
+          }}
+        />
       </head>
       <body>
         <header>

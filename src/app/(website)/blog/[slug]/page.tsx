@@ -6,6 +6,30 @@ import { RichText } from "@/app/(website)/comp/blog/RichText";
 import BlogPostNav from "../../comp/blog/BlogPostNav";
 import { notFound } from "next/navigation";
 
+// app/(website)/blog/[slug]/page.tsx
+export async function generateMetadata({ params }: { params: Promise<{ slug: string }> }) {
+  const { slug } = await params;
+  const payload = await getPayload({ config });
+  const { docs } = await payload.find({
+    collection: "posts",
+    where: { slug: { equals: slug } },
+    limit: 1,
+  });
+  const post = docs[0];
+
+  if (!post) return {};
+
+  return {
+    title: `NICO Design | ${post.title}`,
+    description: post.ingress,
+    openGraph: {
+      title: post.title,
+      description: post.ingress,
+      images: [post.coverImageUrl],
+    },
+  };
+}
+
 export default async function BlogPostPage({
   params,
 }: {

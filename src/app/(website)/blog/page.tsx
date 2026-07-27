@@ -3,6 +3,20 @@ import { getPayload } from "payload";
 import config from "../../../../payload.config";
 import { BlogCard } from "../comp/blog/BlogCard";
 
+export const metadata = {
+  title: "NICO Design | Blog",
+  description:
+    "A deeper insight into my personal life. Diving into topics like design, career and lifestyle.",
+  openGraph: {
+    title: "NICO Design | Blog",
+    description:
+      "A deeper insight into my personal life. Diving into topics like design, career and lifestyle.",
+    images: [
+      "https://res.cloudinary.com/dg0c4lry9/image/upload/v1751379687/karaoke_kgv3mo.jpg",
+    ],
+  },
+};
+
 const Blog = async () => {
   const payload = await getPayload({ config });
   const { docs: posts } = await payload.find({
@@ -18,6 +32,7 @@ const Blog = async () => {
 
   return (
     <>
+      <h1 className="visually-hidden">Blog Page</h1>
       <section>
         <div className="h-screen w-auto relative overflow-hidden">
           <InfiniteScrollBackground

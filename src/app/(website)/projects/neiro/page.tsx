@@ -4,6 +4,20 @@ import ProjectHeroInfo from "@/app/(website)/comp/projects/project_focus/Project
 import ProjectHeroMedia from "@/app/(website)/comp/projects/project_focus/ProjectHeroMedia";
 import { neiroInfo } from "@/data/projects/neiro";
 
+export const metadata = {
+  title: "NICO Design | NEIRO",
+  description:
+    "A passion project from university imagening a new EDM festival focused around the Eastern rave scene for the Western audience.",
+  openGraph: {
+    title: "NICO Design | NEIRO",
+    description:
+      "A passion project from university imagening a new EDM festival focused around the Eastern rave scene for the Western audience.",
+    images: [
+      "https://res.cloudinary.com/dg0c4lry9/image/upload/v1751567180/3_hoodies_ayf7vf.jpg",
+    ],
+  },
+};
+
 const Neiro = () => {
   return (
     <>
