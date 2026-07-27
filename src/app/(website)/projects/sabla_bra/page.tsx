@@ -4,7 +4,21 @@ import ProjectHeroInfo from "@/app/(website)/comp/projects/project_focus/Project
 import ProjectHeroMedia from "@/app/(website)/comp/projects/project_focus/ProjectHeroMedia";
 import { sablaBraInfo } from "@/data/projects/sablaBra";
 
-const Neiro = () => {
+export const metadata = {
+  title: "NICO Design | Sabla Bra",
+  description:
+    "Sabla Bra is a committee with the mission to celebrate the great work created within market communication. Everything, from TV campaigns to visual identities gets its moment to shine once a year at the awards ceremony.",
+  openGraph: {
+    title: "NICO Design | Sabla Bra",
+    description:
+      "Sabla Bra is a committee with the mission to celebrate the great work created within market communication. Everything, from TV campaigns to visual identities gets its moment to shine once a year at the awards ceremony.",
+    images: [
+      "https://res.cloudinary.com/dg0c4lry9/image/upload/v1754577639/sb_some_mockup_ew0isa.jpg",
+    ],
+  },
+};
+
+const SablaBra = () => {
   return (
     <>
       <ProjectHero>
@@ -25,4 +39,4 @@ const Neiro = () => {
   );
 };
 
-export default Neiro;
+export default SablaBra;

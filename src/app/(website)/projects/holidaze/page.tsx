@@ -5,6 +5,18 @@ import ProjectHeroMedia from "@/app/(website)/comp/projects/project_focus/Projec
 import { holidazeInfo } from "@/data/projects/holidaze";
 import Image from "next/image";
 
+export const metadata = {
+  title: "NICO Design | Holidaze",
+  description: "Holidaze Accommodation is a booking platform that adjusts it's journey based on what type of traveller you are.",
+  openGraph: {
+    title: "NICO Design | Holidaze",
+    description: "Holidaze Accommodation is a booking platform that adjusts it's journey based on what type of traveller you are.",
+    images: [
+      "https://res.cloudinary.com/dg0c4lry9/image/upload/v1779373181/holidaze_imac_mockup_fqgd7l.jpg",
+    ],
+  },
+};
+
 const Holidaze = () => {
   return (
     <>

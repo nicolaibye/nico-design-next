@@ -5,6 +5,20 @@ import ProjectHeroMedia from "@/app/(website)/comp/projects/project_focus/Projec
 import { soriaMoriaInfo } from "@/data/projects/soriaMoria";
 import Image from "next/image";
 
+export const metadata = {
+  title: "NICO Design | Soria Moria",
+  description:
+    "Soria Moria was a children's art exhibition, to give children a chance to express themselves through art. The challenge was to create a distinct identity that would be instantly recognisable as the Soria Moria art exhibition.",
+  openGraph: {
+    title: "NICO Design | Soria Moria",
+    description:
+      "Soria Moria was a children's art exhibition, to give children a chance to express themselves through art. The challenge was to create a distinct identity that would be instantly recognisable as the Soria Moria art exhibition.",
+    images: [
+      "https://res.cloudinary.com/dg0c4lry9/image/upload/v1778505836/SoMo_Tote-Bag-Mockups-with-People_vperez.jpg",
+    ],
+  },
+};
+
 const SoriaMoria = () => {
   return (
     <>
