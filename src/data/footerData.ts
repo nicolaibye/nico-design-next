@@ -23,7 +23,7 @@ export const footerCards = [
   //   icon: motionIcon,
   // },
   {
-    title: "Front-end Developer",
+    title: "Front-end Development",
     description:
       "Transforming UI/UX designs into fully interactive websites. Writing maintainable and scalable HTML, CSS, and JavaScript code.",
     icon: devIcon,

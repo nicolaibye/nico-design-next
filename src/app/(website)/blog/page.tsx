@@ -41,7 +41,7 @@ const Blog = async () => {
             durationSeconds={80}
           />
 
-          <div className="absolute flex flex-col md:flex-row items-center justify-center md:gap-12 w-full h-full z-10 mix-blend-difference  font-redaction-50 font-bold text-[10rem] leading-[1.2] text-red-CoralRed uppercase">
+          <div className="absolute flex flex-col md:flex-row items-center justify-center md:gap-12 w-full h-full z-10 font-redaction-50 font-bold text-[10rem] leading-[1.2] text-red-CoralRed uppercase">
             <h1
               aria-label="Blog"
               className="flex flex-col md:flex-row items-center md:gap-12"

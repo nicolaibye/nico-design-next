@@ -63,9 +63,9 @@ const HeroCardComponent = ({ card }: HeroCardProps) => {
     lg:hover:opacity-100! 
     lg:hover:scale-[1.02] 
     transition-all 
-    bg-white-LinkWater/10 
+    bg-white-LinkWater/0
     backdrop-filter 
-    backdrop-blur-md 
+    backdrop-blur-sm 
     ${outlineColor} 
     outline-2 
     rounded-lg 

@@ -103,4 +103,22 @@ export const items: MasonryItem[] = [
     description: "Video infographic",
     type: "video",
   },
+  {
+    id: "11",
+    image:
+      "https://res.cloudinary.com/dg0c4lry9/image/upload/v1755204183/school_project___generosity_by_storeblaa_dao5oe3_bpgq3i.jpg",
+    alt: "...",
+    title: "Generosity",
+    description: "Illustration",
+    type: "image",
+  },
+    {
+    id: "12",
+    image:
+      "https://res.cloudinary.com/dg0c4lry9/image/upload/v1755204179/Posts_8_wjwxuy.jpg",
+    alt: "...",
+    title: "Hollow Triumph",
+    description: "3D composition",
+    type: "image",
+  },
 ];
