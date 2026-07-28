@@ -3,20 +3,6 @@ import { getPayload } from "payload";
 import config from "@payload-config";
 import ContactForm from "@/app/(website)/comp/reuse/ContactForm.tsx";
 
-export const metadata = {
-  title: "NICO Design | Contact",
-  description:
-    "Let's get in touch and make sure that you are not like everyone else!",
-  openGraph: {
-    title: "NICO Design | Contact",
-    description:
-      "Let's get in touch and make sure that you are not like everyone else!",
-    images: [
-      "https://res.cloudinary.com/dg0c4lry9/image/upload/v1756059541/preview_image_sxcv3p.jpg",
-    ],
-  },
-};
-
 const Workbook = async () => {
   const payload = await getPayload({ config });
 
