@@ -26,6 +26,8 @@ import {
 import { RichText } from "@/app/(website)/comp/blog/RichText";
 import type { Form as PayloadForm } from "@/types/payload-types.ts";
 import type { Resolver } from "react-hook-form";
+import { useRouter } from "next/navigation";
+import StarRatingInput from "@/app/(website)/comp/reuse/StarRatingInput.tsx";
 
 type FormFieldBlock = NonNullable<PayloadForm["fields"]>[number];
 type InputFieldBlock = Exclude<FormFieldBlock, { blockType: "message" }>;
@@ -88,6 +90,7 @@ function FieldHeader({
 
 export const ContactForm = ({ form }: { form: PayloadForm | undefined }) => {
   const [status, setStatus] = useState<"idle" | "success" | "error">("idle");
+  const router = useRouter();
 
   const inputFields = form?.fields?.filter(isInputField) ?? [];
   const schema = buildSchema(inputFields);
@@ -136,6 +139,13 @@ export const ContactForm = ({ form }: { form: PayloadForm | undefined }) => {
       setStatus("error");
     }
   };
+
+  const redirectUrl =
+    typeof form.redirect === "string" ? form.redirect : form.redirect?.url;
+
+  if (status === "success" && redirectUrl) {
+    router.push(redirectUrl);
+  }
 
   if (status === "success") {
     setTimeout(() => setStatus("idle"), 3000);
@@ -190,6 +200,13 @@ export const ContactForm = ({ form }: { form: PayloadForm | undefined }) => {
                     <FormControl>
                       {field.blockType === "textarea" ? (
                         <Textarea placeholder={placeholder} {...rhfField} />
+                      ) : field.blockType === "select" &&
+                        field.name === "rating" ? (
+                        <StarRatingInput
+                          options={field.options ?? []}
+                          value={rhfField.value}
+                          onChange={rhfField.onChange}
+                        />
                       ) : field.blockType === "select" ? (
                         <Select
                           onValueChange={rhfField.onChange}
