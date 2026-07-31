@@ -5,6 +5,7 @@ import Footer from "./comp/Footer";
 import { Geist, Lexend, Major_Mono_Display } from "next/font/google";
 import { cn } from "@/lib/utils";
 import localFont from "next/font/local";
+import Clarity from "./comp/Clarity";
 
 const redaction = localFont({
   src: [
@@ -220,6 +221,7 @@ export default function RootLayout({
         />
       </head>
       <body>
+        <Clarity />
         <header>
           <Nav />
         </header>
