@@ -39,8 +39,8 @@ const ServiceSection = () => {
         Already done that? Then I am super excited to help you, this is what I
         can offer:
       </p>
-      <ul className="my-5">
-        <li className="font-lexend tracking-widest leading-11 sm:leading-13 md:leading-16 font-extralight text-[1.5rem] sm:text-[1.8rem] md:text-4xl">
+      <ul className="my-5 grid grid-cols-1 sm:grid-cols-2 gap-5">
+        <li className="font-lexend tracking-wide font-extralight text-md">
           <span className="font-redaction-50 tracking-normal leading-12 sm:leading-18 text-[2.65rem] sm:text-5xl md:text-6xl text-red-CoralRed">
             Starter Package
           </span>
@@ -52,9 +52,10 @@ const ServiceSection = () => {
             This package includes logosuite, color palette, typography, basic
             graphic elements and a brand guidelines.
           </p>
+          <br />
           <span>From: £1000</span>
         </li>
-        <li className="font-lexend tracking-widest leading-11 sm:leading-13 md:leading-16 font-extralight text-[1.5rem] sm:text-[1.8rem] md:text-4xl">
+        <li className="font-lexend tracking-wide font-extralight text-md">
           <span className="font-redaction-50 tracking-normal leading-12 sm:leading-18 text-[2.65rem] sm:text-5xl md:text-6xl text-red-CoralRed">
             Branding Package
           </span>
@@ -69,9 +70,10 @@ const ServiceSection = () => {
             elements and a full brand identity which becomes part of a more
             comprehensive brand guidelines.
           </p>
+          <br />
           <span>From: £2400</span>
         </li>
-        <li className="font-lexend tracking-widest leading-11 sm:leading-13 md:leading-16 font-extralight text-[1.5rem] sm:text-[1.8rem] md:text-4xl">
+        <li className="font-lexend tracking-wide font-extralight text-md">
           <span className="font-redaction-50 tracking-normal leading-12 sm:leading-18 text-[2.65rem] sm:text-5xl md:text-6xl text-red-CoralRed">
             Website Starter
           </span>
@@ -84,9 +86,10 @@ const ServiceSection = () => {
             This package includes Figma designed website, pages and budget are
             adjusted to your needs.
           </p>
+          <br />
           <span>£750 pr. page</span>
         </li>
-        <li className="font-lexend tracking-widest leading-11 sm:leading-13 md:leading-16 font-extralight text-[1.5rem] sm:text-[1.8rem] md:text-4xl">
+        <li className="font-lexend tracking-wide font-extralight text-md">
           <span className="font-redaction-50 tracking-normal leading-12 sm:leading-18 text-[2.65rem] sm:text-5xl md:text-6xl text-red-CoralRed">
             Full Package
           </span>
@@ -99,6 +102,7 @@ const ServiceSection = () => {
             landing page for your business. (Website scope can be adjusted upon
             request).
           </p>
+          <br />
           <span>From: £3000</span>
         </li>
       </ul>
