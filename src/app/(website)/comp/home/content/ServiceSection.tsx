@@ -13,99 +13,46 @@ const ServiceSection = () => {
         </span>
       </h2>
       <p>
-        First and foremost, I want to be honest with you. If you have just made
-        your business, first of all, huge congrats! If you have yet to prove
-        that your business works, then grab a nice font from{" "}
-        <a
-          href="https://fonts.google.com/"
-          target="_blank"
-          rel="noopener noreferrer"
-          className="text-red-CoralRed underline"
-        >
-          fonts.google
-        </a>{" "}
-        and some colors from{" "}
-        <a
-          href="https://coolors.co/"
-          target="_blank"
-          rel="noopener noreferrer"
-          className="text-red-CoralRed underline"
-        >
-          {" "}
-          coolors.co
-        </a>
-        , and make sure this is what you wanna build.
-        <br /> <br />
-        Already done that? Then I am super excited to help you, this is what I
-        can offer:
+        I help businesses stand out in a generated world by creating identities
+        through strong collaboration, clear processes and human curiosity, so
+        that people can feel excited about their brand and comfortable it has
+        been created by someone who actually care about their business. Whether
+        you are looking for a starter brand to get you started, or a full blown
+        brand identity with launch, I am excited to be your next creative
+        partner.
       </p>
-      <ul className="my-5 grid grid-cols-1 sm:grid-cols-2 gap-5">
-        <li className="font-lexend tracking-wide font-extralight text-md">
-          <span className="font-redaction-50 tracking-normal leading-12 sm:leading-18 text-[2.65rem] sm:text-5xl md:text-6xl text-red-CoralRed">
-            Starter Package
-          </span>
+      <ul className="grid grid-cols-1 md:grid-cols-3 gap-8 mt-8">
+        <li>
+          <div className="flex items-center gap-4">
+            <div className="w-8 h-8 bg-black-Mirage dark:bg-white-LinkWater"></div>
+            <h3>Starter</h3>
+          </div>
           <p>
-            Perfect for you who wants to get your business off the ground and
-            start standing out amongst your competitors.
-            <br />
-            <br />
-            This package includes logosuite, color palette, typography, basic
-            graphic elements and a brand guidelines.
+            Logosuite, colour palette, typography, one-pager brand guidelines.
           </p>
-          <br />
-          <span>From: £1000</span>
         </li>
-        <li className="font-lexend tracking-wide font-extralight text-md">
-          <span className="font-redaction-50 tracking-normal leading-12 sm:leading-18 text-[2.65rem] sm:text-5xl md:text-6xl text-red-CoralRed">
-            Branding Package
-          </span>
+        <li>
+          <div className="flex items-center gap-4">
+            <div className="w-8 h-8 bg-black-Mirage dark:bg-white-LinkWater"></div>
+            <h3>Full Brand Identity</h3>
+          </div>
           <p>
-            Getting deep into who you are and what your business is about, this
-            package is perfect for you who wants to get a strong brand identity
-            and stand out from the crowd, both through your visuals but also
-            your values.
-            <br />
-            <br />
-            This package includes the starter package, with expanded graphic
-            elements and a full brand identity which becomes part of a more
-            comprehensive brand guidelines.
+            Starter pack + brand exploration, strategy, positioning, visual
+            identity wrapped up in a brand book.
           </p>
-          <br />
-          <span>From: £2400</span>
         </li>
-        <li className="font-lexend tracking-wide font-extralight text-md">
-          <span className="font-redaction-50 tracking-normal leading-12 sm:leading-18 text-[2.65rem] sm:text-5xl md:text-6xl text-red-CoralRed">
-            Website Starter
-          </span>
+        <li>
+          <div className="flex items-center gap-4">
+            <div className="w-8 h-8 bg-black-Mirage dark:bg-white-LinkWater"></div>
+            <h3>The Full Launch</h3>
+          </div>
           <p>
-            Already got your brand identity and want to get your business
-            online? This package is perfect for you who wants to get a website
-            that reflects your brand and values.
-            <br />
-            <br />
-            This package includes Figma designed website, pages and budget are
-            adjusted to your needs.
+            Full Brand Identity + social media templates, website design and
+            development/online implementation.
           </p>
-          <br />
-          <span>£750 pr. page</span>
-        </li>
-        <li className="font-lexend tracking-wide font-extralight text-md">
-          <span className="font-redaction-50 tracking-normal leading-12 sm:leading-18 text-[2.65rem] sm:text-5xl md:text-6xl text-red-CoralRed">
-            Full Package
-          </span>
-          <p>
-            Ready for a long term partnership? This package is perfect for you
-            who wants to get a full brand identity and website.
-            <br />
-            <br />
-            This package includes the Branding Package, with a Figma designed
-            landing page for your business. (Website scope can be adjusted upon
-            request).
-          </p>
-          <br />
-          <span>From: £3000</span>
         </li>
       </ul>
+      <p>*if you have any questions, feel free to pop me a message!</p>
     </section>
   );
 };
