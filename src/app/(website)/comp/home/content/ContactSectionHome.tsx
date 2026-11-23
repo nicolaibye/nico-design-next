@@ -17,9 +17,7 @@ const ContactSectionHome = async () => {
     return <p>Contact form not found — create one in /admin first.</p>;
   }
   return (
-    <section
-      className={`grid grid-cols-1 gap-5 md:gap-10 rounded-lg`}
-    >
+    <section className={`grid grid-cols-1 gap-5 md:gap-10 rounded-lg`}>
       <div>
         <h2 className="font-lexend uppercase tracking-widest leading-11 text-center sm:leading-13 md:leading-16 font-extralight text-[2.0rem] sm:text-[2.5rem] md:text-5xl">
           Lets make <wbr /> your brand <br />

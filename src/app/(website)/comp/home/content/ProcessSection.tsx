@@ -23,7 +23,7 @@ const processStages = [
 
 const ProcessSection = () => {
   return (
-    <section className="min-h-[80vh] flex flex-col justify-center">
+    <section>
       <h2 className="font-lexend tracking-widest leading-11 sm:leading-13 md:leading-16 font-extralight text-[2.0rem] sm:text-[2.5rem] md:text-5xl uppercase">
         My process
       </h2>
@@ -31,7 +31,7 @@ const ProcessSection = () => {
         All projects has it&apos;s quirks and kinks, but ultimately, the way I
         approach every project breaks down into three main stages.
       </p>
-      <ul className="grid grid-cols-1 h-full gap-10 md:gap-30 my-12">
+      <ul className="grid grid-cols-1 h-full gap-10 md:gap-30 mb-6 mt-16">
         {processStages.map((stage, index) => (
           <li key={index} className="flex flex-col md:flex-row justify-between md:items-end gap-4 sm:gap-none border-b pb-10">
             <div className="flex flex-col gap-5">
@@ -48,7 +48,9 @@ const ProcessSection = () => {
         </li>
         ))}
       </ul>
-      <p>*if you have any questions, feel free to pop me a message!</p>
+      <p className="text-sm">
+        *if you have any questions, feel free to pop me a message!
+      </p>
     </section>
   );
 };
