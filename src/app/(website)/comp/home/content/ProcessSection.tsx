@@ -33,19 +33,20 @@ const ProcessSection = () => {
       </p>
       <ul className="grid grid-cols-1 h-full gap-10 md:gap-30 mb-6 mt-8 md:mt-16">
         {processStages.map((stage, index) => (
-          <li key={index} className="flex flex-col md:flex-row justify-between md:items-end gap-4 sm:gap-none border-b pb-10">
+          <li
+            key={index}
+            className="flex flex-col md:flex-row justify-between md:items-end gap-4 sm:gap-none border-b border-black-Mirage dark:border-white-LinkWater pb-10"
+          >
             <div className="flex flex-col gap-5">
               <p className="text-xs font-semibold text-red-CoralRed uppercase tracking-[0.25rem]">
                 {stage.duration}
               </p>
-            <h3 className="leading-7 md:leading-11 font-redaction-50 tracking-normal text-[2.65rem] md:text-5xl lg:text-7xl text-red-CoralRed">
-              {stage.title}
-            </h3>
-          </div>
-          <p className="md:w-2/5">
-            {stage.description}
-          </p>
-        </li>
+              <h3 className="leading-7 md:leading-11 font-redaction-50 tracking-normal text-[2.65rem] md:text-5xl lg:text-7xl text-red-CoralRed">
+                {stage.title}
+              </h3>
+            </div>
+            <p className="md:w-2/5">{stage.description}</p>
+          </li>
         ))}
       </ul>
       <p className="text-sm">
