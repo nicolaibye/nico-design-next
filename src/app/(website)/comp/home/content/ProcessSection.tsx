@@ -5,19 +5,19 @@ const processStages = [
     title: "Discovery",
     duration: "1-2 weeks",
     description:
-      "A deep dive into what makes your business tick. Expect a lot of questions, and close collaboration to ensure I understand your vision and goals. This is where we lay the foundation for a successful project.",
+      "A deep dive into what makes your project tick. This is where we lay the foundation for a successful project through a series of coffee and questions.",
   },
   {
     title: "Design",
     duration: "2-3 weeks",
     description:
-      "Time for me and my led to explore and bring your vision to life. This is where the magic happens, and where I get to show off my skills and creativity.",
+      "Time for me to explore and bring your vision to life. This is where I get to crack my knuckles and turn messy sketches into your polished deliverables.",
   },
   {
     title: "Launch",
     duration: "1-2 weeks",
     description:
-      "Deliverables are handed over, and the champagne is popped! As I eagerly await to see your project come to life.",
+      "Deliverables are handed over, and the champagne is popped! I ensure a smooth integration with your new assets, as I eagerly await seeing your project in real life.",
   },
 ];
 
@@ -31,7 +31,7 @@ const ProcessSection = () => {
         All projects has it&apos;s quirks and kinks, but ultimately, the way I
         approach every project breaks down into three main stages.
       </p>
-      <ul className="grid grid-cols-1 h-full gap-10 md:gap-30 mb-6 mt-16">
+      <ul className="grid grid-cols-1 h-full gap-10 md:gap-30 mb-6 mt-8 md:mt-16">
         {processStages.map((stage, index) => (
           <li key={index} className="flex flex-col md:flex-row justify-between md:items-end gap-4 sm:gap-none border-b pb-10">
             <div className="flex flex-col gap-5">
