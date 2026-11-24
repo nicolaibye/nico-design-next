@@ -5,14 +5,14 @@ import { ArrowUpRightIcon } from "@phosphor-icons/react/dist/ssr";
 
 const FeaturedProjects = () => {
   return (
-    <section className={`lg:min-h-screen my-auto flex flex-col`}>
+    <section className="md:pb-20">
       <div className="w-full flex justify-center">
         <h2 className="font-lexend font-light uppercase text-3xl tracking-[0.3em] my-16 text-center">
           Featured Projects
         </h2>
       </div>
       <div>
-        <ul className="flex flex-col lg:flex-row lg:h-[80vh] max-w-wide mx-auto">
+        <ul className="flex flex-col lg:flex-row lg:h-[80vh] max-h-200 max-w-wide mx-auto">
           {projects.map((project) => (
             <li
               key={project.href}

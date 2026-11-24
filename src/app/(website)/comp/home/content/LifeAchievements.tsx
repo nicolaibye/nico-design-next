@@ -19,7 +19,7 @@ const fontSofiaSans = Sofia_Sans({
 const LifeAchievements = () => {
   return (
     <section className={`${fontLexend.variable} ${fontSofiaSans.variable}`}>
-      <div className="max-w-230 mx-auto p-5 sm:p-10 my-10 md:my-14 lg:my-24 flex flex-col gap-16 justify-center">
+      <div className="max-w-230 mx-auto flex flex-col gap-16 justify-center">
         <SectionDivider lineClass="outline-black-Mirage dark:outline-white-LinkWater">
           <h2 className="font-lexend uppercase text-xs min-w-fit tracking-widest">
             Life achievements
@@ -32,7 +32,10 @@ const LifeAchievements = () => {
             </AnimatedCounter>
           </li>
           <li className="flex flex-col w-61">
-            <AnimatedCounter target={6} textColor="text-green-RiverBed dark:text-white-LinkWater">
+            <AnimatedCounter
+              target={7}
+              textColor="text-green-RiverBed dark:text-white-LinkWater"
+            >
               Years of working as a freelancer and co-worker
             </AnimatedCounter>
           </li>
